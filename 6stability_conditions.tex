@@ -1,0 +1,242 @@
+\section{Bridgeland安定性条件}
+\begin{defn}\cite{Bri07}
+三角圏 $\D$ におけるスライス $\P$ とは，部分圏の族 $\{ \P(\phi) \}_{\phi \in \RR} \subset \D$ であって，次の条件を満たすものである：
+\begin{itemize}
+  \item 任意の $\phi \in \RR$ に対して，$\P(\phi + 1) = \P(\phi)[1]$ が成り立つ．
+  \item 任意の $\phi_1 > \phi_2$ に対して，$X_i \in \P(\phi_i)$ であるならば，$\Hom_{\D}(X_1, X_2) = 0$ である．
+  \item 任意の対象 $X \in \D$ に対して，実数列 $\phi_1 > \phi_2 > \cdots > \phi_n$ と $Y_i \in \P(\phi_i)$ が存在し，次のような完全三角形の列による分解が存在する：
+  \[
+    \begin{tikzcd}[column sep=1.5em]
+      0 \ar[r, equal] & X_0 \ar[rr] && X_1 \ar[r] \ar[ld] & \cdots \ar[r] & X_{n-2} \ar[rr] && X_{n-1} \ar[ld] \ar[rr] && X_n \ar[ld] \ar[r, equal] & X \\
+      && Y_1 \ar[lu, dotted,swap, "{[1]}"'] &&&& Y_{n-1} \ar[lu, dotted,swap, "{[1]}"'] && Y_n \ar[lu, dotted,swap, "{[1]}"'].
+    \end{tikzcd}
+  \]
+\end{itemize}
+\end{defn}
+
+
+\begin{defn}\cite{Bri07}
+アーベル圏 $\A$ 上の安定性条件とは，群準同型
+\[
+  Z \colon K(\A) \longrightarrow \CC.
+\]
+であって，次の条件を満たすものである：
+\begin{itemize}
+  \item[(i)] 任意の $X \in \A$，$X \neq 0$ に対して，$Z(X) \in \HH$ を満たす．ただし，
+  \[
+    \HH \coloneqq \{ re^{i\pi\phi} \in \CC \mid r > 0,\ 0 < \phi \le 1 \}.
+  \]
+  と定める．このとき，$Z(X) = |Z(X)|e^{i\pi\phi(X)}$ と書けるような $\phi(X) \in (0,1]$ を
+  位相（phase）と呼ぶ．
+  
+  \item[(ii)] 任意の $X \in \A$ に対して，次のような完全列
+  \[
+    0 = X_0 \subset X_1 \subset \cdots \subset X_k = X.
+  \]
+  が存在して，各被対象 $Y_i \coloneqq X_i / X_{i-1}$ が $Z$ に関して$Z$-半安定であり，かつその位相が
+  \[
+    \phi(Y_1) > \phi(Y_2) > \cdots > \phi(Y_k).
+  \]
+  を満たす．このような列をHarder--Narasimhan分解（HN分解）と呼ぶ．
+\end{itemize}
+
+ここで，非零対象 $X \in \A$ が$Z$-半安定であるとは，任意の非零部分対象 $0 \neq Y \subsetneq X$ に対して，
+\[
+  \arg Z(Y) \le \arg Z(X).
+\]
+が成り立つことをいう．
+\end{defn}
+
+\begin{prop}\cite{Bri07}
+三角圏 $\D$ に対して，$\D$ 上の有界な $t$-構造と，その核のアーベル圏上の stability函数 $Z$ を与えることと，$\D$ 上のBridgeland安定性条件 $(Z, \P)$で，任意の $\phi \in \RR$ と $0 \neq X \in \P(\phi)$ に対して $Z(X) \in \RR_{>0} e^{i\pi\phi}$ を満たすものを与えることは同値である．
+\end{prop}
+
+\begin{lemm}\cite{Bri07}
+	$\D$をt-構造が与えられた三角圏，その核に安定性条件が与えられているとする．$X,Y\in\D^{\le 0}\cap\D^{\ge 0}$が半安定で$\phi(X)>\phi(Y)$であるとき，
+	\[\Hom_{\D}(X,Y)=0.\]
+	である．
+\end{lemm}
+\begin{proof}
+	$f\in\Hom_{\D}(X,Y)$が$0$でないと仮定する．
+	\[0\rightarrow\Ker f\rightarrow X \rightarrow \Im f \rightarrow 0.\]
+	の完全列が存在して$X$が半安定対象であることから$\phi(\Im f)\ge\phi(X)$．$\Im f\neq 0$が$Y$の部分対象で$Y$も半安定であることから$\phi(Y)\ge\phi(\Im f)$．これらを合わせると$\phi(Y)\ge\phi(X)$．仮定に矛盾．
+\end{proof}
+
+	\begin{proof}
+		アーベル圏上の安定性条件$(Z,\A)\rightarrow$三角圏上のBridgeland安定性条件$\P$の構成\\
+		各$0<\phi\le 1$に対して，
+		\[\P(\phi)\coloneq \{X\in\A\mid X\colon Z\text{-半安定 }Z(X)\in\RR_{>0}e^{i\pi\phi}\}\cup \{0\}.\]
+		$\phi\in\RR,\phi\in(k,k+1]$となる整数$k$をとって
+		\[\P(\phi)\coloneq \P(\phi - k)[k].\]
+		こう定めたとき，Bridgeland安定性条件を定めていることを確かめる．\\
+		\bullet \ 任意の$\phi\in\RR$ に対して，$ \P(\phi + 1) = \P(\phi)[1]$は定義から従う．\\
+		\bullet \ $\phi_1 > \phi_2$と$X_i\in\P(\phi_i)$対して，$\Hom_{\D}(X_1,X_2)=0$\\
+		このとき$Y_1,Y_2\in\P((0,1])$を用いて，$X_1=Y_1[m],\ X_2=Y_2[n], (m>n \text{または}\ m=n, \phi(Y_1) > \phi(Y_2))$とかける．\\
+		$m=n$のときは補題より$0$であることがわかる．$m>n$のとき
+		$\Hom_{\D}(Y_1[m],Y_2[n])\simeq \Hom_{\D}(Y_1,Y_2[-(m-n)])$なので，$\Hom_{\D}(Y_1,Y_2[-k])=0\ k>0$を示せばよいが，$Y_1\in\D^{\le 0},\ Y_2[-k]\in\D^{\ge k}$なのでt-構造の定義より$0$となることがわかる．\\
+分解をもつことはt-構造の性質より，整数の列$k_1>k_2 \cdots > k_n$と分解
+	\[
+		\begin{tikzcd}[column sep=1.0em]
+			0\ar[r,equal]&X_0\ar[rr]& & X_{1}\ar[r]\ar[ld] &\cdots\ar[r] &X_{n-2}\ar[rr]&&X_{n-1}\ar[ld]\ar[rr]&&X_n\ar[ld]\ar[r,equal]&X\\
+									 &&A_{1}[k_1]\ar[lu,dotted,"{[1]}"] &&&&A_{n-1}[k_{n-1}]\ar[lu,dotted,"{[1]}"]&&A_n[k_n]\ar[lu,dotted,"{[1]}"].
+		\end{tikzcd}
+	\]
+	$A_j\in \A$が存在する．各$A_j$には仮定よりHN分解が存在するので更に分解することで3つ目の条件が得られる．\\
+	逆に$\P$が与えられたとき，$\F^{\perp}[1]=\D^{\ge 0}\coloneq\P((0,\infty)), \F=\D^{\le 0}\coloneq\P((-\infty,1])$がt-構造を定める．スライスの条件より，
+
+\end{proof}
+
+
+\begin{prop}\cite{Bri07}
+		$\A\colon$アーベル圏，群準同型$Z\colon K(\A)\to \CC$が次の条件を満たすとき，HN分解が存在する．つまり$Z$が安定性条件を定める．
+		\begin{itemize}
+			\item[(i)]
+			全射の無限列
+			\[X_1\twoheadrightarrow X_2\twoheadrightarrow X_3\twoheadrightarrow\cdots .  \]
+		で$\phi (X_i)> \phi (X_{i+1})$となるものは存在しない．
+	\item[(ii)]
+			無限降下列
+		\[X_1\supset X_2\supset X_3\supset \cdots  .\]
+		で$\phi (X_{i+1}) > \phi(X_i)$となるものは存在しない．
+	\end{itemize}
+\end{prop}
+
+\begin{proof}\hfill\\
+	Step 1\hspace{5mm}\\
+	\bullet 任意の対象$X\in\A$には$\phi(A) \ge \phi(X)$を満たす半安定な部分対象$A$が存在する．\\
+	\bullet 任意の対象$X\in\A$には$\phi(X) \ge \phi(B)$を満たす半安定な対象$B$と全射$X\twoheadrightarrow B$が存在する．
+	$X$が半安定ならOK.そうでないなら$\phi(X')>\phi(X)$となる部分対象$X'(\subsetneq X)$がとれる．\\
+	これが無限回繰り返されると条件の(ii)に矛盾するので有限回でとまる．この極小となる$A$をとれば半安定である．\\
+	同様に$X$が半安定なら全射$X\xrightarrow{\id}X$がとれてOK.そうでないとき，$X'(\subsetneq X)$で，$\phi(X')>\phi(X)$が存在して，$B'\coloneq X/X'$と定めると$\phi(X)\ge\phi(B')$であり，$X\twoheadrightarrow X/X'$がとれて，有限回でこの操作はとまるのでいずれ半安定になる．
+\begin{center}
+	\usetikzlibrary{arrows.meta}
+
+\begin{tikzpicture}[scale=2, >=Stealth]
+
+  % 原点を中心に設定
+  \coordinate (O) at (0,0);
+
+  % 各ベクトルの終点
+  \coordinate (X') at (-0.5,0.7);     % Z(A)
+  \coordinate (B') at (1.2,0.6);    % Z(X/A)
+  \coordinate (X) at ($(X')+(B')$); % Z(X) = Z(A) + Z(X/A)
+
+  % 軸
+  \draw[->] (-1,0) -- (1.2,0) node[right] {\(\Re\)};
+  \draw[->] (0,-0.2) -- (0,1.6) node[above] {\(\Im\)};
+
+  % Z(A) ベクトル（青）
+  \draw[->, thick,blue] (O) -- (X') node[midway, left] {\(Z(X')\)};
+
+  % Z(X/A) ベクトル（緑）：Aの先から
+  \draw[->, thick] (X') -- (X) node[midway,above] {\(Z(B')\)};
+
+  % Z(X) ベクトル（赤）：原点から
+  \draw[->, thick,red] (O) -- (X) node[midway, right] {\(Z(X)\)};
+
+  % 原点
+  \fill (O) circle (0.03);
+  \node at (-0.15, -0.1) {\footnotesize 0};
+
+\end{tikzpicture}
+\end{center}
+
+		Step 2\\
+			$X\twoheadrightarrow B$が次の条件をみたすとき極大不安定商(mdq)と呼ぶ.\\
+			\bullet $\phi(X)\ge\phi(B)$\\
+			\bullet 任意の$X\twoheadrightarrow B'$に対して，$\phi(B')\ge \phi(B)$であり，$\phi(B')=\phi(B)$なら
+			\[X\twoheadrightarrow B\twoheadrightarrow B'.\]
+			と分解．\\
+			このとき，任意の対象$X$はmdqを持つことがわかる．
+	$X\twoheadrightarrow B'$において$B'$が半安定でないならStep 1から半安定な対象$B''$で$\phi(B')>\phi(B'')$と$B'\twoheadrightarrow B''$がとれるので，$B'$が半安定なときについて示せばよい．同様にmdqの$B$は半安定でなければならない．\\
+$X$が半安定対象のとき，任意の全射$X\twoheadrightarrow B'$に対して，短完全列
+\[0\rightarrow \Ker f\rightarrow X\xrightarrow{f} B'\rightarrow 0.\]
+が存在するので$Z(B') = Z(X) - Z(\Ker f)$．安定対象なので，$\phi(\Ker f)\le \phi(X)$
+\begin{center}
+\begin{tikzpicture}[scale=2, >=Stealth]
+
+  % 原点を中心に設定
+  \coordinate (O) at (0,0);
+
+  % 各ベクトルの終点
+  \coordinate (Ker) at (0.7,0.9);     % Z(A)
+  \coordinate (B') at (-1.2,0.4);    % Z(X/A)
+  \coordinate (X) at ($(Ker)+(B')$); % Z(X) = Z(A) + Z(X/A)
+
+  % 軸
+  \draw[->] (-1,0) -- (1.2,0) node[right] {\(\Re\)};
+  \draw[->] (0,-0.2) -- (0,1.6) node[above] {\(\Im\)};
+
+  % Z(A) ベクトル（青）
+  \draw[->, thick,blue] (O) -- (Ker) node[midway, right] {\(Z(\Ker f)\)};
+
+  % Z(X/A) ベクトル（緑）：Aの先から
+  \draw[->, thick] (Ker) -- (X) node[midway,above] {\(Z(B')\)};
+
+  % Z(X) ベクトル（赤）：原点から
+  \draw[->, thick,red] (O) -- (X) node[midway, left] {\(Z(X)\)};
+
+  % 原点
+  \fill (O) circle (0.03);
+  \node at (-0.15, -0.1) {\footnotesize 0};
+
+\end{tikzpicture}
+\end{center}
+したがって，$\phi(B')\ge\phi(X)$となり$X$が半安定対象のとき，$X\xrightarrow{\id}X$はmdqとなる．\\
+そうでないとき，step1より$\phi(A)>\phi(X)$なる半安定対象$A\subsetneq X$と
+\[0\rightarrow A\rightarrow X\rightarrow X'\rightarrow 0.\]
+という完全列が存在する．$\phi(A)>\phi(X)>\phi(X')$となっている．$X'\twoheadrightarrow B$が$X'$のmdqとなっているとき，合成$X\twoheadrightarrow B$は$X$のmdqであることを示す．\\
+\because $X\twoheadrightarrow B'$を半安定で$\phi(B')\le \phi(B)$となっているとすると
+\[\phi(A)>\phi(X)>\phi(X')\ge\phi(B)\ge\phi(B').\]
+$A,B'$は半安定対象であり，前の補題より$\Hom_{\D}(A,B')=0$
+\[\begin{tikzcd}
+	A \ar[r,hookrightarrow]\ar[rd,"0",swap,]& X\ar[r,twoheadrightarrow]\ar[d,twoheadrightarrow]& X/A = X'\ar[ld,dotted,two heads].\\
+								 &B'
+\end{tikzcd}\]
+図式のように可換にする全射が普遍性から存在する．$X'\twoheadrightarrow B$がmdqなので$\mu(B')=\mu(B)$となり，mdqの条件より$X'\twoheadrightarrow B\twoheadrightarrow B'$と経由する．したがって$X\twoheadrightarrow B\twoheadrightarrow B'$が存在し，$X\twoheadrightarrow B$がmdqであることがわかる．\\
+$X'$がmdqでない場合は$X$を$X'$に取り替えて議論を繰り返すことと条件(ii)から有限回でとまるのでmdqの存在がわかる．
+
+		Step 3\\
+		任意の$X\in\A$はHN分解をもつ．
+	$0$でない$X\in\A$を任意にとる．$X$が半安定なら$0\subset X$がHN分解を与えている．そうでないとき，$X\twoheadrightarrow B^1$をmdqとして
+	\[0\rightarrow X^1 \rightarrow X\rightarrow B^1\rightarrow 0.\]
+	をとる．$X^1$が半安定であるなら$0\subsetneq X^1\subsetneq X$がHN分解になっている．($X/X^1\simeq B$でmdqの$B$が半安定であるため)．$X^1$がmdqでないとき，$X^1\twoheadrightarrow B^2$をmdqとして
+	\[0\rightarrow X^2\rightarrow X^1\rightarrow B^2\rightarrow 0.\]
+	$Q=X/X^2$とすると，$X\twoheadrightarrow B^1$がmdqであることから$\phi(Q)\ge\phi(B^1)$であり，次の短完全列
+	\[0\rightarrow B^2\rightarrow Q\rightarrow B^1\rightarrow 0.\]
+	\begin{center}
+	\begin{tikzpicture}[scale=2, >=Stealth]
+
+		% 原点を中心に設定
+		\coordinate (O) at (0,0);
+
+		% 各ベクトルの終点
+		\coordinate (B1) at (0.7,0.9);     % Z(A)
+		\coordinate (B2) at (-1.2,0.4);    % Z(X/A)
+		\coordinate (Q) at ($(B1)+(B2)$); % Z(X) = Z(A) + Z(X/A)
+
+		% 軸
+		\draw[->] (-1,0) -- (1.2,0) node[right] {\(\Re\)};
+		\draw[->] (0,-0.2) -- (0,1.6) node[above] {\(\Im\)};
+
+		\draw[->, thick,blue] (O) -- (B1) node[midway, right] {\(Z(B^1)\)};
+
+		\draw[->, thick] (B1) -- (Q) node[midway,above] {\(Z(B^2)\)};
+
+		\draw[->, thick,red] (O) -- (Q) node[midway, left] {\(Z(Q)\)};
+
+		% 原点
+		\fill (O) circle (0.03);
+		\node at (-0.15, -0.1) {\footnotesize 0};
+
+	\end{tikzpicture}
+\end{center}
+から$\phi(B^2)\ge\phi(Q)$が得られる．$\phi(B^2)=\phi(Q)=\phi(B^1)$と仮定すると，$X\twoheadrightarrow B^1$がmdqであることから$X\twoheadrightarrow B^1\twoheadrightarrow Q$となって，$B^1$と$Q$の双方向に全射があることから$B^1\simeq Q$となり，$B^2=0$．これは矛盾．したがって，$\phi(B^2)>\phi(B^1)$が成り立つ．この操作は条件(ii)より有限回でとまり，その商は半安定なのでHN分解を得る．
+\end{proof}
+
+
+%\begin{defn}\cite{Bri07}
+%	$\D\colon$三角圏．$\D$上の安定性条件とは，$\D$の有界な$t$-構造のHeart $\A\subset\D$と$\A$と$\A$上の安定性条件
+%	\[Z\colon K(\D)=K(\A)\to\CC\]
+%	$(Z,\A)$のことである．
+%\end{defn}

@@ -1,0 +1,84 @@
+\RequirePackage{luatex85}
+\documentclass[eqno]{ltjsarticle}
+\usepackage{luatexja-fontspec}
+\usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{luatexja} 
+\usepackage{multicol,amsmath,amssymb,mathtools,ascmac,amsthm,amscd,physics,comment,dcolumn,titlesec,mathrsfs,test,tikz-cd,enumitem}
+\usetikzlibrary{arrows.meta,calc}
+\titleformat*{\section}{\Large\bfseries}
+\setlength{\parindent}{0pt}
+\usepackage[most]{tcolorbox}
+\tikzset{every picture/.style={remember picture,baseline=(current bounding box.center)}}
+%\everymath{\displaystyle}
+\begin{document}
+\title{三角圏上のBridgeland安定性条件}
+\date{}
+\author{大阪大学大学院理学研究科数学専攻\\山本　雄大}
+\maketitle
+\tableofcontents
+\input{1triangulated_category}
+\input{2fundamental_property_of_triangulated_category}
+\input{3definition_of_derived_category}
+\input{4properties_tri}
+\input{5t_structure}
+\input{6stability_conditions}
+\input{7space_of_stability_conditions}
+\input{8qgr}
+\input{9GL}
+
+\begin{thebibliography}{99}
+	\bibitem[Bri07]{Bri07}
+	Bridgeland, Tom,
+		\textit{Stability conditions on triangulated categories},
+	Annals of Mathematics, Vol. 166, No. 2, 2007, pp. 317–345.
+
+	\bibitem[KS06]{KS06}
+	Masaki Kashiwara and Pierre Schapira,
+		\textit{Categories and Sheaves},
+	Grundlehren der Mathematischen Wissenschaften, vol. 332,
+	Springer-Verlag, Berlin, 2006.
+
+	\bibitem[GM03]{GM03}
+	S. I. Gelfand and Yu. I. Manin,
+	\textit{Methods of Homological Algebra}, 2nd ed.,
+	Springer Monographs in Mathematics, Springer, 2003.
+
+	\bibitem[AZ94]{AZ94}
+	Michael Artin and James J. Zhang,
+	\textit{Noncommutative Projective Schemes},
+	Adv. Math. \textbf{109} (1994), no.~2, 228--287.
+
+	\bibitem[BK89]{BK89}
+	A.~Bondal and M.~Kapranov,
+	\newblock Representable functors, Serre functors, and reconstructions,
+	\newblock {\em Izv. Akad. Nauk SSSR Ser. Mat.} \textbf{53} (1989), no.~6, 1183--1205.
+	\newblock English transl.: {\em Math. USSR Izv.} \textbf{35} (1990), no.~3, 519--541.
+
+	\bibitem[Ri89]{Ri89}
+	J.~Rickard,
+	\newblock Morita theory for derived categories,
+	\newblock {\em J. London Math. Soc. (2)} \textbf{39} (1989), no.~3, 436--456.
+
+
+	\bibitem[GL87]{GL87}
+	W.~Geigle and H.~Lenzing,
+	\newblock A class of weighted projective curves arising in representation theory of finite-dimensional algebras,
+	\newblock in *Singularities, Representation of Algebras, and Vector Bundles* (Lambrecht, 1985), Lecture Notes in Math. 1273, Springer, Berlin, 1987, pp. 265–297.
+	
+	\bibitem[BBD]{BBD}
+	A. A. Beilinson, J. Bernstein, and P. Deligne,
+	\textit{Faisceaux pervers},
+	Astérisque, \textbf{100}, Société Mathématique de France, 1982. Chapitre 1.
+
+	\bibitem[Gro57]{Gro57}
+	A.~Grothendieck,
+	\textit{Sur quelques points d'algèbre homologique},
+	Tohoku Math. J. (2) \textbf{9} (1957), 119--221.
+
+	\bibitem[Serre55]{Serre55}
+	J.-P.~Serre,
+	\newblock Faisceaux algébriques cohérents,
+	\newblock \emph{Ann. of Math.} \textbf{61} (1955), 197--278.
+
+\end{thebibliography}
+\end{document}

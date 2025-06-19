@@ -1,0 +1,189 @@
+\section{$\qgr R$の定義}
+
+以下$R$を可換環とする．
+\begin{defn}
+$\A$ をアーベル圏，$\B \subset \A$ を Serre 部分圏とする．すなわち，$\B$ は次の条件を満たす：
+\begin{itemize}
+  \item 任意の短完全列
+  \[
+  0 \to X \to Y \to Z \to 0.
+  \]
+  が $\A$ にあり，$Y$ が $\B$ に属するとき，$X$ および $Z$ も $\B$ に属する（逆も同様）．
+\end{itemize}
+このとき，$\B$ による $\A$ のSerre 商圏（Serre quotient category）$\A/\B$ は次のように定義される：
+\begin{itemize}
+  \item 対象は $\A$ の対象と同じである．:
+		\[\Ob(\A/\B)\coloneq \Ob(\A).\]
+  \item 射は以下のように定義される：
+  \[
+  \Hom_{\A/\B}(X, Y) := \varinjlim_{\substack{X' \subset X\\ X/X' \in \B}} \varinjlim_{\substack{Y' \subset Y\\ Y' \in \B}} \Hom_{\A}(X', Y/Y').
+  \]
+\end{itemize}
+\end{defn}
+	
+\begin{defn}
+次数付き環 \( R = \bigoplus_{n \ge 0} R_n \) 上の次数付き加群 \( M \in \gr R \) に対して，元 \( x \in M \) が 捻れ元（torsion element） であるとは，ある整数 \( n \gg 0 \) が存在して，\( R_{\ge n} \cdot x = 0 \) となることをいう．ここで \( R_{\ge n} = \bigoplus_{m \ge n} R_m \) とする．
+
+加群 \( M \) が 捻れ加群（torsion module） であるとは，すべての元 \( x \in M \) が捻れ元であることである．このような加群全体のなす部分圏を \(\tors R\) で表す．
+\end{defn}
+
+\begin{prop}
+次数付き環 \( R = \bigoplus_{n \ge 0} R_n \) に対し，その上の次数付き右$R$-加群全体のアーベル圏 \(\gr R\) において，torsion 加群全体からなる部分圏 \(\tors R\) は Serre部分圏である．
+\end{prop}
+
+\begin{defn}\cite{AZ94}
+\(
+R = \bigoplus_{n \ge 0} R_n
+\) を次数付きネーター$\CC$-代数とする．\vspace{-3mm}
+\begin{itemize}
+  \item $\gr R$ は $\mathbb{Z}$-次数付き有限生成$R$-加群のアーベル圏とする．
+  \item $\tors R$ は $\gr R$ のうち，ねじれ加群全体とする．
+  \item $\qgr R$ は $\gr R$ の Serre 部分圏 $\tors R$ による商圏：$\qgr R := \gr R / \tors R$ と定義する．
+\end{itemize}
+\end{defn}
+
+\begin{thm}[Serreの定理 {\cite{Serre55}}]
+\( A = \bigoplus_{n \ge 0} A_n \) を次数1の元で生成される \(\ZZ\)次数付き ネーター環とし，\( A_0 \) もネーター環とする．このとき，スキーム \( X = \operatorname{Proj} A \) に対して，以下のアーベル圏の圏同値が存在する：
+\[
+\Coh X \simeq \qgr A.
+\]
+この圏同値は，\( \F \in \Coh X \) に対して次のように定まる加群
+\[
+\Gamma_\star(\F) = \bigoplus_{d \in \ZZ} H^0(X, \F \otimes \mathcal{O}_X(d))
+\]
+をとして対応させることにより与えられる．
+\end{thm}
+
+\begin{prop}\cite{GL87}
+$\CC$ を基礎体とし，$a_0, \dots, a_n \in \mathbb{Z}_{>0}$ とする．重み付き多項式環 $R = \CC[x_0, \dots, x_n]$ に対し，対応する Deligne–Mumford スタックを
+\[
+\mathcal{X} := [(\Spec R \setminus \{0\}) / \CC^*].
+\]
+と定める.このとき，スタック $\mathcal{X}$ 上の連接層のアーベル圏は次と同値である：
+\[
+\Coh(\mathcal{X}) \simeq \qgr R := \gr R / \tors R.
+\]
+\end{prop}
+
+
+
+\begin{prop}[\cite{AZ94}]
+$R = \CC[x_0, \dots, x_n]$ を重み付き多項式環とする．このとき，$\qgr R$ における射影対象は，次のような有限直和
+\[
+\bigoplus_{i=1}^r \mathcal{O}(n_i).
+\]
+で表される．
+ここで，$\mathcal{O}(n) := \pi(R(n))$ は $R(n)$ の $\qgr R$ における像である．
+\end{prop}
+
+
+\begin{exmp}
+$R = \CC[x, y]$ を $\ZZ$次数付き多項式環とし，$\deg(x) = 1$，$\deg(y) = 2$ とする．このとき，$R$ は重み付き射影直線 $\mathbb{P}(1,2)$ に対応し，次のような圏同値が成り立つ：
+\[
+\qgr R := \gr R / \tors R \simeq \Coh(\mathbb{P}(1,2)).
+\]
+\[
+R := \CC[x, y], \quad \deg(x) = 1,\quad \deg(y) = 2.
+\]
+
+各\(n \in \ZZ_{\ge 0}\) に対して次数成分 \(R_n\) は次のように与えられる：
+\[
+\begin{aligned}
+R_0 &= \CC \\
+R_1 &= \CC x \\
+R_2 &= \CC x^2 \oplus \CC y \\
+R_3 &= \CC x^3 \oplus \CC x y \\
+R_4 &= \CC x^4 \oplus \CC x^2 y \oplus \CC y^2 \\
+&\vdots 
+\end{aligned}
+\]
+
+このとき，次の列
+\[
+(\mathcal{O},\ \mathcal{O}(1),\ \mathcal{O}(2)),
+\]
+は \(\D^b(\Coh(\mathbb{P}(1,2)))\) における強例外生成列(\ref{defn:strong exceptional collection})であり，その直和
+\[
+T := \mathcal{O} \oplus \mathcal{O}(1) \oplus \mathcal{O}(2),
+\]
+は傾斜対象(\ref{defn:tilting object})となる．したがって，導来函手
+\[
+\RHom(T, -) \colon \D^b(\Coh(\mathbb{P}(1,2))) \longrightarrow \D^b(\mod \End(T)).
+\]
+は三角同値を与える．
+\end{exmp}
+
+\begin{defn}[Koszul 環]
+体 $\Bbbk$ 上の $\mathbb{Z}_{\geq 0}$-次数付き結合多元環 $R = \bigoplus_{i \geq 0} R_i$ がKoszul であるとは，単純加群 $\Bbbk = R / R_{>0}$ が射影分解
+\[
+\cdots \to P^n \to \cdots \to P^1 \to P^0 \to \Bbbk \to 0
+\]
+において，各 $P^n$ が次数付き自由加群であり，その生成元がすべて次数 $n$ にあるときに言う．すなわち，
+\[
+\operatorname{Ext}^n_R(\Bbbk, \Bbbk)_m = 
+\begin{cases}
+\Bbbk & \text{if } m = n, \\
+0 & \text{if } m \ne n
+\end{cases}
+\quad \text{for all } n, m \in \mathbb{Z}.
+\]
+が成り立つとき，$R$ は Koszul 環である．
+\end{defn}
+
+\begin{defn}[Artin–Schelter regular 環]
+$\Bbbk$ 上の $\mathbb{Z}_{\geq 0}$-次数付き結合多元環 $R = \bigoplus_{i \geq 0} R_i$ が Artin--Schelter regular（AS-regular）であるとは，次の三条件を満たすときに言う：
+\begin{enumerate}
+  \item $R$ は右および左ともに有限生成の $\Bbbk$-代数である．
+  \item $R$ の大域次元 $\gldim(R) = d < \infty$．
+  \item Gorenstein 条件：ある整数 $l$ が存在して
+  \[
+  \operatorname{Ext}^i_R(\Bbbk, R) = 
+  \begin{cases}
+  \Bbbk(l) & \text{if } i = d, \\
+  0 & \text{if } i \ne d
+  \end{cases}
+  \quad \text{および} \quad
+  \operatorname{Ext}^i_{R^\mathrm{op}}(\Bbbk, R) = 
+  \begin{cases}
+  \Bbbk(l) & \text{if } i = d, \\
+  0 & \text{if } i \ne d
+  \end{cases}
+  \]
+  が成り立つ（ここで $\Bbbk(l)$ は次数 $l$ だけシフトされた $\Bbbk$ である）．
+\end{enumerate}
+\end{defn}
+
+\begin{thm}
+\label{thm:tilting_qgr}
+次数付き環 \(R = \bigoplus_{n \ge 0} R_n\) が次の条件を満たすとする：
+
+\begin{enumerate}
+  \item \(R\) は \(\CC\)-線型で右ネーター．
+  \item \(R_0 = \CC\)．
+  \item \(R\) は Koszul かつ AS-regular，大域次元を \(d\) とする．
+\end{enumerate}
+
+このとき，対象
+\[
+T := \bigoplus_{i=0}^{d-1} \pi(R(i)) \in \qgr R
+\]
+は \(\D^b(\qgr R)\) における傾斜対象(\ref{defn:tilting object})であり，導来函手
+\[
+\RHom_{\qgr R}(T, -) \colon \D^b(\qgr R) \longrightarrow \D^b(\mod \End_{\qgr R}(T))
+\]
+は三角同値を与える．
+\end{thm}
+
+\begin{prop}\cite{Ri89}
+\label{prop:t_structure_from_tilting}
+定理 \ref{thm:tilting_qgr} の状況において，
+\[
+\RHom_{\qgr R}(T, -) \colon \D^b(\qgr R) \xrightarrow{\sim} \D^b(\mod A), \quad A := \End_{\qgr R}(T).
+\]
+が三角同値であるとする．このとき，
+\[
+\A := \left\{ X \in \D^b(\qgr R) \mid \RHom_{\qgr R}(T, X) \in \mod A \subset \D^b(\mod A) \right\}.
+\]
+は \(\D^b(\qgr R)\) 上の \(t\)-構造の核となる．
+\end{prop}
+

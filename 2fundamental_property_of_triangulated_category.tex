@@ -1,0 +1,177 @@
+\section{三角圏の基本的な性質}
+\begin{prop}\cite[p.245]{KS06}\label{gf=0}
+三角圏 $\D$ において，完全三角形
+\[
+X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} X[1].
+\]
+が与えられたとき，合成 $g \circ f = 0$ が成り立つ．
+\end{prop}
+
+\begin{proof}
+三角圏の公理 (TR1) と(TR5)により，以下の図式
+		\[
+\begin{tikzcd}
+	X\ar[r,"\id"]\ar[d,"\id"]&X \ar[r]\ar[d,"f"]& 0\ar[r]\ar[d]& X[1]\ar[d,"f\texttt{[1]}"]\\
+	X\ar[r,"f"]&Y \ar[r,"g"]& Z\ar[r]& X[1].
+\end{tikzcd}
+	\]
+	が可換になることから$g\circ f = 0$である．
+\end{proof}
+
+\begin{prop}\cite[p.245]{KS06}
+三角圏 $\D$ において，対象 $X \in \D$ と同型射 $f \colon X \xrightarrow{\sim} Y$ が与えられたとする．
+このとき，三角
+\[
+X \xrightarrow{f} Y \to 0 \to X[1].
+\]
+は完全三角形である．
+\end{prop}
+
+\begin{proof}
+三角圏の公理 \textnormal{(TR1)} により，任意の対象 $X$ に対して恒等射による完全三角形と以下の完全三角形の同型
+		\[
+\begin{tikzcd}
+	X\ar[r,"f"]\ar[d,equal]&Y \ar[r]\ar[d,"f\inv"]& 0\ar[r]\ar[d]& X[1]\ar[d,equal]\\
+	X\ar[r,"\id"]&X \ar[r,"g"]& 0\ar[r]& X[1].
+\end{tikzcd}
+	\]
+	が存在するので，上の行が完全三角形であることがわかる．
+\end{proof}
+
+\begin{defn}\cite[p.245]{KS06}
+	三角圏$\D$からアーベル圏$\A$への加法函手$H\colon \D\to\A$がコホモロジー的であるとは，$\D$における任意の完全三角形
+	\[X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{h}X[1].\]
+	に対して，$\A$において
+	\[H(X)\xrightarrow{H(f)}H(Y)\xrightarrow{H(g)}H(Z).\]
+	が完全列になることである．
+\end{defn}
+
+\begin{prop}\cite[p.245]{KS06}
+	$\D$を三角圏，$W\in \D$としたとき，函手
+	\begin{gather*}
+		\Hom_{\D}(W,-)\colon \D\to\Mod\ZZ \\
+		\Hom_{\D}(-,W)\colon \D^{\mathrm{op}}\to\Mod\ZZ\ .
+	\end{gather*}
+	はコホモロジー的函手である．
+\end{prop}
+\begin{proof}
+	$X\rightarrow Y \rightarrow Z\rightarrow X[1]$を完全三角形，$W\in\D$とする．このとき，以下の完全列
+	\[\Hom_{\D}(W,X)\xrightarrow{\Hom_{\D}(W,f)}\Hom_{\D}(W,Y)\xrightarrow{\Hom_{\D}(W,g)}\Hom_{\D}(W,Z).\]
+	が完全であることを示す．命題\ref{gf=0}より，$\Im(\Hom_{\D}(W,f))\subset \Ker(\Hom_{\D}(W,g))$がわかる．
+	逆の包含に関してはTR4,TR5より，$g\circ\varphi = 0$をみたす$\varphi\colon W\to Y$を任意にとると，以下の図式を可換にする$\psi\colon W\to X$が存在する．
+		\[
+\begin{tikzcd}
+	W\ar[r,"\id"]\ar[d,dotted,"\psi"]&W \ar[r]\ar[d,"\varphi"]& 0\ar[r]\ar[d]& W[1]\ar[d,"\psi\texttt{[1]}"]\\
+	X\ar[r,"f"]&Y \ar[r,"g"]& Z\ar[r]& X[1].
+\end{tikzcd}
+	\]
+つまり，$\varphi = f\circ\psi$である．したがって，$\Im(\Hom_{\D}(W,f))= \Ker(\Hom_{\D}(W,g))$が示された．
+\end{proof}
+
+
+
+\begin{prop}\cite[p.246]{KS06}
+三角圏 $\D$ において，次の2つの完全三角形
+\[
+X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} X[1], \quad
+X' \xrightarrow{f'} Y' \xrightarrow{g'} Z' \xrightarrow{h'} X'[1].
+\]
+とその間の射，
+\[
+\begin{tikzcd}
+X \arrow{r}{f} \arrow{d}{\alpha}[swap]{\sim} & Y \arrow{r}{g} \arrow{d}{\beta}[swap]{\sim} & Z \arrow{r}{h} \arrow[dotted]{d}{\gamma} & X[1] \arrow{d}{\alpha[1]} \\
+X' \arrow{r}{f'} & Y' \arrow{r}{g'} & Z' \arrow{r}{h'} & X'[1].
+\end{tikzcd}
+\]
+が与えられており，$\alpha, \beta$ が同型であれば，$\gamma$ も同型となる．
+\end{prop}
+\begin{proof}
+	$W\in\D$を任意にとり，$\Hom_{\D}(W,-)$を作用させるとコホモロジー的函手であることにより，以下の完全列が存在する．
+\[\begin{tikzcd}
+	\Hom_{\D}(W,X)\ar[r]\ar[d,"\rotatebox{90}{\sim}"]&\Hom_{\D}(W,Y)\ar[r]\ar[d,"\rotatebox{90}{\sim}"]&\Hom_{\D}(W,Z)\ar[r]\ar[d]&\Hom_{\D}(W,X[1])\ar[r]\ar[d,"\rotatebox{90}{\sim}"]&\Hom_{\D}(W,Y[1])\ar[d,"\rotatebox{90}{\sim}"]\\
+	\Hom_{\D}(W,X')\ar[r]&\Hom_{\D}(W,Y')\ar[r]&\Hom_{\D}(W,Z')\ar[r]&\Hom_{\D}(W,X'[1])\ar[r]&\Hom_{\D}(W,Y'[1]).
+\end{tikzcd}\]	
+5項補題により，$\Hom_{\D}(W,\gamma)$が同型である．$W\in\D$は任意なので，米田の補題より$\gamma$は同型である．
+\end{proof}
+
+\begin{cor}\cite[p.246]{KS06}
+三角圏 $\D$ において，射 $f \colon X \to Y$ に対して，
+2つの完全三角形
+\[
+X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} X[1], \quad
+X \xrightarrow{f} Y \xrightarrow{g'} Z' \xrightarrow{h'} X[1].
+\]
+が存在するとする．このとき，対象 $Z, Z'$ は同型であり，さらに完全三角形の間の同型射
+\[
+\begin{tikzcd}
+X \arrow{r}{f} \arrow[equal]{d} & Y \arrow{r}{g} \arrow[equal]{d} & Z \arrow{r}{h} \arrow[dashed]{d}{\varphi} & X[1] \arrow[equal]{d} \\
+X \arrow{r}{f} & Y \arrow{r}{g'} & Z' \arrow{r}{h'} & X[1].
+\end{tikzcd}
+\]
+が存在する．このような$Z$を同型類から$1$つ選び，$f$の写像錘（mapping cone）と呼び，記号$\Cone(f)$と記す．
+\end{cor}
+
+\begin{cor}
+三角圏 $\D$ における完全三角形
+\[
+X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} X[1].
+\]
+に対して，以下が成り立つ：
+
+\begin{enumerate}
+  \item $g$ が全射であることと$h = 0$であることは同値である．
+  \item $g$ が単射ああることと$f = 0$であることは同値である．
+  \item $h = 0$ ならば，$Y \cong X \oplus Z$ が成り立ち，この三角は
+  \[
+  X \xrightarrow{\iota} X \oplus Z \xrightarrow{\pi} Z \xrightarrow{0} X[1].
+  \]
+  に同型である（ただし $\iota$ は自然な包含、$\pi$ は射影）．
+\end{enumerate}
+\end{cor}
+\begin{proof}
+	命題\ref{gf=0}より，$h\circ g = 0$であり，$g$が全射なら$h=0$．逆に，任意の$W\in\D$に対して，
+\[
+	\Hom_{\D}(X[1],W)\xrightarrow{\Hom_{\D}(h,W)}\Hom_{\D}(Z,W)\xrightarrow{\Hom_{\D}(g,W)}\Hom_{\D}(Y,W).
+\]	
+が完全列なので，$h=0$なら，$\Hom_{\D}(g,W)$は単射である．したがって$g$は全射である．2は双対的に示される．\\
+3について，$h=0$とすると，
+\begin{gather*}
+	0\rightarrow\Hom_{\D}(Z,W)\rightarrow\Hom_{\D}(Y,W)\rightarrow\Hom_{\D}(X,W)\rightarrow 0,\\
+	0\rightarrow\Hom_{\D}(W,X)\rightarrow\Hom_{\D}(W,Y)\rightarrow\Hom_{\D}(W,Z)\rightarrow 0.
+\end{gather*}
+が短完全列になることより，短完全列
+\[
+0\rightarrow X \xrightarrow{f} Y \xrightarrow{g} Z\rightarrow 0 .
+\]
+が分裂して$Y\simeq X\oplus Z$がわかる．
+\end{proof}
+
+\begin{prop}\cite[p.247]{KS06}
+三角圏 $\D$ において，次の2つの完全三角形
+\[
+X \rightarrow Y \rightarrow Z \rightarrow X[1], \quad
+X' \rightarrow Y' \rightarrow Z' \rightarrow X'[1].
+\]
+が与えられているとする．
+
+また，射$g\colon Y\to Y'$ が与えられており，さらに
+\[
+\Hom_{\D}(X, Z') = \Hom_{\D}(X, Z'[-1]) = 0.
+\]
+が成り立つとする．
+
+このとき，ある一意な射$f\colon X\to X'\quad h\colon Z\to Z'$が存在して，以下の図式が可換になる：
+\[
+\begin{tikzcd}
+	X \arrow{r} \arrow[dotted]{d}{\exists !f} & Y \arrow{r} \arrow{d}{ g} & Z \arrow{r} \arrow[dotted]{d}{\exists !h} & X[1] \arrow[dotted]{d}{f[1]} \\
+X' \arrow{r} & Y' \arrow{r} & Z' \arrow{r} & X'[1].
+\end{tikzcd}
+\]
+すなわち，$(f,g,h)$ は完全三角形の間の射をなす．
+\end{prop}
+\begin{proof}
+	コホモロジー的函手$\Hom_{\D}(X,-)$を2行目に作用させると，
+	\[0=\Hom_{\D}(X,Z'[-1])\rightarrow \Hom_{\D}(X,X') \rightarrow \Hom_{\D}(X,Y') \rightarrow \Hom_{\D}(X,Z')=0.\]
+	という完全列が得られ，可換にする一意的な射$f$の存在がわかる．同様に，$\Hom_{\D}(-,Z')$を1行目に作用させて，$\Hom_{\D}(X[1],Z')\simeq \Hom_{\D}(X,Z'[-1])$を用いれば，一意的な射$h$の存在もわかる．
+
+\end{proof}

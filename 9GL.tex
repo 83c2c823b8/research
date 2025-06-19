@@ -1,0 +1,66 @@
+\section{GL}
+\begin{defn}\cite{GL87}
+重み付き射影直線（weighted projective line）とは，以下のデータによって定まる射影曲線である：
+
+\begin{itemize}
+  \item 正の整数からなる列 $\mathbf{p} = (p_0, p_1, \dots, p_n)$，
+  \item $\mathbb{P}^1(k)$ の互いに異なる点の列 $\boldsymbol{\lambda} = (\lambda_0, \lambda_1, \dots, \lambda_n)$，
+\end{itemize}
+
+ただし，通常 $\lambda_0 = \infty,\ \lambda_1 = 0,\ \lambda_2 = 1$ と正規化する．次に，アーベル群
+\[
+L(\mathbf{p}) = \left\langle \vec{x}_0, \vec{x}_1, \dots, \vec{x}_n \ \middle| \ p_0 \vec{x}_0 = p_1 \vec{x}_1 = \cdots = p_n \vec{x}_n \right\rangle .
+\]
+を定義し，これを次数付き群とする． $\vec{c}\coloneq p_0 \vec{x}_0 = \cdots = p_n \vec{x}_n$ と定める．
+
+$L(\mathbf{p})$ によって次数付けされた多項式環:
+\[
+S = \CC[X_0, X_1, \dots, X_n], \quad \deg X_i = \vec{x}_i.
+\]
+において，以下の $L(\mathbf{p})$-斉次イデアル:
+\[
+I(\mathbf{p}, \boldsymbol{\lambda}) = \left( X_i^{p_i} - X_1^{p_1} + \lambda_i X_0^{p_0} \ \middle|\ i = 2, \dots, n \right).
+\]
+を用いて商環
+\[
+S(\mathbf{p}, \boldsymbol{\lambda}) = \frac{k[X_0, X_1, \dots, X_n]}{I(\mathbf{p}, \boldsymbol{\lambda})}.
+\]
+を定義する．この $L(\mathbf{p})$-次数付き環 $S(\mathbf{p}, \boldsymbol{\lambda})$ を用いて，次のように構成される代数多様体
+\[
+\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda}) = \mathrm{Proj}_{L(\mathbf{p})}(S(\mathbf{p}, \boldsymbol{\lambda})).
+\]
+を重み付き射影直線（weighted projective line）と呼ぶ．
+\end{defn}
+ここで，
+\[\vec{\omega} \coloneq (n-1)\vec{c} - \sum_{i=0}^n\vec{x_i}.\]
+と$\vec{\omega}$を定義し，双対化元(dualizing element)と呼ぶ．
+
+\begin{defn}\cite{GL87}
+重み付き射影直線 $\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda})$ に対応する $L(\mathbf{p})$-次数付き環 $S = S(\mathbf{p}, \boldsymbol{\lambda})$ に対して，次のように連接層の圏$\Coh(\mathbb{X})$ を定義する：
+
+\[
+\Coh(\mathbb{X}) := \frac{\mathrm{mod}^{L(\mathbf{p})}_+(S)}{\mathrm{mod}^{L(\mathbf{p})}_0(S)}.
+\]
+
+ここで，
+\begin{itemize}
+  \item $\mathrm{mod}^{L(\mathbf{p})}_+(S)$ は $L(\mathbf{p})$-次数付き有限生成 $S$-加群の圏，
+  \item $\mathrm{mod}^{L(\mathbf{p})}_0(S)$ は $L(\mathbf{p})$-次数付き有限長 $S$-加群（すなわち有限サポートをもつ加群）の圏．
+\end{itemize}
+\end{defn}
+
+\begin{thm}[Serre 双対性]\cite{GL87}
+重み付き射影直線 $\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda})$ において，任意の連接層 $\mathcal{F}, \mathcal{G} \in \Coh(\mathbb{X})$ に対して，次の自然なベクトル空間の同型が成り立つ：
+\[
+\Ext^1(\mathcal{F}, \mathcal{G})^\vee \cong \Hom(\mathcal{G}, \mathcal{F}(\vec{\omega})).
+\]
+\[
+\RHom(\F,\G)^\vee \simeq \RHom(\G,\F(\vec{\omega}))[1]?\]
+ここで，
+\begin{itemize}
+	\item $(-)^\vee := \Hom_{\CC}(-, \CC)$ は $\CC$ 上の線型双対，
+  \item $\vec{\omega} = (n - 1)\vec{c} - \sum_{i=0}^n \vec{x}_i$ は dualizing element（双対化元）である．
+\end{itemize}
+この同型は $\mathcal{F}, \mathcal{G}$ に関して函手的である．
+\end{thm}
+

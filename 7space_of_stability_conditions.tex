@@ -1,0 +1,54 @@
+\section{Bridgeland安定性条件の空間}
+\begin{defn}\cite{Bri07}
+$\mathrm{Slice(\D)}$を$\D$上のスライスの集合，$\mathcal P,\mathcal Q\in\mathrm{Slice} \D$に対して，
+\[d(\mathcal P,\mathcal Q)\coloneq\sup_{0\neq E\in\D}\{|\phi^-_{\P}(E)-\phi_{\Q}^-(E)|,|\phi^+_{\P}(E)-\phi_{\Q}^+(E)|\}.\]
+と定義する．$(\mathrm{Slice(\D)},d)$は，距離空間である．
+\end{defn}
+\begin{lemm}
+	$\phi_{*}^+(E),\phi_{*}^-(E)\colon \mathrm{Slice(\D)}\rightarrow\RR$
+	は連続写像である．
+\end{lemm}
+\begin{proof}
+	$d(\P,\Q)=0$とすると，$0$でない$\P(\phi)$の対象は$\Q(\phi)$の対象である．したがって，$\P=\Q$．対称性，三角不等式は，絶対値と$\sup$の定義よりしたがう．
+\end{proof}
+
+ある有限生成自由アーベル群 $\Gamma$ とGrothendieck群 $K(\D)$ からの群準同型
+\[
+v \colon K(\D) \to \Gamma .
+\]
+をひとつとり，固定する．
+\begin{defn}[台条件（support property）]\cite{Bri07}
+三角圏 $\D$ 上の安定性条件 $\sigma = (Z, \mathcal{P})$ が台条件を満たすとは，次の条件が成り立つことをいう：\\
+$C > 0$ とノルム\ $\|\cdot\|\colon\Gamma \otimes_{\mathbb{Z}} \mathbb{R} $ が上に存在して，任意の $\sigma$-安定対象 $E \in \D$ に対して
+\[
+\|v(E)\| \leq C \cdot |Z(v(E))| .
+\]
+が成立することである．
+\end{defn}
+
+\begin{prop}\cite{Bri07}
+$K(\D)$ から有限自由アーベル群 $\Gamma$ への固定された群準同型$v \colon K(\D) \to \Gamma$
+に対して，$\Stab_\Gamma(\D)$ は次の集合である：
+\[
+\Stab_\Gamma(\D) \subset \Hom_{\ZZ}(\Gamma, \CC)\times\Slice(\D).
+\]
+安定性条件の組$(Z,\P)$で台条件をみたすものである．この集合は，忘却写像:
+		\[
+			\begin{array}{ccccc}
+				\mathrm{Stab}_{\Gamma}(\D)& \longrightarrow & \Hom_{\ZZ}(\Gamma,\CC) \\
+				\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+				(Z,\P) & \longmapsto &  Z& .
+					\end{array}
+\]
+は局所同相写像である．とくに，$\Stab_{\Gamma}(\D)$に$\Hom_{\ZZ}(\Gamma,\CC)$の標準的な複素構造に関して，上記の忘却写像が正則写像になるような複素構造が一意に定まる．
+\end{prop}
+\begin{proof}
+	この写像が局所的に単射であることを示す．$\sigma = (Z,\P),\ \tau = (Z,\Q)\in \Stab_{\Gamma}(\D)$の2点に対し，$d(\P,\Q)<1$を満たすなら$\P = \Q$となることを背理法で示す．\\
+	$\P\neq \Q$と仮定する．このとき，ある$\phi\in\RR$と$E\in\P(\phi)$が存在して，$E\notin\Q(\phi)$となる．このとき，$Z(E)\in\RR_{>0}e^{i\pi\phi}$である．\\
+	$E\in\Q(\ge\phi)$とすると，$d(\P,\Q)<1$より，$E\in\Q([\phi,\phi +1))$となり，$E\notin Q(\phi)$だったので，
+	$Z(E)\in\RR_{>0} e^{i\pi\phi}$に矛盾．同様に$E\notin \Q(\P)$も言えることから，
+	\[A\rightarrow E\rightarrow B\rightarrow A[1].\]
+	で$A\in\Q((\phi,\phi+1))\backslash \{0\}，B\in\Q((\phi-1,\phi))\backslash \{0\}$となるものが存在する．
+	$d(\P,\Q)<1$より，$A\in\P((\phi-1,\phi +2))$となる．\\
+	$A\in\P((\phi -1,\phi])$であるなら，$\sigma$と$\tau$が同じ中心電荷を持つことになり矛盾．したがって，$\psi >\phi$と$C\in\P(\psi)$と$0$ではない分解の射が存在する．
+\end{proof}

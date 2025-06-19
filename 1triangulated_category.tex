@@ -1,0 +1,176 @@
+\section{三角圏の定義}
+\begin{defn}\cite[p.170]{KS06}
+	以下の条件をみたす圏$\C$を前加法圏(preadditive category)という．
+	\vspace{-3mm}
+	\begin{itemize}
+		\item[(i)]
+			任意の$X,Y\in\C$に対して，射の集合$\Hom_{\C}(X,Y)$が加法群になる．
+		\item[(ii)]
+			任意の$X,Y,Z\in\C$に対して，合成写像
+		\[
+			\begin{array}{ccccc}
+				\circ\colon\Hom_{\C}(Y,Z) \times \Hom_{\C}(X,Y) & \longrightarrow & \Hom_{\C}(X,Z) \\
+				\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+				(g, f) & \longmapsto & g \circ f& .
+					\end{array}
+\]
+が双線型である．つまり，任意の$g,g'\in\Hom_{\C}(Y,Z),\ f,f'\in\Hom_{\C}(X,Y)$に対して，
+\begin{gather*}
+	(g+g')\circ f = g\circ f + g'\circ f\\
+	g\circ(f+f') = g\circ f + g\circ f'.
+\end{gather*}
+が成り立つ．
+	\end{itemize}
+\end{defn}
+
+
+\begin{defn}\cite[p.171]{KS06}
+	$\C$を前加法圏とする．このとき，$X,Y\in\C$の直和(direct sum)とは，対象$X\oplus Y\in\C$と$\iota_{X}\in\Hom_{\C}(X,X\oplus Y),\iota_{Y}\in\Hom_{\C}(Y,X\oplus Y)$の三つ組$(X\oplus Y,\iota_X,\iota_Y)$であって，以下の普遍性を満たすものである．
+	\[\begin{tikzcd}
+		X\ar[r,"\iota_X"]\ar[rd,"f_X",swap]& X\oplus Y\ar[d,dotted,"\exists !h",swap] &Y\ar[l,"\iota_Y",swap]\ar[ld,"f_Y"]\\
+																			 &Z&.
+\end{tikzcd}\]
+任意の$Z\in\C$と$f_X\in\Hom_{\C}(X,Z),\ f_Y\in\Hom_{\C}(Y,Z)$に対して，$h\circ \iota_X=f_X,\ h\circ\iota_Y=f_Y$となる$h\in\Hom_{\C}(X\oplus Y,Z)$が一意に存在する．
+\end{defn}
+
+\begin{defn}\cite[p.171]{KS06}
+	以下の条件をみたす前加法圏$\C$を加法圏(additive category)という．
+	\vspace{-3mm}
+	\begin{itemize}
+	\item[(i)]零対象(始対象かつ終対象)である$0\in\C$をを持つ．
+	\item[(ii)]任意の対象$X,Y\in\C$に対し直和$X\oplus Y$が存在する．
+	\end{itemize}
+	\vspace{-3mm}
+\end{defn}
+
+\begin{defn}\cite[p.171]{KS06}
+	 	加法圏$\C,\D$に対し，函手$F\colon\C\to\D$が以下の条件を満たすとき加法函手(additve functor)という．
+		\begin{itemize}
+			\item[(1)]
+				任意の$X,Y\in\C$に対し，
+				\[
+			\begin{array}{ccccc}
+				F\colon\Hom_{\C}(X,Y) & \longrightarrow & \Hom_{\D}(F(X),F(Y)) \\
+				\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+				f & \longmapsto & F(f)&.
+					\end{array}
+				\]
+				が加法群の準同型写像になっている．つまり任意の$f,g \in\Hom_{\C}(X,Y)$に対し，
+				\[F(f + g) = F(f) + F(g).\]
+				となる．
+			\item[(2)]
+				$0\in\C$に対し，$F(0)=0$
+			\item[(3)]
+			直和を保つ．つまり，任意の対象$X,Y\in\C$に対して以下が成り立つ．
+				\[F(X\oplus Y)\simeq F(X)\oplus F(Y).\]
+		\end{itemize}
+\end{defn}
+
+\begin{defn}\cite[p.175]{KS06}
+	$\C$を加法圏とする．このとき，$f\in\Hom_{\C}(X,Y)$の核(kernel)とは$\Ker f\in\C$と$\ker f\in\Hom_{\C}(\Ker f,X)$の組$(\Ker f,\ker f)$であって，以下の普遍性をみたすものである．
+	\[\begin{tikzcd}
+		K\ar[rd,"k"]\ar[d,"\exists !h",dotted,swap]\\
+		\Ker f\ar[r,"\ker f",swap]&X\ar[r,"f",swap]&Y.
+\end{tikzcd}\]
+\begin{itemize}
+	\item[(i)]
+		$f\circ\ker f=0$
+	\item[(ii)]
+		任意の$K\in\C$と$k\in\Hom_{\C}(K,X)$で$f\circ k=0$を満たすものに対して，一意に$h\in\Hom_{\C}(K,\Ker f)$が存在して，$\ker f\circ h=k$となる．\\
+$f\in\Hom_{\C}(X,Y)$の$\C$の反対圏での核を余核(cokernel)とよび，$(\Cok f,\cok f)$と記す．
+\end{itemize}
+\end{defn}
+
+\begin{defn}\cite[p.175]{KS06}
+	加法圏$\A$がアーベル圏(abelian category)であるとは以下を満たす場合である．
+	\vspace{-3mm}
+	\begin{itemize}
+		\item[(i)]
+			$\A$の任意の射$f$に対し，核$\Ker f$と余核$\Cok f$が存在する．
+		\item[(ii)]
+			$\A$の任意の射$f$に対し，自然な準同型\ $\Coim(f)\simeq\Im f$が同型となる．
+	\end{itemize}
+\end{defn}
+	加法圏$\D$と自己同値函手$[1]\colon\D\to\D$与えられているとき，$\D$における三角形とは以下の形の射の列をいう．
+	\[X\xrightarrow{f}Y\xrightarrow{g} Z\xrightarrow{h} X[1].\]
+
+	\begin{defn}\cite[p.243]{KS06}
+	加法圏$\D$に自己同値函手$[1]$と完全三角形(distinguished triangle)と呼ばれる三角形の集合が与えられていて，これらが以下の条件を満たすとき，$\D$を三角圏(triangulated category)と呼ぶ．三角形が完全三角形であるとき，「三角形が完全である．」とも表現し，以下の記述も用いることにする．
+	\[X\xrightarrow{f}Y\xrightarrow{g} Z\xrightarrow{h} X[1]\hspace{3mm}(完全). \]
+	\vspace{-3mm}
+	\begin{itemize}
+		\item[(TR1)]
+			任意の$X\in\D$に対して，
+			\[X\xrightarrow{\id_X}X\rightarrow 0 \rightarrow X[1].\]
+			は完全三角形である．
+		\item[(TR2)]
+		以下の2つの三角形とその間の射$f,g,h$が
+			\[
+		\begin{tikzcd}
+			X_1\ar[r]\ar[d,"f"]& X_2\ar[r]\ar[d,"g"]& X_3\ar[r]\ar[d,"h"] & X_1[1]\ar[d,"f\texttt{[1]}"]\\
+			Y_1\ar[r]& Y_2\ar[r]& Y_3\ar[r] & Y_1[1].\\
+		\end{tikzcd}
+			\]
+		このとき，$f,g,h$が同型で$X_1\rightarrow X_2\rightarrow X_3 \rightarrow X_1[1]$が完全三角形なら$Y_1\rightarrow Y_2\rightarrow Y_3 \rightarrow Y_1[1]$も完全三角形である．
+		\item[(TR3)]
+			任意の射$X\xrightarrow{f}Y$は，$X\xrightarrow{f} Y\rightarrow Z \rightarrow X[1]$と完全三角形に拡張できる．
+	\item[(TR4)]
+		三角形
+		\[X_1\xrightarrow{u} X_2\xrightarrow{v} X_3\xrightarrow{w}  X_1[1].\]
+		が完全三角形であることと
+		\[X_2\xrightarrow{v} X_3\xrightarrow{w} X_1[1]\xrightarrow{-u[1]}  X_2[1].\]
+		が完全三角形であることが同値である．
+
+	\item[(TR5)]
+以下の2つの完全三角形と図式を可換にする$f,g$が存在したとする．
+		\[
+		\begin{tikzcd}
+			X_1\ar[r]\ar[d,"f"]& X_2\ar[r]\ar[d,"g"]& X_3\ar[r]\ar[d,"h",dotted] & X_1[1]\ar[d,"f\texttt{[1]}"]\\
+			Y_1\ar[r]& Y_2\ar[r]& Y_3\ar[r] & Y_1[1].\\
+		\end{tikzcd}
+	\]
+	このとき，すべての四角形を可換にする$h$が存在する．
+
+	\item[(TR6)]
+		（八面体公理）3つの完全三角形\\
+			\[
+				\begin{tikzcd}[row sep=5pt]
+			X \ar[r,"f"]& Y\ar[r,"h"]& Z' \ar[r]& X[1]\\
+			X \ar[r,"g\circ f"]& Z\ar[r,"l"]& Y' \ar[r]& X[1]\\
+			Y \ar[r,"g"]& Z\ar[r,"k"]& X' \ar[r]& Y[1].\\
+		\end{tikzcd}
+			\]
+			に対して，以下の図式のすべての四角形を可換にし，4行目を完全三角形にするような$u\in\Hom_{\D}(Z',Y'),v\in\Hom_{\D}(Y',X'),w\in\Hom_{\D}(X',Z'[1])$が存在する．
+			\[
+		\begin{tikzcd}
+			X \ar[r,"f"]\ar[d,equal]& Y\ar[r,"h"]\ar[d,"g",swap]& Z'\ar[d,"u",dotted] \ar[r]& X[1]\ar[d,equal]\\
+			X \ar[r,"g\circ f"]\ar[d,"f",swap]& Z\ar[r,"l"]\ar[d,equal]& Y'\ar[d,"v",dotted] \ar[r]& X[1]\ar[d,"f\texttt{[1]}"]\\
+			Y \ar[r,"g"]\ar[d,"h",swap]& Z\ar[r,"k"]\ar[d,"l",swap]& X' \ar[r]\ar[d,equal]& Y[1]\ar[d,"h\texttt{[1]}"]\\
+			Z' \ar[r,"u",dotted]& Y'\ar[r,"v",dotted]& X' \ar[r,"w",dotted]& Z'[1].\\
+		\end{tikzcd}
+			\]
+	\end{itemize}
+\end{defn}
+
+\begin{defn}\cite[p.243]{KS06}
+三角圏 $\D$ において，2つの完全三角形
+\[
+X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} X[1], \quad
+X' \xrightarrow{f'} Y' \xrightarrow{g'} Z' \xrightarrow{h'} X'[1].
+\]
+が与えられているとする．
+
+このとき，射の三つ組 $(\alpha, \beta, \gamma)$（ただし $\alpha \colon X \to X'$，$\beta \colon Y \to Y'$，$\gamma \colon Z \to Z'$）が完全三角形の間の射（morphism of triangles）であるとは，以下の図式が可換であることをいう：
+\[
+\begin{tikzcd}
+X \arrow{r}{f} \arrow{d}{\alpha} & Y \arrow{r}{g} \arrow{d}{\beta} & Z \arrow{r}{h} \arrow{d}{\gamma} & X[1] \arrow{d}{\alpha[1]} \\
+X' \arrow{r}{f'} & Y' \arrow{r}{g'} & Z' \arrow{r}{h'} & X'[1].
+\end{tikzcd}
+\]
+すなわち，以下が成り立つ：
+\[
+\beta \circ f = f' \circ \alpha, \quad
+\gamma \circ g = g' \circ \beta, \quad
+\alpha[1] \circ h = h' \circ \gamma.
+\]
+\end{defn}

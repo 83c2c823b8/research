@@ -1,0 +1,161 @@
+\section{三角圏における基本概念}
+
+\begin{defn}\cite[]{Gro57}
+	アーベル圏$\A$と三角圏$\D$に対して，Grothendieck群$K(\A)$と$K(\D)$をそれぞれ対象の同型類で自由生成された群を以下の群で割ったものであると定める．
+	\[\langle[Y]-[X]-[Z]\mid 短完全列\ 0\rightarrow X\rightarrow Y\rightarrow Z\rightarrow 0\ が\A で存在する．\rangle\]
+	\[\langle [Y]-[X]-[Z]\mid 完全三角形\  X\rightarrow Y\rightarrow Z\rightarrow X[1]\ が\D で存在する．\rangle .\]
+\end{defn}
+
+\begin{defn}\cite[p.278]{GM03}
+$\D$ を三角圏，$\C$ をその充満部分加法圏とする．
+\begin{itemize}
+  \item[(i)] $\C$ の $\D$ における右（左）直交部分圏（right (left) orthogonal subcategory）$\C^\perp$, ${}^\perp\C$ を，
+  \[
+    \C^\perp \coloneqq \{ Y \in \D \mid \forall X \in \C,\ \Hom_{\D}(X, Y) = 0 \},\quad
+    {}^\perp\C \coloneqq \{ X \in \D \mid \forall Y \in \C,\ \Hom_{\D}(X, Y) = 0 \}.
+  \]
+  によって定める．
+  
+  \item[(ii)] $\C$ が $\D$ の狭義充満部分圏（strictly full subcategory）であるとは，
+  $X \in \C$ と $Y \in \D$ に対して $X \simeq Y$ ならば $Y \in \C$ が成り立つことをいう．
+  
+  \item[(iii)] $\C$ の $\D$ における thick 閉包（thick closure）は，直和因子を取る操作で閉じた最小の狭義充満部分三角圏であり，$\thick \C$ と記す．
+
+  \item[(iv)] $\C$ が thick であるとは，$\C = \thick\C$ が成り立つことである．
+\end{itemize}
+\end{defn}
+
+
+$X^\bullet\in\D^b(\A)$に対して，函手$\tau_{\le i},\ \tau_{> i},\sigma_{\le i}, \sigma_{> i}$を
+\begin{gather*}
+	\tau_{\le i}X^\bullet\coloneq (\cdots \rightarrow X^{i-2}\rightarrow X^{i-1}\rightarrow \Ker d_X^i\rightarrow 0\rightarrow \cdots),\\
+	\tau_{> i}X^\bullet\coloneq (\cdots \rightarrow 0\rightarrow \Im d_X^i\rightarrow X^{i+1}\rightarrow X^{i+2}\rightarrow \cdots),\\
+	\sigma_{\le i}X^\bullet\coloneq (\cdots \rightarrow X^{i-2}\rightarrow X^{i-1}\rightarrow X^i\rightarrow 0\rightarrow \cdots),\\
+	\sigma_{> i}X^\bullet\coloneq (\cdots \rightarrow 0\rightarrow X^{i+1}\rightarrow X^{i+2}\rightarrow X^{i+3}\rightarrow \cdots).
+\end{gather*}
+と定めると
+\begin{gather}
+	\tau_{\le i}X^\bullet\rightarrow X^\bullet \rightarrow\tau_{>i}X^\bullet\rightarrow \tau_{\le i}X^\bullet[1]\label{canonical},\\
+	\sigma_{>i}X^\bullet\rightarrow X^\bullet \rightarrow\sigma_{\le i}X^\bullet\rightarrow \sigma_{> i}X^\bullet[1]\label{stupid}.
+\end{gather}
+が完全三角形となる．
+
+
+\begin{lemm}\cite{KS06}
+	$X^\bullet\in D^b(\A)$に対し，Grothendieck群$K(D^b(\A))$の中で
+	\[[X^\bullet] = \sum_i(-1)^i[\H^i(X^\bullet)] = \sum_{i}(-1)^i[X^i].\]
+\end{lemm}
+\begin{proof}
+	完全三角形(\ref{stupid})により，
+	\[[X^\bullet] = [\sigma_{>i}X^\bullet] + [\sigma_{\le i}X^\bullet].\]
+	が成り立つ．$X^\bullet$は有界複体なので，繰り返し適用すれば
+	\[[X^\bullet] = \sum_{i\in\ZZ}[X^i[-i]].\]
+	完全三角形$X\rightarrow 0\rightarrow X[1]\rightarrow X[1]$を考えれば，$[X] = -X[1]$より$[X^\bullet] = \sum_{i\in\ZZ}(-1)^i[X^i]$\\
+同様に完全三角形(\ref{canonical})により，
+	\[[X^\bullet] = [\tau_{\le i}X^\bullet] + [\tau_{> i}X^\bullet].\]
+繰り返し用いて，
+\begin{align*}
+	[X^\bullet] &= \sum_{i\in\ZZ}([\Im d_X^i[-i]] + [\Ker d_X^i[-i]])\\
+							&= \sum_{i\in\ZZ}((-1)^i(-[\Im d_X^{i-1}] + [\Ker d_X^i]),
+							\intertext{$0\rightarrow\Im_{X}^{i-1}\rightarrow \Ker d_X^{i} \rightarrow \H^i(X)\rightarrow 0$の短完全列より}
+							&= \sum_{i\in\ZZ}(-1)^i[\H^i(X^\bullet)].
+\end{align*}
+\end{proof}
+
+\begin{prop}\cite{KS06}
+	$\A$から$\D^b(\A)$への自然な埋め込みによって，
+	\[K(\A)\rightarrow K(\D^b(\A)).\]
+	で群の同型が与えられる．
+\end{prop}
+\begin{proof}
+	$\A$での短完全列は$\D^b(\A)$での完全三角形を対応させるのでwell-definedである．\\
+	\begin{gather*}
+		\phi([X])\coloneq [(\cdots\rightarrow 0\rightarrow X\rightarrow 0\rightarrow \cdots)],\\
+		\psi([X^\bullet])\coloneq \sum_i(-1)^i[\H^i(X^\bullet)].
+	\end{gather*}
+	と定めると互いに逆を与えている．
+\end{proof}
+
+\begin{defn}[例外対象]\cite{BK89}
+\label{defn:exceptional object}
+$\CC$-線形な三角圏 \( \D \) における対象 \( E \in \D \) が 例外対象（exceptional object） であるとは，次の条件を満たすことである：
+\[
+\Hom_{\D}(E, E) \cong \CC, \quad \Hom_{\D}(E, E[n]) = 0 \quad \forall n \ne 0.
+\]
+\end{defn}
+
+\begin{defn}[例外列]\cite{BK89}
+\label{defn:exceptional collection}
+有限個の対象の列 \( (E_1, E_2, \dots, E_r) \) が三角圏 \( \D \) における 例外列（exceptional collection）であるとは，次を満たすことである：
+\begin{itemize}
+  \item 各 \( E_i \) は例外対象である．
+  \item 任意の \( i > j \) に対して
+  \[
+  \Hom_{\D}(E_i, E_j[n]) = 0 \quad  \forall n \in \ZZ.
+  \]
+\end{itemize}
+\end{defn}
+
+\begin{defn}[強例外列]\cite{BK89}
+\label{defn:strong exceptional collection}
+例外列 \( (E_1, \dots, E_r) \) が 強例外列（strong exceptional collection）であるとは，
+\[
+\Hom_{\D}(E_i, E_j[n]) = 0 \quad \forall i, j ,\ \forall n \ne 0.
+\]
+を満たすことである．
+\end{defn}
+
+\begin{defn}[完全強例外列]\cite{BK89}
+\label{defn:full strong exceptional collection}
+強例外列 \( (E_1, \dots, E_r) \) が 完全強例外列（full strong exceptional collection） であるとは，この集合が三角圏 \( \D \) を生成すること，すなわち
+\[
+\D = \langle E_1, \dots, E_r \rangle .
+\]
+となることである．
+\end{defn}
+
+\begin{defn}[傾斜対象]\cite{BK89}
+\label{defn:tilting object}
+三角圏 \(\D\) において，対象 \(T \in \D\) が傾斜対象（tilting object）であるとは，次の二条件を満たすことである：
+
+\begin{enumerate}
+  \item \(\Hom_{\D}(T, T[i]) = 0\) が \(i \ne 0\) に対して成り立つ．
+  \item \(T\) は \(\D\) を生成する：
+  \[
+  \D = \langle T \rangle.
+  \]
+\end{enumerate}
+
+\end{defn}
+
+\begin{thm}\cite{BK89}
+\label{thm:derived_equivalence_tilting}
+\(\CC\)-線型三角圏 \(\D\) を考える．\(T \in \D\) が傾斜対象（tilting object）であるとき，導来函手
+\[
+\RHom_{\D}(T, -) \colon \D \longrightarrow \D^b(\mod \End_{\D}(T))
+\]
+は三角同値を与える．
+
+すなわち，\(\D\) は有限次元 \(\CC\)-代数 \(A := \End_{\D}(T)\) の有限生成加群の有界導来圏と三角同値である：
+\[
+\D \simeq \D^b(\mod A).
+\]
+\end{thm}
+
+
+\begin{proof}
+{\color{red}要証明}
+\end{proof}
+
+\begin{thm}\cite{BK89}
+\label{thm:tilting_from_exceptional}
+\(\CC\) 線型三角圏 \(\D\) において，強例外生成列 \((E_1, \dots, E_n)\) が存在するとき，
+その直和
+\[
+T := \bigoplus_{i=1}^n E_i.
+\]
+は \(\D\) における傾斜対象（tilting object）である．
+\end{thm}
+\begin{proof}
+	$E_1,\ldots,E_n$の定義から，三角圏を生成し1次以上の$\Ext$が消えていることがわかる．
+\end{proof}

@@ -1,0 +1,182 @@
+\section{$t$-structure}
+
+アーベル圏に対して導来圏を構成する操作は，対象を複体へと拡張し，ホモロジー的構造を三角形として扱うことにより，理論を高次化・柔軟化するものである．この構成により得られた導来圏において，逆にアーベル圏的な構造を回復するための枠組みとして，t-構造が導入される．t-構造は，三角圏の中に核と呼ばれるアーベル圏を定めることで，アーベル圏から導来圏を作る操作に対して「逆の操作」を与えるものと見なせる．このような視点は，導来圏上の安定性条件や構造の分類を行う上でも基本的な役割を果たす．
+\begin{defn}\cite[p.29]{BBD}
+		$\D$を三角圏．直和因子と同型を取る操作で閉じている加法部分圏$\D^{\le 0},\D^{\ge 0}\subset\D$が次の条件を満たすとき，$(\D^{\le 0},\D^{\ge 0})$を$\D$のt-構造 (t-structure) と呼ぶ．
+		$\D^{\le n}\coloneq\D^{\le 0}[-n],\hspace{3mm}\D^{\ge n}\coloneq\D^{\ge 0}[-n] $
+		\begin{itemize}
+			\item[(i)]
+				$\D^{\le 0}\subset\D^{\le 1}\hspace{3mm}\D^{\ge 1}\subset\D^{\ge 0} $
+			\item[(ii)]
+				$\D^{\ge 1}\subset (\D^{\le 0})^\perp$．つまり，任意の$X\in \D^{\le 0}, Y\in\D^{\ge 1}$に対して，$\Hom_{\D}(X,Y)=0$である．
+			\item[(iii)]
+				任意の$X\in\D$に対して
+				\[\tau_{\le 0}X\rightarrow X \rightarrow \tau_{\ge 1}X\rightarrow \tau_{\le 0}X[1].\]
+				となるような$\tau_{\le 0}X\in\D^{\le 0},\ \tau_{\ge 1}X\in\D^{\ge 1}$が存在する．
+		\end{itemize}
+\end{defn}
+
+\begin{prop}\cite[p.30]{BBD}\label{tau_functor}
+	$\D$を三角圏，$(\D^{\le0},\D^{\ge 0})$を$\D$のt-構造とするとき，以下が成り立つ．
+		\begin{itemize}
+				\item[(i)]$\D^{\ge 1}=(\D^{\le 0})^{\perp}$
+				\item[(ii)]$E\in\D$に対して，$\tau_{\le 0}E\in\D^{\le 0}, \tau_{\ge 1}E\in\D^{\ge 1}$は同型を除いて一意に定まり，$\tau_{\le 0},\ \tau_{\ge 1}$は函手になっている．
+		\end{itemize}
+\end{prop}
+	\begin{proof}
+		$X\in\mathcal (\D^{\le 0})^\perp$ を任意にとる．定義より以下の完全三角形がとれる．
+				\[\tau_{\le 0}X\rightarrow X \rightarrow \tau_{\ge 1}X\rightarrow \tau_{\le 0}X[1].\]
+				定義より，$\tau_{\le 0}X\rightarrow X$は0射であるので，$\tau_{\ge 1}X\simeq X\oplus\tau_{\le 0}X[1]\in \D^{\ge 1}$．直和因子と同型を取る操作で閉じているので$X\in\D^{\ge 1}$．\\
+				一意性と函手的であることについては，$X,X'\in\D,\ f\in\Hom_{\D}(X,X')$に対して，t-構造の定義より$Y,Y'\in\D^{\le 0},\ Z,Z'\in\D^{\ge 1}$で以下が完全三角形になるものがとれる．
+			\[
+		\begin{tikzcd}
+			Y\ar[r]\ar[d,dotted,"\exists !g"]& X\ar[r]\ar[d,"f"]& Z\ar[d,dotted,"\exists !h"]\ar[r] & Y[1]\ar[d,"f\texttt{[1]}"]\\
+			Y'\ar[r]& X'\ar[r]& Z'\ar[r] & Y'[1].\\
+		\end{tikzcd}
+			\]
+			$g\in\Hom_{\D}(Y,Y'),\ h\in\Hom_{\D}(Z,Z')$が一意的に存在する．したがって，$\tau_{\le 0}f\coloneq g$， $\tau_{\ge 1}f\coloneq h$と定めると一意性より，函手的であることがわかる．\\
+				別の$Y\in\D^{\le 0},\ Z\in\D^{\ge 1}$と完全三角形
+\[Y\rightarrow X \rightarrow Z\rightarrow Y[1].\]
+				があったとすると，完全三角形の間の射$f\in\Hom_{\D}(\tau_{\le 0}X,Y),\ f'\in\Hom_{\D}(\tau_{\ge 1}X,Z)$が一意に存在する．
+			\[
+		\begin{tikzcd}
+			\tau_{\le 0}X\ar[r]\ar[d,"f"]& X\ar[r]\ar[d,equal]& \tau_{\ge 1}X\ar[r]\ar[d,"g"] & \tau_{\le 0}X[1]\ar[d,"f\texttt{[1]}"]\\
+			Y\ar[r]\ar[d,"f'"]& X\ar[r]\ar[d,equal]& Z\ar[d,"g'"]\ar[r] & Y[1]\ar[d,"f'\texttt{[1]}"]\\
+			\tau_{\le 0}X\ar[r]& X\ar[r]& \tau_{\ge 1}X\ar[r] & \tau_{\le 0}X[1].\\
+		\end{tikzcd}
+			\]
+			一意性より$f'\circ f = \id,\ g'\circ g=\id$がわかり，同様に逆もいえるので同型を除いて一意的である．
+\end{proof}
+\begin{defn}\cite[p.31]{BBD}
+	$(D^{\le 0},\D^{\ge 0})$がt-構造を与えるとき，$\D$の部分圏$\H\coloneq\D^{\le 0}\cap\D^{\ge 0}$はt-構造の核(the heart of t-structure)と呼ばれる．
+\end{defn}
+
+\begin{prop}\cite[p.33]{BBD}
+	$\H$はアーベル圏である．
+\end{prop}
+\begin{proof}
+	まず，$\H$は核，余核をもつことを示す．\\
+	$A,B\in\H$，$f\in\Hom_{\H}(A,B)$を任意にとる．このとき，三角圏の公理より以下の完全三角形
+	\[C\xrightarrow{e}A\xrightarrow{f}B\xrightarrow{g}C[1].\]
+	が存在する．t-構造の定義より
+	\[X\xrightarrow{x}C[1]\xrightarrow{y}Y\rightarrow X[1].\]
+	が完全三角形となるような$X\in \D^{\le -1},Y\in \D^{\ge 0}$が存在する．このとき，
+	\[y\circ g\colon B\rightarrow Y.\]
+	が$f$の余核を与えることを示す．
+	\begin{comment}
+			\[
+				\begin{tikzcd}[column sep=huge,row sep =huge]
+					B[-1] \ar[r,"g\texttt{[-1]}"]\ar[d,equal]& C\ar[r,]\ar[d,"y\texttt{[-1]}",swap]& A\ar[d,"\ell",dotted] \ar[r,"f"]& B\ar[d,equal]\\
+					B[-1] \ar[r,"y\texttt{[-1]}\circ g\texttt{[-1]}"]\ar[d,"g\texttt{[-1]}",swap]& Y[-1]\ar[r,]\ar[d,equal]& M\ar[d,dotted] \ar[r,"m"]& B\ar[d,"g"]\\
+					C \ar[r,]\ar[d,swap]& Y[-1]\ar[r,]\ar[d,swap]& X \ar[r,"x"]\ar[d,equal]& C[1] \ar[d,]\\
+			A \ar[r,"\ell",dotted]& M\ar[r,dotted]&  X\ar[r,dotted]& A[1]\\
+		\end{tikzcd}
+			\]
+\end{comment}	
+			定義より，$A\in\H\subset\D^{\le 0}$，$X\in\D^{\le -1}\subset\D^{\le 0}$であり，八面体公理より存在する以下の完全三角形から
+	\[A\rightarrow M\rightarrow X\rightarrow A[1].\]
+	$M\in\D^{\le 0}$がわかる．$B\in\H\subset\D^{\le 0}$，$A[1]\in \D^{\le -1}\subset \D^{\le 0}$より$C[1]\in\D^{\le 0}$がしたがう．$X[1]\in\D^{\le -2}\subset\D^{\le 0}$と合わせて，$Y\in\D^{\le 0}$がしたがう．取り方により$Y\in\D^{\ge 0}$だったので$Y\in\H$がわかる．\\
+	$Q\in\H$と$q\circ f$を満たす$q\in\Hom_{\H}(B,Q)$を任意にとると，$q=q'\circ g$を満たす$q'\in\Hom_{\D}(C[1],Q)$が存在する．また，$X\in\D^{\le -1}$，$Q\in\D^{\ge 0}$なので$g\circ q'=0$．したがって，$q'=y\circ q''$を満たす$q''\in\Hom_{\D}(Y,Q)$が存在する．完全系列
+	\[A\rightarrow B\xrightarrow{g} C[1]\rightarrow A[1].\]
+	に対して，コホモロジー的函手$\Hom_{\D}(-,Q)$を作用させると$A[1]\in\D^{\le -1}$なので$\Hom_{\D}(A[1],Q)=0$から完全列
+	\[0\rightarrow \Hom_{\D}(C[1],Q) \rightarrow \Hom_{\D}(B,Q).\]
+	が存在して，$q=q'\circ g$となる$q'$の一意性がわかる．どうように$X[1]\in\D^{\le -1}$なので，
+	\[0\rightarrow \Hom_{\D}(Y[1],Q) \rightarrow \Hom_{\D}(C[1],Q).\]
+	$q'=q''\circ y$となる$q''$の一意性がわかる．したがって，$y\circ g\colon B\to Y$が$f\colon A\to B$の余核を与えていることが示された．反対圏を考えることで核の存在も証明される．\\
+	核，余核の存在は示されたので任意の射$f\in\Hom_{\H}(A,B)$に対して，自然な同型
+\[\Im(f)\simeq \Coim(f).\]
+の存在を言えばよい．完全三角形
+	\[C\xrightarrow{e}A\xrightarrow{f}B\xrightarrow{g}C[1].\]
+	に対して， $X\in\D^{\le -1},\ Y\in\D^{\ge 0}$をとって
+	\[X\xrightarrow{x}C[1]\xrightarrow{y}Y\rightarrow X[1].\]
+	と完全三角形にしたものをとったときに$y\circ g\colon B\to Y$が$f$の余核であった．$y\circ g$を延長して
+	\[M\xrightarrow{m}B\xrightarrow{y\circ g}Y\rightarrow M[1].\]
+をとると，$\ker(\cok f) = m$が得られる．したがって$\Im f= (M,m)$．\\
+同様に
+\[X[-1]\xrightarrow{x[-1]} C \rightarrow Y[-1]\rightarrow X.\]
+で$e\circ x[-1]\colon X[-1]\to A$が$f$の核を与えていて，$\Coim f = (M,\ell)$となり，像経由分解と余像経由分解が一致することがわかり証明された．
+\end{proof}
+
+アーベル圏 $\A$に対して導来圏 $\D(\A)$ を構成する際，理論的には無限に広がる複体全体を扱う必要があるが，実際の応用や計算においては，ある次数において消える複体に制限した有界導来圏 $\D^b(\A)$ を考えることが多い．これは，現実的な対象や関手の振る舞いが有界な範囲に収まることが多いためである．同様の観点から，三角圏における t-構造を考える際にも，t-構造の核が有界な複体に対応するような有界なt-構造を考えるのが自然である．
+\begin{defn}\cite{BBD}
+	三角圏$\D$のt-構造$\D^{\le 0}\subset \D$が有界であるとは，
+	\[\D = \bigcup_{i,j\in\ZZ}(\D^{\le i}\cap\D^{\ge j}).\]
+	と表せることである．
+\end{defn}
+
+\begin{prop}\cite{BBD}
+	$\D$を三角圏，$\A\subset\D$を充満部分加法圏としたとき，$\A$有界なt-構造$\F\subset\D$の核であることと以下の条件が同値．\vspace{-3mm}
+	\begin{enumerate}[label=\roman*.]
+		\item[(i)]
+			任意の$k_1,k_2\in\ZZ\ (k_1>k_2)$と$A,B\in\A$に対して，$\Hom_{\D}(A[k_1],B[k_2])=0$
+		\item[(ii)]
+			任意の対象$X\in\D$に対して，有限の整数の列$k_1>k_2 \cdots > k_n$ が存在して$A_j\in \A[k_j]$とした以下の分解が存在する．
+	\[
+		\begin{tikzcd}[column sep=1.3em]
+			0\ar[r,equal]&X_0\ar[rr,"f_0"]& & X_{1}\ar[r]\ar[ld] &\cdots\ar[r] &X_{n-2}\ar[rr,"f_{n-2}"]&&X_{n-1}\ar[ld]\ar[rr,"f_{n-1}"]&&X_n\ar[ld]\ar[r,equal]&X\\
+									 &&A_{1}\ar[lu,dotted,"{[1]}"] &&&&A_{n-1}\ar[lu,dotted,"{[1]}"]&&A_n\ar[lu,dotted,"{[1]}"]
+		\end{tikzcd}.
+	\]
+	\end{enumerate}
+\end{prop}
+\begin{proof}\hfil\\
+	$\A$をt-構造の核としたとき(i),(ii)を示す．(i)については，$A[k_1]\in\D^{\le -k_1},\ B[k_2]\in\D^{\ge -k_2}$なので，$\Hom_{\D}(A[k_1],B[k_2])=0$，t-構造が有界なことから$A_n\coloneq\tau_{\ge -k_n}X$が$0$にならない最小の$k_n$が存在する．t-構造の定義から完全三角形
+	\[X_{n-1} \rightarrow X \rightarrow A_{n}\rightarrow X_{n-1}[1].\]
+	が存在する．ただし$X_{n-1}\in\D^{\le -k_n -1}$である．$k_{n+1}$を$k_n$より大きい数で$\tau_{\ge -k_{n-1}}X_{n}$が$0$にならない最小の数として，同様の手順を繰り返せば有界なt-構造であることから有限回の手続きで終了する．したがって条件が満たされていることが確認された．逆については，	
+	\begin{gather*}
+		\D^{\ge 0}\coloneq \{X\in\D\mid\Hom_{\D}(A[k],X),\ \forall A\in\A, k>0\},\\
+		\D^{\le 0}\coloneq \{X\in\D\mid\Hom_{\D}(X,A[k]),\ \forall A\in\A, k<0\}.
+	\end{gather*}
+	と定めると，定義から$D^{\le 0}\subset\D^{\le 1}=\D^{\le 0}[-1]$，$\D^{\ge 1}\subset \D^{\ge 0}，\D^{\ge 1}\subset (\D^{\le 0})^\perp$がわかる．
+	また，八面体公理から$X_{n-2}\rightarrow X_n\rightarrow A \rightarrow X_{n-2}[1],\ A_{n-1}\rightarrow A\rightarrow A_n\rightarrow A_{n-1}[1]$の2つの完全三角形が存在し，コホモロジー的函手$\Hom_{\D}(-,X[1])$を2つ目の完全三角形に作用させることで$A\in\D^{\ge 1}$がわかる．これを$k_j\le -1$を満たす最大の$j$まで繰り返すと，完全三角形
+	\[X_{j-1}\rightarrow X \rightarrow A\rightarrow X_{j-1}[1].\]
+	で$X_{j-1}\in\D^{\le 0},\ A\in\D^{\ge 1}$となるものが得られて，t-構造となっていることがわかる．
+	\end{proof}
+
+	\begin{prop}\cite[p.283]{GM03}
+		$t$-構造が与えられた三角圏$\D$において，命題\ref{tau_functor}の$\tau$を用いて以下の函手
+		\[\
+			\begin{array}{ccccc}
+				H^0\colon&\D &\longrightarrow & \A\\
+						 &\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+						 &X & \longmapsto & \tau_{\ge 0}\tau_{\le 0}X.
+					\end{array}
+\]
+を定義すると$H^0$はコホモロジー的函手である．
+	\end{prop}
+\begin{proof}
+	任意の完全三角形
+	\[X\rightarrow Y\rightarrow Z\rightarrow X[1].\]
+	に対して，
+	\[H^0(X)\rightarrow H^0(Y)\rightarrow H^0(Z).\]
+	が完全列になることを示せば良い．
+\end{proof}
+
+
+
+\begin{defn}\cite[p.285]{GM03}
+		$\D,\D'$をt-構造を持った三角圏とする．このとき，函手$F\colon \D\to\D'$が以下の条件をみたすとき，t-完全函手という．\vspace{-3mm}
+		\begin{itemize}
+			\item[(i)]
+				$F$は完全函手である．つまり，シフト函手$[1]$と可換で$\D$の完全三角形を$\D'$の完全三角形にうつす．
+			\item[(ii)]
+				$F(\D^{\ge 0})\subset D'^{\ge 0}$かつ$F(\D^{\le 0})\subset D'^{\le 0}$
+		\end{itemize}
+	\end{defn}
+	\begin{prop}\cite[p.286]{GM03}
+	$\D$を三角圏，$(\D^{\le 0},\D^{\ge 0})$を有界なt-構造，$\A=\D^{\le 0}\cap\D^{\ge 0}$をその核とする．このとき，$X,Y\in\A$に対し，
+	\begin{gather*}
+		\Ext^i_{\D}(X,Y) = \Hom_{\D}(X,Y[i]),\\
+		\Ext^i_{\A}(X,Y) = \Hom_{\D^b(\A)}(X,Y[i]).
+	\end{gather*}
+	と定める．このとき，
+	\[\Ext^i_{\D}(X,Y)\times\Ext^j_{\D}(Y,Z)\rightarrow \Ext^{i+j}_{\D}(X,Z).\]
+	が定まる．
+	$F\colon \D^b(\A)\to\D$をt-完全函手としたとき，この函手が圏同値を与えることと$\Ext^1_{\D}$が$\Ext^\star_{\D}$を生成すること(すなわち，任意の$X,Y\in\A,\ \alpha\in\Ext^i_{\D}(X,Y)$に対して，$\beta_1\beta_2\ldots\beta_i,\ \beta_j\in\Ext^1_{\D}(X_j,X_{j+1})$とかける．)は同値である．
+\end{prop}
+\begin{proof}
+	$\Ext^{1}_{\A}$は$\Ext^{\star}_{\A}$を生成しているので，$F$が圏同値を与えているのならば$\Ext^{1}_{\D}$は$\Ext^{*}_{\D}$を生成していなければならない．逆に，$\Ext^1_{\D}$が$\Ext^\star_{\D}$を生成していたとする．圏同値であることを示すには$F$が充満忠実で本質的全射であることを示せば良い．\\
+任意の$X,Y\in\D^b(\A)$に対して，
+\[F\colon\Hom_{\D^b(\A)}(X,Y)\simeq \Hom_{\D}(F(X),F(Y)) .\]
+{\color{red} 要証明}
+\end{proof}
