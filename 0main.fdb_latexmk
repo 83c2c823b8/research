@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1750346574.07341 "0main.tex" "0main.pdf" "0main" 1750346578.61963 0
+["lualatex"] 1750370479.23218 "0main.tex" "0main.pdf" "0main" 1750370483.752 0
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1720346179.56229 1924610 5ad0ab270dd7b2d968c525a623c6f575 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1720346139.93902 2011208 896bb74978c1fb2dba5f7bcf7d26c84d ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1720346555.51527 81819 c1a1831503f38fe92f18da76596f7b9d ""
@@ -13,6 +13,7 @@
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman17-regular.luc" 1740207530.77002 128903 97a8402bc1f22ad44d704bec94f6c3a8 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman5-regular.luc" 1720346555.35327 125949 77481c3f38dbf8f1d1c3d431f8f2c5f7 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman6-regular.luc" 1743935874.39848 128498 26b426622a050256c91d2d7aac6eb659 ""
+  "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-italic.luc" 1740028578.41275 135973 867c5f3ee68416593fc7a9f7780ec05e ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-regular.luc" 1720346555.31026 128357 7927b6e898300280eee1561ad78bd0e8 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmroman8-regular.luc" 1720346140.19901 128128 ca20734c6458fb2502cd84305b602bbe ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmromandemi10-regular.luc" 1739068337.89653 127542 528f93bb069665c0c47f2eda6eb9573e ""
@@ -33,6 +34,7 @@
   "/home/gf1cg8to/.texlive2023/texmf-var/luatexja/extra_lmroman17-regular.luc" 1744191156.16823 17367 4a378d55176ce364eb8f71016dce1968 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatexja/extra_lmroman5-regular.luc" 1720346555.35627 17367 a4685d1bead885ce28271a9fffe5ccc8 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatexja/extra_lmroman6-regular.luc" 1743935874.40248 17367 a4685d1bead885ce28271a9fffe5ccc8 ""
+  "/home/gf1cg8to/.texlive2023/texmf-var/luatexja/extra_lmroman7-italic.luc" 1740028578.41575 17367 a4685d1bead885ce28271a9fffe5ccc8 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatexja/extra_lmroman7-regular.luc" 1720346555.31426 17367 a4685d1bead885ce28271a9fffe5ccc8 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatexja/extra_lmroman8-regular.luc" 1720346140.20201 17367 a4685d1bead885ce28271a9fffe5ccc8 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatexja/extra_lmromandemi10-regular.luc" 1739068337.90053 17367 a4685d1bead885ce28271a9fffe5ccc8 ""
@@ -369,9 +371,9 @@
   "/usr/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf" 1255129361 94256 a52a5407fe2a4281f96a01e9736568c3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1720342003.09286 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1720342095 12237217 22f2cdc28d4a662257bccd8aa8039d1a ""
-  "0main.aux" 1750346578.34564 4924 8cd6923b9263a5ed68e6cbe7a124c462 "lualatex"
+  "0main.aux" 1750370483.48744 4956 dc39e28039e75c069f4c412e30757222 "lualatex"
   "0main.tex" 1750334571.01571 3013 fc49f66b4e4ababfcb40db6d062cde26 ""
-  "0main.toc" 1750346578.34664 637 5662db2fa7ad9e48670d55f0cce5c4ba "lualatex"
+  "0main.toc" 1750370483.48744 637 5662db2fa7ad9e48670d55f0cce5c4ba "lualatex"
   "1triangulated_category.tex" 1750330319.88665 7896 8e3637fac8a7403246951477a2343fa4 ""
   "2fundamental_property_of_triangulated_category.tex" 1750330319.88665 7676 4d89cf4022987628f0ec901380e843d0 ""
   "3definition_of_derived_category.tex" 1750342270.98448 15118 eafc8f3abc5769e134d272079f2653be ""
@@ -380,7 +382,7 @@
   "6stability_conditions.tex" 1750330319.88765 13040 8dd75e4e6e5173f9ff965f880711a44a ""
   "7space_of_stability_conditions.tex" 1750330319.88765 3271 472e70aeaecbc1316b94acc795f96e92 ""
   "8qgr.tex" 1750344326.77897 7352 daf7c99973f564796f142046b2dd2066 ""
-  "9GL.tex" 1750346572.50874 3247 ef05c2feffc2624885e22b44b69cc534 ""
+  "9GL.tex" 1750370478.89036 4468 7d9a891d2cc48dc19eedef40f3a1ae41 ""
   "test.sty" 1750341926.12784 4196 917e9bb3a362aa72758df74181851e42 ""
   (generated)
   "0main.aux"

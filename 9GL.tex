@@ -45,7 +45,7 @@ S(\mathbf{p}, \boldsymbol{\lambda}) = \frac{k[X_0, X_1, \dots, X_n]}{I(\mathbf{p
 ここで，
 \begin{itemize}
   \item $\mathrm{mod}^{L(\mathbf{p})}_+(S)$ は $L(\mathbf{p})$-次数付き有限生成 $S$-加群の圏，
-  \item $\mathrm{mod}^{L(\mathbf{p})}_0(S)$ は $L(\mathbf{p})$-次数付き有限長 $S$-加群（すなわち有限サポートをもつ加群）の圏．
+	\item $\mathrm{mod}^{L(\mathbf{p})}_0(S)$ は $\mathrm{mod}^{L(\mathbf{p})}_+(S)$のねじれ加群全体の圏．
 \end{itemize}
 \end{defn}
 
@@ -62,5 +62,34 @@ S(\mathbf{p}, \boldsymbol{\lambda}) = \frac{k[X_0, X_1, \dots, X_n]}{I(\mathbf{p
   \item $\vec{\omega} = (n - 1)\vec{c} - \sum_{i=0}^n \vec{x}_i$ は dualizing element（双対化元）である．
 \end{itemize}
 この同型は $\mathcal{F}, \mathcal{G}$ に関して函手的である．
+\end{thm}
+
+\begin{lemm}
+	重み付き射影直線 $\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda})$において，各直線束$L$は$\Coh(\XX)$における例外対象である．
+\end{lemm}
+\begin{proof}
+	$L = \mathcal{O}(\vec{x})$とかけるので，
+	\[\Hom(\mathcal{O}(\vec{x}),\mathcal{O}(\vec{x}))=S_0=\CC.\]
+	である．
+\end{proof}
+
+\begin{thm}\cite{GL87}
+重み付き射影直線 $\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda})$ において，次の加群
+\[
+T := \bigoplus_{0 \le \vec{x} \le \vec{c}} \mathcal{O}_{\mathbb{X}}(\vec{x}).
+\]
+をとると，これは $\Coh(\mathbb{X})$ における傾対象である．
+\end{thm}
+
+
+\begin{thm}[Krull--Schmidt 性]\cite{GL87}
+重み付き射影直線 $\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda})$ に対して，連接層のアーベル圏
+\[
+\Coh(\mathbb{X}) := \frac{\mathrm{mod}_+^{L(\mathbf{p})}(S)}{\mathrm{mod}_0^{L(\mathbf{p})}(S)}.
+\]
+は Krull--Schmidt 圏である．すなわち，任意の対象 $\mathcal{F} \in \Coh(\mathbb{X})$ は直既約対象の有限直和に分解でき，その分解は同型と順序を除いて一意である：
+\[
+\mathcal{F} \cong \bigoplus_{i=1}^n \mathcal{F}_i \quad (\text{各} \mathcal{F}_i \text{が既約対象}).
+\]
 \end{thm}
 
