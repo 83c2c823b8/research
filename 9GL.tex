@@ -15,7 +15,7 @@ L(\mathbf{p}) = \left\langle \vec{x}_0, \vec{x}_1, \dots, \vec{x}_n \ \middle| \
 
 $L(\mathbf{p})$ によって次数付けされた多項式環:
 \[
-S = \CC[X_0, X_1, \dots, X_n], \quad \deg X_i = \vec{x}_i.
+	S(\mathbf{p}) = \CC[X_0, X_1, \dots, X_n], \quad \deg X_i = \vec{x}_i. 
 \]
 において，以下の $L(\mathbf{p})$-斉次イデアル:
 \[
@@ -23,30 +23,43 @@ I(\mathbf{p}, \boldsymbol{\lambda}) = \left( X_i^{p_i} - X_1^{p_1} + \lambda_i X
 \]
 を用いて商環
 \[
-S(\mathbf{p}, \boldsymbol{\lambda}) = \frac{k[X_0, X_1, \dots, X_n]}{I(\mathbf{p}, \boldsymbol{\lambda})}.
+	S(\mathbf{p}, \boldsymbol{\lambda}) = k[X_0, X_1, \dots, X_n]\Big{/}I(\mathbf{p}, \boldsymbol{\lambda}) = k[x_0,x_1,\ldots, x_n],\quad \deg(x_i)=\vec{x_i}.
 \]
-を定義する．この $L(\mathbf{p})$-次数付き環 $S(\mathbf{p}, \boldsymbol{\lambda})$ を用いて，次のように構成される代数多様体
-\[
-\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda}) = \mathrm{Proj}_{L(\mathbf{p})}(S(\mathbf{p}, \boldsymbol{\lambda})).
-\]
-を重み付き射影直線（weighted projective line）と呼ぶ．
+を定義する．
 \end{defn}
+
+
+各次数$\vec{\ell}\in L(\mathbf{p})$は一意的に，
+\[\vec{\ell} = \sum_{i=0}^n \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\]
+とかける．
 ここで，
 \[\vec{\omega} \coloneq (n-1)\vec{c} - \sum_{i=0}^n\vec{x_i}.\]
-と$\vec{\omega}$を定義し，双対化元(dualizing element)と呼ぶ．
+と$\vec{\omega}$を定義し，双対化元(dualizing element)と呼ぶ．また，
+\[R(\mathbf{p} )= \bigoplus_{\ell=0}^\infty R_{\ell},\quad R_\ell = S_{\ell\vec{c}}.\]
+を$S$の核(core)と呼ぶ．
 
 \begin{defn}\cite{GL87}
 重み付き射影直線 $\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda})$ に対応する $L(\mathbf{p})$-次数付き環 $S = S(\mathbf{p}, \boldsymbol{\lambda})$ に対して，次のように連接層の圏$\Coh(\mathbb{X})$ を定義する：
 
 \[
-\Coh(\mathbb{X}) := \frac{\mathrm{mod}^{L(\mathbf{p})}_+(S)}{\mathrm{mod}^{L(\mathbf{p})}_0(S)}.
+\Coh(\mathbb{X}) := \mathrm{mod}^{L(\mathbf{p})}(S)\Big{/}\mathrm{mod}^{L(\mathbf{p})}_0(S).
 \]
 
 ここで，
 \begin{itemize}
-  \item $\mathrm{mod}^{L(\mathbf{p})}_+(S)$ は $L(\mathbf{p})$-次数付き有限生成 $S$-加群の圏，
-	\item $\mathrm{mod}^{L(\mathbf{p})}_0(S)$ は $\mathrm{mod}^{L(\mathbf{p})}_+(S)$のねじれ加群全体の圏．
+  \item $\mathrm{mod}^{L(\mathbf{p})}(S)$ は $L(\mathbf{p})$-次数付き有限生成 $S$-加群の圏，
+	\item $\mathrm{mod}^{L(\mathbf{p})}_0(S)$ は $\mathrm{mod}^{L(\mathbf{p})}(S)$のねじれ加群全体の圏．
 \end{itemize}
+さらに，$\vec{x} \in L(\mathbf{p})$ に対して，ひねり（twist）とは，$S$-加群 $M$ に対して次のように定義される加群 $M(\vec{x})$ を与える操作である：
+\[
+M(\vec{x})_{\vec{y}} := M_{\vec{x} + \vec{y}} \quad (\vec{y} \in L(\mathbf{p})).
+\]
+$(M,\vec{x})\to M(\vec{x})$により，各圏に対して$L(\mathbf{p})$作用が定まる．
+\end{defn}
+
+\begin{defn}[局所化]
+重み付き射影直線 $\mathbb{X} = \mathbb{C}(\mathbf{p}, \boldsymbol{\lambda})$ に対して，次数付き環 $S = S(\mathbf{p}, \boldsymbol{\lambda})$ とその次数付け群 $L(\mathbf{p})$ を考える．
+
 \end{defn}
 
 \begin{thm}[Serre 双対性]\cite{GL87}
