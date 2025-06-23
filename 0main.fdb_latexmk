@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1750370479.23218 "0main.tex" "0main.pdf" "0main" 1750370483.752 0
+["lualatex"] 1750688772.92907 "0main.tex" "0main.pdf" "0main" 1750688777.6063 0
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1720346179.56229 1924610 5ad0ab270dd7b2d968c525a623c6f575 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1720346139.93902 2011208 896bb74978c1fb2dba5f7bcf7d26c84d ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1720346555.51527 81819 c1a1831503f38fe92f18da76596f7b9d ""
@@ -371,19 +371,19 @@
   "/usr/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf" 1255129361 94256 a52a5407fe2a4281f96a01e9736568c3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1720342003.09286 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1720342095 12237217 22f2cdc28d4a662257bccd8aa8039d1a ""
-  "0main.aux" 1750370483.48744 4956 dc39e28039e75c069f4c412e30757222 "lualatex"
+  "0main.aux" 1750688777.33857 4957 f7d38ebd652e415186160a0f5362cce8 "lualatex"
   "0main.tex" 1750334571.01571 3013 fc49f66b4e4ababfcb40db6d062cde26 ""
-  "0main.toc" 1750370483.48744 637 5662db2fa7ad9e48670d55f0cce5c4ba "lualatex"
+  "0main.toc" 1750688777.33957 637 8d9c2437d602cb082f4ee39049e37fc8 "lualatex"
   "1triangulated_category.tex" 1750330319.88665 7896 8e3637fac8a7403246951477a2343fa4 ""
-  "2fundamental_property_of_triangulated_category.tex" 1750330319.88665 7676 4d89cf4022987628f0ec901380e843d0 ""
+  "2fundamental_property_of_triangulated_category.tex" 1750686217.42628 7674 05cc5bafe99c2175f297daef7ab713dd ""
   "3definition_of_derived_category.tex" 1750342270.98448 15118 eafc8f3abc5769e134d272079f2653be ""
   "4properties_tri.tex" 1750330319.88765 6991 4fa4ce1ee18fa65ae58d9d734c9b06b6 ""
   "5t_structure.tex" 1750330319.88765 13581 f3b0b60de1a4fca38b1936c687aa0b07 ""
   "6stability_conditions.tex" 1750330319.88765 13040 8dd75e4e6e5173f9ff965f880711a44a ""
   "7space_of_stability_conditions.tex" 1750330319.88765 3271 472e70aeaecbc1316b94acc795f96e92 ""
-  "8qgr.tex" 1750344326.77897 7352 daf7c99973f564796f142046b2dd2066 ""
-  "9GL.tex" 1750370478.89036 4468 7d9a891d2cc48dc19eedef40f3a1ae41 ""
-  "test.sty" 1750341926.12784 4196 917e9bb3a362aa72758df74181851e42 ""
+  "8qgr.tex" 1750683325.08905 7365 9e1502dbef21d5de4675a15796101159 ""
+  "9GL.tex" 1750688772.63651 5385 0b203e02d913e023931c4f732c52c1bc ""
+  "test.sty" 1750602597.38436 4196 917e9bb3a362aa72758df74181851e42 ""
   (generated)
   "0main.aux"
   "0main.log"
