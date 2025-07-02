@@ -89,10 +89,14 @@ R = \bigoplus_{n \ge 0} R_n
 を定義する．このとき，$R_{A,\Lambda}$は，部分環$k[x_0^{a_0},x_1^{a_1}]$が存在する．
 \end{defn}
 
-$L_A$は階数$1$のアーベル群であり，各次数$\vec{\ell}\in L_A$は一意的に，
+$L_A$は階数$1$のアーベル群であるため，各次数$\vec{\ell}\in L_A$は一意的に，
 \[\vec{\ell} = \sum_{i=0}^r \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\]
-と表すことができる．
-ここで，
+と表すことができ，$\ell,m\in L_A$に対して順序$\le$を
+\begin{gather*}
+\vec{\ell} = \sum_{i=0}^r \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\\
+\vec{m} = \sum_{i=0}^r m_i\vec{x_i} + m\vec{c}\quad (0\le m_i < p_i,\ \ \ell \in \ZZ).
+\end{gather*}
+とあらわしたときに，すべての$0\le i\le r$で$\ell_i\le m_i$かつ$\ell\le m_i$とさだめる．ここで，
 \[\vec{\omega} \coloneq (r-1)\vec{c} - \sum_{i=0}^r\vec{x_i}.\]
 と$\vec{\omega}$を定義し，双対化元(dualizing element)と呼ぶ．また，
 \[R(A)= \bigoplus_{\ell=0}^\infty R_{\ell},\quad R_\ell = S_{\ell\vec{c}}.\]
@@ -111,57 +115,67 @@ $L_A$は階数$1$のアーベル群であり，各次数$\vec{\ell}\in L_A$は�
 	\item $\tors R_{A,\Lambda}$ は $\gr R_{A,\Lambda}$のねじれ加群全体の圏．
 \end{itemize}
 このとき，2つの圏の間には自然な射影函手 (projection functor)を
-\[ \pi: \gr R_{A,\Lambda} \longrightarrow \Coh(\XX) .\]
-と記す．さらに，$\vec{x} \in L(\mathbf{p})$ に対して，ひねり（twist）とは，$R_{A,\Lambda}$-加群 $M$ に対して次のように定義される加群 $M(\vec{x})$ を与える操作である：
+\[ \pi\colon \gr R_{A,\Lambda} \longrightarrow \Coh(\XX) .\]
+と記す．さらに，$\vec{x} \in L_A$ に対して，ひねり（twist）とは，$R_{A,\Lambda}$-加群 $M$ に対して次のように定義される加群 $M(\vec{x})$ を与える操作である：
 \[
-M(\vec{x})_{\vec{y}} := M_{\vec{x} + \vec{y}} \quad (\vec{y} \in L(\mathbf{p})).
+M(\vec{x})_{\vec{y}} := M_{\vec{x} + \vec{y}} \quad (\vec{y} \in L_A).
 \]
 $(M,\vec{x})\to M(\vec{x})$により，各圏に対して$L_A$作用が定まる．
 \end{defn}
-$R_{A,\Lambda}(\vec{x})$ を射影函手 $\pi$ で写した $\mathrm{coh}(\mathcal{X})$ の対象を，
+$R_{A,\Lambda}(\vec{x})$ を射影函手 $\pi$ で写した $\Coh(\XX)$ の対象を，
 \[ \mathcal{O}(\vec{x}) := \pi(R(\vec{x})). \]
-と書き，（次数 $\vec{x}$ による）捩り層 (twisting sheaf) と呼ぶ．\\
+と書き，（次数 $\vec{x}$ による）捩り層 (twisting sheaf) と呼ぶ．
 
-$x = $
-\[0\longrightarrow \mathcal{O}\xrightarrow{\ u\ }\mathcal{O}(\vec{c})\longrightarrow S\longrightarrow 0\]
-$L_{A,\Lambda}$ の元 $\vec{x}, \vec{y}$ に対する順序を以下のように定義する．
+通常の点$\lambda\in\PP^1\backslash\Lambda = \PP^1\backslash\{\lambda_0,\lambda_1,\ldots, \lambda_r\}$に対して，$\displaystyle\lambda = \frac{x^{p_1}}{x_0^{p_0}}$として$u = x_1^{p_1} - \lambda x_0^{p_0}$として，以下の短完全列：
+\[0\longrightarrow \mathcal{O}\xrightarrow{\ u\ }\mathcal{O}(\vec{c})\longrightarrow S\longrightarrow 0.\]
+で$S$を定めると
+$x_i=0$の点のとき
+\[0\longrightarrow \mathcal{O}(j\vec{x_i})\xrightarrow{\ x_i\ }\mathcal{O}((j+1)\vec{x_i})\longrightarrow S_{i,j}\longrightarrow 0\quad (j\in \ZZ/a_i\ZZ).\]
+で$S ,S_{i,j}$を定めると，これらは$\Coh(\XX)$の単純対象であり，$x$にサポートを持つ層である．
+\begin{prop}\label{lemm:qgr-hom-condition}
+	$\vec{x}\le \vec{y}$であることと$\Hom_{\qgr R_{A,\Lambda}}(\mathcal{O}(\vec{x}),\mathcal{O}(\vec{y})) \neq 0$であることは同値である．\\
+	また$\vec{x}\le\vec{y}$のとき，
+	\[\Hom_{\qgr R_{A,\Lambda}}(\mathcal{O}(\vec{x}),\mathcal{O}(\vec{y}))= R_{\vec{y}- \vec{x}}.\]
+	である．
+\end{prop}
 \begin{center}
   \begin{tikzpicture}[->,thick]
       \node (0) at (0,0) {0};
-			\node (11) at (2,2) {$\vec{x_0}$};
-			\node (12) at (5,2) {$2\vec{x_0}$};
-      \node (13) at (8,2) {$\cdots$};
-			\node (14) at (11,2) {$(a_0-1)\vec{x_0}$};
-      \node (21) at (2,1) {$\vec{x_1}$};
-      \node (22) at (5,1) {$2\vec{x_1}$};
-      \node (23) at (8,1) {$\cdots$};
-			\node (24) at (11,1) {$(a_1-1)\vec{x_1}$};
-      \node (31) at (2,0) {$\vdots$};
-      \node (32) at (5,0) {$\vdots$};
-      \node (33) at (8,0) {$\vdots$};
-      \node (34) at (11,0) {$\vdots$};
-			\node (41) at (2,-1) {$\vec{x_r}$};
-			\node (42) at (5,-1) {$2\vec{x_r}$};
-      \node (43) at (8,-1) {$\cdots$};
-			\node (44) at (11,-1) {$(a_r-1)\vec{x_r}$};
-			\node (1) at (13,0) {$\vec{c}$};
-      \draw (0) -- node[above] {$X_0$} (11);
-      \draw (11) -- node[above] {$X_0$} (12);
-      \draw (12) -- node[above] {$X_0$} (13);
-      \draw (13) -- node[above] {$X_0$} (14);
-      \draw (14) -- node[above] {$X_0$} (1);
-      \draw (0) -- node[below] {$X_1$} (21);
-      \draw (21) -- node[above] {$X_1$} (22);
-      \draw (22) -- node[above] {$X_1$} (23);
-      \draw (23) -- node[above] {$X_1$} (24);
-      \draw (24) -- node[pos=.5,fill=white] {$X_1$} (1);
-      \draw (0) -- node[below] {$X_r$} (41);
-      \draw (41) -- node[below] {$X_r$} (42);
-      \draw (42) -- node[below] {$X_r$} (43);
-      \draw (43) -- node[below] {$X_r$} (44);
-      \draw (44) -- node[below] {$X_r$} (1);
+			\node (A1) at (2,2) {$\vec{x_0}$};
+			\node (A2) at (5,2) {$2\vec{x_0}$};
+      \node (A3) at (8,2) {$\cdots$};
+			\node (A4) at (11,2) {$(a_0-1)\vec{x_0}$};
+      \node (B1) at (2,1) {$\vec{x_1}$};
+      \node (B2) at (5,1) {$2\vec{x_1}$};
+      \node (B3) at (8,1) {$\cdots$};
+			\node (B4) at (11,1) {$(a_1-1)\vec{x_1}$};
+      \node (C1) at (2,0) {$\vdots$};
+      \node (C2) at (5,0) {$\vdots$};
+      \node (C3) at (8,0) {$\vdots$};
+      \node (C4) at (11,0) {$\vdots$};
+			\node (D1) at (2,-1) {$\vec{x_r}$};
+			\node (D2) at (5,-1) {$2\vec{x_r}$};
+      \node (D3) at (8,-1) {$\cdots$};
+			\node (D4) at (11,-1) {$(a_r-1)\vec{x_r}$};
+			\node (c) at (13,0) {$\vec{c}$};
+      \draw (0) -- node[above] {$X_0$} (A1);
+      \draw (A1) -- node[above] {$X_0$} (A2);
+      \draw (A2) -- node[above] {$X_0$} (A3);
+      \draw (A3) -- node[above] {$X_0$} (A4);
+      \draw (A4) -- node[above] {$X_0$} (c);
+      \draw (0) -- node[below] {$X_1$} (B1);
+      \draw (B1) -- node[above] {$X_1$} (B2);
+      \draw (B2) -- node[above] {$X_1$} (B3);
+      \draw (B3) -- node[above] {$X_1$} (B4);
+      \draw (B4) -- node[pos=.5,fill=white] {$X_1$} (c);
+      \draw (0) -- node[below] {$X_r$} (D1);
+      \draw (D1) -- node[below] {$X_r$} (D2);
+      \draw (D2) -- node[below] {$X_r$} (D3);
+      \draw (D3) -- node[below] {$X_r$} (D4);
+      \draw (D4) -- node[below] {$X_r$} (c);
   \end{tikzpicture}
   \end{center}
+	\[X_i^{p_i} = X_0^{p_0} - \lambda_iX_1^{p_1}.\]
 
 \begin{thm}[Krull--Schmidt 性]\cite{GL87}
 重み付き射影直線 $\mathbb{X} $ に対して，連接層のアーベル圏
@@ -174,12 +188,12 @@ $L_{A,\Lambda}$ の元 $\vec{x}, \vec{y}$ に対する順序を以下のよう�
 \]
 \end{thm}
 
-\begin{lemm}
+\begin{lemm}\label{lemm:exceptional object}
 	重み付き射影直線 $\mathbb{X}$において，各直線束$L$は$\Coh(\XX)$における例外対象である．
 \end{lemm}
 \begin{proof}
 	$L = \mathcal{O}(\vec{x})$とかけるので，
-	\[\Hom(\mathcal{O}(\vec{x}),\mathcal{O}(\vec{x}))=S_0=k.\]
+	\[\Hom(\mathcal{O}(\vec{x}),\mathcal{O}(\vec{x}))=R_0.\]
 	である．
 \end{proof}
 
@@ -190,6 +204,14 @@ T := \bigoplus_{0 \le \vec{x} \le \vec{c}} \mathcal{O}_{\mathbb{X}}(\vec{x}).
 \]
 をとると，これは $\Coh(\mathbb{X})$ における傾対象である．
 \end{thm}
+\begin{proof}
+	(\ref{lemm:qgr-hom-condition})と(\ref{lemm:exceptional object})よりわかる．
+\end{proof}
+
+\begin{gather*}
+	\mu_A \coloneq 2 + \sum_{i=1}^r (a_i - 1)\\
+	\chi_A \coloneq 2 + \sum_{i=1}^r \left(\frac{1}{a_i} - 1\right)\\
+\end{gather*}
 
 \begin{thm}[Serre 双対性]\cite{GL87}
 重み付き射影直線 $\mathbb{X}$ において，任意の連接層 $\mathcal{F}, \mathcal{G} \in \Coh(\mathbb{X})$ に対して，次の自然なベクトル空間の同型が成り立つ：
