@@ -20,6 +20,26 @@ $\A$ をアーベル圏，$\B \subset \A$ を Serre 部分圏とする．すな�
   \]
 \end{itemize}
 \end{defn}
+
+\begin{defn}[次数付き環]
+環 $R$ が，アーベル群としての直和
+\[ R = \bigoplus_{i \in \mathbb{Z}} R_i. \]
+に分解され，かつ，環の積が任意の $i, j \in \mathbb{Z}$ に対して
+\[ R_i R_j \subseteq R_{i+j} .\]
+をみたすとき，$R$ を次数付き環 (graded ring) という．
+このとき，$R_i$ の元を次数 $i$ の斉次元 (homogeneous element of degree $i$) と呼ぶ．
+\end{defn}
+以降，特に断りのない限り，次数付き環はネーター環であり，$R_0$ 上有限生成であるものとする．
+
+\begin{defn}[次数付き加群]
+$R = \bigoplus_{i \in \mathbb{Z}} R_i$ を次数付き環とし，$M$ を右 $R$-加群とする．
+$M$ が部分加群の直和
+\[ M = \bigoplus_{n \in \mathbb{Z}} M_n. \]
+と表され、かつ、任意の $i, j \in \mathbb{Z}$ に対して、環の作用が
+\[ R_i M_j \subseteq M_{i+j} .\]
+をみたすとき、$M$ を次数付き$R$-加群 (graded $R$-module) という。
+このとき、$M_n$ の元を次数 $n$ の斉次元 (homogeneous element of degree $n$) と呼ぶ。
+\end{defn}
 	
 \begin{defn}
 	 \( R = \bigoplus_{n \ge 0} R_n \)を次数付き環，\( M \in \gr R \)を$R$上の次数付き加群とする． $M$の元\( x \in M \) に対して，ある整数 \( n \gg 0 \) が存在して，\( R_{\ge n} \cdot x = 0 \) となるとき， 捻れ元（torsion element） であるという．ここで \( R_{\ge n} = \bigoplus_{m \ge n} R_m \) とする．
@@ -56,24 +76,24 @@ R = \bigoplus_{n \ge 0} R_n
 \]
 を定義し，これを次数付き群とする．多項式環: 
 \[
-	S = k[X_0, X_1, \dots, X_n], \quad \deg X_i = \vec{x}_i. 
+	S = k[X_0, X_1, \dots, X_r], \quad \deg X_i = \vec{x}_i. 
 \]
 において，以下の $L_A$-斉次イデアル:
 \[
-	I_{A,\Lambda} = \left( X_i^{a_i} - X_1^{a_1} + \lambda_i X_0^{a_0} \ \middle|\ i = 2, \dots, n \right).
+	I_{A,\Lambda} = \left( X_i^{a_i} - X_1^{a_1} + \lambda_i X_0^{a_0} \ \middle|\ i = 2, \dots, r \right).
 \]
 を用いて商環
 \[
-	R_{A,\Lambda} = k[X_0, X_1, \dots, X_n]\Big{/}I_{A,\Lambda} = k[x_0,x_1,\ldots, x_n],\quad \deg(x_i)=\vec{x_i}.
+	R_{A,\Lambda} = k[X_0, X_1, \dots, X_r]\Big{/}I_{A,\Lambda} = k[x_0,x_1,\ldots, x_r],\quad \deg(x_i)=\vec{x_i}.
 \]
-を定義する．
+を定義する．このとき，$R_{A,\Lambda}$は，部分環$k[x_0^{a_0},x_1^{a_1}]$が存在する．
 \end{defn}
 
 $L_A$は階数$1$のアーベル群であり，各次数$\vec{\ell}\in L_A$は一意的に，
-\[\vec{\ell} = \sum_{i=0}^n \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\]
-とかける．
+\[\vec{\ell} = \sum_{i=0}^r \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\]
+と表すことができる．
 ここで，
-\[\vec{\omega} \coloneq (n-1)\vec{c} - \sum_{i=0}^n\vec{x_i}.\]
+\[\vec{\omega} \coloneq (r-1)\vec{c} - \sum_{i=0}^r\vec{x_i}.\]
 と$\vec{\omega}$を定義し，双対化元(dualizing element)と呼ぶ．また，
 \[R(A)= \bigoplus_{\ell=0}^\infty R_{\ell},\quad R_\ell = S_{\ell\vec{c}}.\]
 を$R_{A,\Lambda}$の核(core)と呼ぶ．
@@ -90,12 +110,58 @@ $L_A$は階数$1$のアーベル群であり，各次数$\vec{\ell}\in L_A$は�
 	\item $\gr R_{A,\Lambda}$ は $L_A$-次数付き有限生成$R_{A,\Lambda}$-加群の圏，
 	\item $\tors R_{A,\Lambda}$ は $\gr R_{A,\Lambda}$のねじれ加群全体の圏．
 \end{itemize}
-さらに，$\vec{x} \in L(\mathbf{p})$ に対して，ひねり（twist）とは，$S$-加群 $M$ に対して次のように定義される加群 $M(\vec{x})$ を与える操作である：
+このとき，2つの圏の間には自然な射影函手 (projection functor)を
+\[ \pi: \gr R_{A,\Lambda} \longrightarrow \Coh(\XX) .\]
+と記す．さらに，$\vec{x} \in L(\mathbf{p})$ に対して，ひねり（twist）とは，$R_{A,\Lambda}$-加群 $M$ に対して次のように定義される加群 $M(\vec{x})$ を与える操作である：
 \[
 M(\vec{x})_{\vec{y}} := M_{\vec{x} + \vec{y}} \quad (\vec{y} \in L(\mathbf{p})).
 \]
 $(M,\vec{x})\to M(\vec{x})$により，各圏に対して$L_A$作用が定まる．
 \end{defn}
+$R_{A,\Lambda}(\vec{x})$ を射影函手 $\pi$ で写した $\mathrm{coh}(\mathcal{X})$ の対象を，
+\[ \mathcal{O}(\vec{x}) := \pi(R(\vec{x})). \]
+と書き，（次数 $\vec{x}$ による）捩り層 (twisting sheaf) と呼ぶ．\\
+
+$x = $
+\[0\longrightarrow \mathcal{O}\xrightarrow{\ u\ }\mathcal{O}(\vec{c})\longrightarrow S\longrightarrow 0\]
+$L_{A,\Lambda}$ の元 $\vec{x}, \vec{y}$ に対する順序を以下のように定義する．
+\begin{center}
+  \begin{tikzpicture}[->,thick]
+      \node (0) at (0,0) {0};
+			\node (11) at (2,2) {$\vec{x_0}$};
+			\node (12) at (5,2) {$2\vec{x_0}$};
+      \node (13) at (8,2) {$\cdots$};
+			\node (14) at (11,2) {$(a_0-1)\vec{x_0}$};
+      \node (21) at (2,1) {$\vec{x_1}$};
+      \node (22) at (5,1) {$2\vec{x_1}$};
+      \node (23) at (8,1) {$\cdots$};
+			\node (24) at (11,1) {$(a_1-1)\vec{x_1}$};
+      \node (31) at (2,0) {$\vdots$};
+      \node (32) at (5,0) {$\vdots$};
+      \node (33) at (8,0) {$\vdots$};
+      \node (34) at (11,0) {$\vdots$};
+			\node (41) at (2,-1) {$\vec{x_r}$};
+			\node (42) at (5,-1) {$2\vec{x_r}$};
+      \node (43) at (8,-1) {$\cdots$};
+			\node (44) at (11,-1) {$(a_r-1)\vec{x_r}$};
+			\node (1) at (13,0) {$\vec{c}$};
+      \draw (0) -- node[above] {$X_0$} (11);
+      \draw (11) -- node[above] {$X_0$} (12);
+      \draw (12) -- node[above] {$X_0$} (13);
+      \draw (13) -- node[above] {$X_0$} (14);
+      \draw (14) -- node[above] {$X_0$} (1);
+      \draw (0) -- node[below] {$X_1$} (21);
+      \draw (21) -- node[above] {$X_1$} (22);
+      \draw (22) -- node[above] {$X_1$} (23);
+      \draw (23) -- node[above] {$X_1$} (24);
+      \draw (24) -- node[pos=.5,fill=white] {$X_1$} (1);
+      \draw (0) -- node[below] {$X_r$} (41);
+      \draw (41) -- node[below] {$X_r$} (42);
+      \draw (42) -- node[below] {$X_r$} (43);
+      \draw (43) -- node[below] {$X_r$} (44);
+      \draw (44) -- node[below] {$X_r$} (1);
+  \end{tikzpicture}
+  \end{center}
 
 \begin{thm}[Krull--Schmidt 性]\cite{GL87}
 重み付き射影直線 $\mathbb{X} $ に対して，連接層のアーベル圏
