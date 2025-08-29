@@ -1,6 +1,6 @@
 \section{Bridgeland安定性条件}
 \begin{defn}\cite{Bri07}
-三角圏 $\D$ におけるスライス $\P$ とは，部分圏の族 $\{ \P(\phi) \}_{\phi \in \RR} \subset \D$ であって，次の条件を満たすものである：
+三角圏 $\D$ において，部分圏の族 $\{ \P(\phi) \}_{\phi \in \RR} \subset \D$が，次の条件を満たすとき，スライスという：
 \begin{itemize}
   \item 任意の $\phi \in \RR$ に対して，$\P(\phi + 1) = \P(\phi)[1]$ が成り立つ．
   \item 任意の $\phi_1 > \phi_2$ に対して，$X_i \in \P(\phi_i)$ であるならば，$\Hom_{\D}(X_1, X_2) = 0$ である．
@@ -16,11 +16,11 @@
 
 
 \begin{defn}\cite{Bri07}
-アーベル圏 $\A$ 上の安定性条件とは，群準同型
+$\A$をアーベル圏とする．群準同型:
 \[
   Z \colon K(\A) \longrightarrow \CC.
 \]
-であって，次の条件を満たすものである：
+が次の条件を満たすとき，アーベル圏 $\A$ 上の安定性条件という：
 \begin{itemize}
   \item[(i)] 任意の $X \in \A$，$X \neq 0$ に対して，$Z(X) \in \HH$ を満たす．ただし，
   \[
@@ -40,11 +40,11 @@
   を満たす．このような列をHarder--Narasimhan分解（HN分解）と呼ぶ．
 \end{itemize}
 
-ここで，非零対象 $X \in \A$ が$Z$-半安定であるとは，任意の非零部分対象 $0 \neq Y \subsetneq X$ に対して，
+ここで，非零対象 $X \in \A$ が任意の非零部分対象 $0 \neq Y \subsetneq X$ に対して，
 \[
   \arg Z(Y) \le \arg Z(X).
 \]
-が成り立つことをいう．
+が成り立つとき，$X$は$Z$-半安定であるという．
 \end{defn}
 
 \begin{prop}\cite{Bri07}
