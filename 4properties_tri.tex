@@ -16,12 +16,12 @@ $\D$ を三角圏，$\C$ をその充満部分加法圏とする．
   \]
   によって定める．
   
-  \item[(ii)] $\C$ が $\D$ の狭義充満部分圏（strictly full subcategory）であるとは，
-  $X \in \C$ と $Y \in \D$ に対して $X \simeq Y$ ならば $Y \in \C$ が成り立つことをいう．
+  \item[(ii)] $\C$ が   $X \in \C$ と $Y \in \D$ に対して $X \simeq Y$ ならば $Y \in \C$ が成り立つとき，$\D$ の狭義充満部分圏（strictly full subcategory）という．
+
   
   \item[(iii)] $\C$ の $\D$ における thick 閉包（thick closure）は，直和因子を取る操作で閉じた最小の狭義充満部分三角圏であり，$\thick \C$ と記す．
 
-  \item[(iv)] $\C$ が thick であるとは，$\C = \thick\C$ が成り立つことである．
+  \item[(iv)] $\C = \thick\C$ が成り立つとき，$\C$をthickという．
 \end{itemize}
 \end{defn}
 
@@ -78,7 +78,7 @@ $X^\bullet\in\D^b(\A)$に対して，函手$\tau_{\le i},\ \tau_{> i},\sigma_{\l
 
 \begin{defn}[例外対象]\cite{BK89}
 \label{defn:exceptional object}
-$\CC$-線形な三角圏 \( \D \) における対象 \( E \in \D \) が 例外対象（exceptional object） であるとは，次の条件を満たすことである：
+$\CC$-線形な三角圏 \( \D \) における対象 \( E \in \D \) が 次の条件を満たすとき，例外対象（exceptional object）という:
 \[
 \Hom_{\D}(E, E) \cong \CC, \quad \Hom_{\D}(E, E[n]) = 0 \quad \forall n \ne 0.
 \]
@@ -86,7 +86,7 @@ $\CC$-線形な三角圏 \( \D \) における対象 \( E \in \D \) が 例外�
 
 \begin{defn}[例外列]\cite{BK89}
 \label{defn:exceptional collection}
-有限個の対象の列 \( (E_1, E_2, \dots, E_r) \) が三角圏 \( \D \) における 例外列（exceptional collection）であるとは，次を満たすことである：
+有限個の対象の列 \( (E_1, E_2, \dots, E_r) \) が次の条件をみたすとき，三角圏 \( \D \) における例外列（exceptional collection）であるという：
 \begin{itemize}
   \item 各 \( E_i \) は例外対象である．
   \item 任意の \( i > j \) に対して
@@ -98,26 +98,23 @@ $\CC$-線形な三角圏 \( \D \) における対象 \( E \in \D \) が 例外�
 
 \begin{defn}[強例外列]\cite{BK89}
 \label{defn:strong exceptional collection}
-例外列 \( (E_1, \dots, E_r) \) が 強例外列（strong exceptional collection）であるとは，
-\[
-\Hom_{\D}(E_i, E_j[n]) = 0 \quad \forall i, j ,\ \forall n \ne 0.
-\]
-を満たすことである．
+例外列 \( (E_1, \dots, E_r) \) が
+\[\Hom_{\D}(E_i, E_j[n]) = 0 \quad \forall i, j ,\ \forall n \ne 0.\]
+ を満たすとき，強例外列（strong exceptional collection）という．
 \end{defn}
 
 \begin{defn}[完全強例外列]\cite{BK89}
 \label{defn:full strong exceptional collection}
-強例外列 \( (E_1, \dots, E_r) \) が 完全強例外列（full strong exceptional collection） であるとは，この集合が三角圏 \( \D \) を生成すること，すなわち
+強例外列 \( (E_1, \dots, E_r) \) が，三角圏 \( \D \) を生成するとき，すなわち
 \[
 \D = \langle E_1, \dots, E_r \rangle .
 \]
-となることである．
+を満たすとき，完全強例外列（full strong exceptional collection）という．
 \end{defn}
 
 \begin{defn}[傾斜対象]\cite{BK89}
 \label{defn:tilting object}
-三角圏 \(\D\) において，対象 \(T \in \D\) が傾斜対象（tilting object）であるとは，次の二条件を満たすことである：
-
+三角圏 \(\D\) において，対象 \(T \in \D\) が，次の二条件を満たすとき，傾斜対象（tilting object）という：
 \begin{enumerate}
   \item \(\Hom_{\D}(T, T[i]) = 0\) が \(i \ne 0\) に対して成り立つ．
   \item \(T\) は \(\D\) を生成する：

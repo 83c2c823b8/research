@@ -5,7 +5,7 @@ $\A$ をアーベル圏とする．このとき，$\A$ における複体の圏 
 
 対象$X^\bullet\in\Ob(C(\A))$は，$\ZZ$-次付き加群の族 $\{X^n\}_{n \in \ZZ}$ と，各 $n \in \ZZ$ に対する射 $d_{X}^n: X^n \to X^{n+1}$ の組
   \[
-		X^\bullet = ( \cdots \to X^{n-1} \xrightarrow{d_{X}^{n-1}} X^n \xrightarrow{d_{X}^n} X^{n+1} \to \cdots ).
+		X^\bullet = ( \quad \cdots \xrightarrow{d_{X}^{n-2}} X^{n-1} \xrightarrow{d_{X}^{n-1}} X^n \xrightarrow{d_{X}^n} X^{n+1} \xrightarrow{d_{X}^{n+2}} \cdots \quad ).
   \]
 	であって，すべての $n \in \mathbb{Z}$ に対して $d_{X}^{n+1} \circ d_{X}^n = 0$ を満たすものとする．
 
@@ -35,11 +35,12 @@ $\A$ をアーベル圏とする．このとき，$\A$ における複体の圏 
 \end{defn}
 
 \begin{defn}\cite[p.272]{KS06}
-	$\mathcal{A}$ をアーベル圏とし，$X^\bullet, Y^\bullet \in \mathsf{C}(\mathcal{A})$ を複体とする．2つの複体の射 $f^\bullet, g^\bullet: X^\bullet \to Y^\bullet$ がホモトピック（homotopic）であるとは，$\mathcal{A}$ における射の族 $\{h^n: X^n \to Y^{n-1}\}_{n \in \mathbb{Z}}$ が存在して，任意の $n \in \mathbb{Z}$ に対して
+	$\mathcal{A}$ をアーベル圏とし，$X^\bullet, Y^\bullet \in \mathsf{C}(\mathcal{A})$ を複体とする．2つの複体の射 $f^\bullet, g^\bullet: X^\bullet \to Y^\bullet$ が次の条件をみたすとき，$f^\bullet$と$g^\bullet$はホモトピック（homotopic）であるという:\\
+	$\mathcal{A}$ における射の族 $\{h^n: X^n \to Y^{n-1}\}_{n \in \mathbb{Z}}$ が存在して，任意の $n \in \mathbb{Z}$ に対して
 \[
   f^n - g^n = d_Y^{n-1} \circ h^n + h^{n+1} \circ d_X^n.
 \]
-を満たすときである．このような射の族 $h^\bullet = \{h^n\}_{n \in \mathbb{Z}}$ をホモトピーと呼ぶ．このとき，$f^\bullet \overset{\mathrm{h.e.}}{\sim} g^\bullet$ と記す．
+を満たす．このような射の族 $h^\bullet = \{h^n\}_{n \in \mathbb{Z}}$ をホモトピーと呼ぶ．このとき，$f^\bullet \overset{\mathrm{h.e.}}{\sim} g^\bullet$ と記す．
 \[\begin{tikzcd}[column sep=large, row sep=large]
   \cdots \ar[r] &
 	X^{n-1} \ar[r,"d_X^{n-1}"] \ar[d,"f^{n-1}"',"g^{n-1}"] \ar[dl,dotted,"h^{n-1}"description] &
@@ -122,9 +123,7 @@ $\A$ をアーベル圏，$\mathsf{K}(\A)$ をそのホモトピー圏とする�
 \end{align*}
 なので$\Cone(f^\bullet)$が複体となっていることがわかる．
 \begin{prop}\cite[p.273]{KS06}
-$\A$ をアーベル圏とする．このとき，ホモトピー圏 $\mathsf{K}(\A)$ は自然な三角構造を持つ三角圏である．
-
-すなわち，以下のデータにより三角圏の構造が与えられる：
+$\A$ をアーベル圏とする．このとき，ホモトピー圏 $\mathsf{K}(\A)$ は自然な三角構造を持つ三角圏である．すなわち，以下のデータにより三角圏の構造が与えられる：
 \begin{itemize}
   \item シフト函手：複体 $X^\bullet$ に対して，$X[1]^\bullet$ を
   \[
@@ -134,19 +133,170 @@ $\A$ をアーベル圏とする．このとき，ホモトピー圏 $\mathsf{K}
   
   \item 完全三角形：任意の射 $f^\bullet: X^\bullet \to Y^\bullet$ に対して，写像錘$\Cone(f^\bullet)$を用いて構成される三角形
   \[
-    X^\bullet \xrightarrow{f^\bullet} Y^\bullet \to \operatorname{Cone}(f^\bullet) \to X^\bullet[1].
+		X^\bullet \xrightarrow{f^\bullet} Y^\bullet \xrightarrow{g^\bullet} \operatorname{Cone}(f^\bullet) \xrightarrow{h^\bullet} X^\bullet[1].
   \]
-  を完全三角形とする．
+  を完全三角形とする．ただし，$g^\bullet,\ h^\bullet$を
+	\[g^n = \begin{pmatrix}\id^n_Y\\ 0\end{pmatrix}\colon Y^n\rightarrow Y^n\oplus X^{n+1},\quad h^n = \begin{pmatrix}0 & \id^{n+1}_X\end{pmatrix}\colon Y^n\oplus X^{n+1}\to X^{n+1}.\]
+	によって定める．
 \end{itemize}
 
 これにより，ホモトピー圏$\mathsf{K}(\A)$ は三角圏の構造をもつ．
 \end{prop}
-\begin{proof}
-	{\color{red}要証明}	
+\begin{proof}\hfill\\
+	(TR1)\\
+	任意の$X^\bullet\in \mathsf{K}(\A)$に対して，
+	\[\Cone(\id_X) = \left(X^n\oplus X^{n+1},d^n_{\Cone(\id_X)}\right)_{n\in\ZZ},\quad
+ d^n_{\Cone(\id_X)} = 
+		\begin{pmatrix}
+		d^{n}_X & \id^{n+1}_{X}\\
+		0 & -d^{n+1}_{X}\\
+\end{pmatrix}.\]
+であり，
+\[h^n \coloneq \begin{pmatrix}0&0\\ \id^n_X &0\end{pmatrix},\]
+と定めると，
+\begin{align*}
+	\id^n_{\Cone(\id_X)} - 0 &= \begin{pmatrix}\id^{n}_X&0 \\ 0 &\id^{n+1}_X\end{pmatrix}\\
+													 & = \begin{pmatrix}d^{n-1}_X&\id^n_X\\0 & d^n_X\end{pmatrix}\begin{pmatrix}0&0\\ \id^n_{X} & 0\end{pmatrix} +\begin{pmatrix}0&0\\ \id^{n+1}_{X} & 0\end{pmatrix} \begin{pmatrix}d^{n}_X&\id^{n+1}_X\\0 & d^{n+1}_X\end{pmatrix}\\
+													 &= d^{n-1}_{\Cone(\id_X)}\circ h^n + h^{n+1}\circ d^{n-1}_{\Cone(\id_X)}.
+\end{align*}
+すなわち，$\id_{\Cone{\id_X}}\overset{\mathrm{h.e.}}{\sim}0$．したがって，$\Cone(\id_X)\simeq 0$である．\\
+(TR4) 任意の完全三角形:
+  \[
+		X^\bullet \xrightarrow{f^\bullet} Y^\bullet \xrightarrow{g^\bullet} \operatorname{Cone}(f^\bullet) \xrightarrow{h^\bullet} X^\bullet[1].
+  \]
+	に対して，$\Cone(g^\bullet)\simeq X^\bullet[1]$であることを示す．
+\[\Cone(g^\bullet) = \left(Y^n\oplus X^{n+1}\oplus Y^{n+1},d_{\Cone(g^\bullet)}\right)_{n\in\ZZ},\quad
+	d_{\Cone({g^\bullet})} = 
+	\begin{pmatrix}
+		d^n_Y & f^{n+1} & \id^{n+1}_{Y}\\
+		0 & -d^{n+1}_X & 0\\
+		0 & 0 &-d^{n+2}_Y
+	\end{pmatrix},\]
+
+\begin{align*}
+	\begin{pmatrix}
+		\id^{n+1}_Y & 0 & 0\\
+		0 & f^{n+2} & \id^{n+2}_{Y} \\
+		0 & \id^{n+2}_{X} & 0
+	\end{pmatrix}\cdot
+	d^n_{\Cone({g^\bullet})} 
+	\cdot &
+	\begin{pmatrix}
+		\id^{n}_Y & 0 & 0\\
+		0 & f^{n+1} & \id^{n+1}_Y \\
+		0 & \id^{n+1}_{X} & 0
+	\end{pmatrix}^{-1} \\
+	&=\begin{pmatrix}
+		\id^{n+1}_Y & 0 & 0\\
+		0 & f^{n+2} & \id^{n+2}_Y \\
+		0 & \id^{n+2}_X & 0
+	\end{pmatrix}\cdot
+	\begin{pmatrix}
+		d^{n}_Y & f^{n+1} & \id^{n+1}_{Y}\\
+		0 & -d^{n+1}_{X} & 0\\
+		0 & 0 &-d^{n+1}_Y
+	\end{pmatrix} 
+	\begin{pmatrix}
+		\id^n_{Y} & 0 & 0\\
+		0 & 0 & \id^{n+1}_{X} \\
+		0 & \id^{n+1}_Y & -f^{n+1}
+	\end{pmatrix}\\
+	&=
+	\begin{pmatrix}
+		d^n_Y &	\id^{n+1}_Y & 0\\
+		0 &	d^{n+1}_Y & 0\\
+		0 &	0 & -d^{n+1}_X\\
+	\end{pmatrix}.
+\end{align*}
+したがって，
+\[\Cone(g^\bullet)\simeq \Cone(\id^{\bullet}_Y)\oplus X^\bullet[1]\simeq X^\bullet[1]\]
+次に，$\Cone(h^\bullet)\simeq Y^\bullet[1]$を示す．任意の完全三角形:
+  \[
+		X^\bullet \xrightarrow{f^\bullet} Y^\bullet \xrightarrow{g^\bullet} \operatorname{Cone}(f^\bullet) \xrightarrow{h^\bullet} X^\bullet[1].
+  \]
+	に対して，
+	\[\Cone(h^\bullet) = \left(X^{n+1}\oplus Y^{n+1}\oplus X^{n+2},d_{\Cone(h^\bullet)}\right)_{n\in\ZZ},\quad
+	d_{\Cone({h^\bullet})} = 
+	\begin{pmatrix}
+		d^{n+1}_X & 0 & \id^{n+2}_{X}\\
+		0 & d^{n+1}_Y & f^{n+2}\\
+		0 & 0 &-d^{n+2}_X
+	\end{pmatrix},\]
+\begin{align*}
+	\begin{pmatrix}
+		\id^{n+2}_X & 0 & 0\\
+		 0 & 0 & \id^{n+3}_{X} \\
+		-f^{n+2} & \id^{n+2}_{Y} & 0
+	\end{pmatrix}\cdot
+	d^n_{\Cone({h^\bullet})} 
+	\cdot &
+	\begin{pmatrix}
+		\id^{n+1}_X & 0 & 0\\
+		 0 & 0 & \id^{n+2}_{X} \\
+		-f^{n+1} & \id^{n+1}_{Y} & 0
+	\end{pmatrix}^{-1} \\
+	&=\begin{pmatrix}
+		\id^{n+2}_X & 0 & 0\\
+		 0 & 0 & \id^{n+3}_{X} \\
+		-f^{n+2} & \id^{n+2}_{Y} & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		d^{n+1}_X & 0 & \id^{n+2}_{X}\\
+		0 & d^{n+1}_Y & f^{n+2}\\
+		0 & 0 &-d^{n+2}_X
+	\end{pmatrix}
+	\begin{pmatrix}
+		\id^{n+1}_X & 0 & 0\\
+		f^{n+1} & 0 & \id^{n+1}_{Y} \\
+		0 & \id^{n+2}_{X} & 0
+	\end{pmatrix}\\
+	&=
+	\begin{pmatrix}
+		d^{n+1}_X &	\id^{n+2}_X & 0\\
+		0 &	-d^{n+2}_X & 0\\
+		0 &	0 & d^{n+1}_Y\\
+	\end{pmatrix}.
+\end{align*}
+したがって，
+\[\Cone(h^\bullet)\simeq \Cone(\id^{\bullet}_{X[1]})\oplus Y^\bullet[1]\simeq Y^\bullet[1].\]
+(TR5) 次に八面体公理を示す．			\[
+				\begin{tikzcd}[row sep=5pt]
+			X^\bullet \ar[r,"f^\bullet"]& Y^\bullet\ar[r]& Z'^\bullet \ar[r]& X^\bullet[1]\\
+			X^\bullet \ar[r,"g^\bullet\circ f^\bullet"]& Z^\bullet\ar[r]& Y'^\bullet \ar[r]& X^\bullet[1]\\
+			Y^\bullet \ar[r,"g^\bullet"]& Z^\bullet\ar[r]& X'^\bullet \ar[r]& Y^\bullet[1].\\
+		\end{tikzcd}
+			\]
+			射:\ $\tilde{g}^\bullet\colon \Cone(f^\bullet)\rightarrow \Cone(g^\bullet\circ f^\bullet)$を
+			\[\begin{pmatrix}g^n & 0 \\ 0 & \id_X^{n+1}\end{pmatrix}\colon \left(Y^n\oplus X^{n+1}, d_{\Cone(f^\bullet)}\right)\rightarrow \left(Z^n\oplus X^{n+1}, d_{\Cone(g^\bullet\circ f^\bullet)}\right). \]
+			と定める．これは，
+		\[
+\begin{tikzcd}[column sep=large, row sep=large]
+  \cdots \ar[r] &
+	Y^{n}\oplus X^{n+1} \ar[r,"d_{\Cone(f^\bullet)}^{n}"] \ar[d,] &Y^{n+1}\oplus X^{n+2} \ar[r] \ar[d,] &
+  \cdots \\
+  \cdots \ar[r] &
+	Z^{n}\oplus X^{n+1} \ar[r,"d_{\Cone(g^\bullet\circ f^\bullet)}^{n}"] &Z^{n+1}\oplus X^{n+2} \ar[r] &
+	\cdots .
+\end{tikzcd}
+	\]
+			\begin{align*}
+				\begin{pmatrix}g^{n+1} & 0\\ 0 & \id_X^{n+1}\end{pmatrix}\begin{pmatrix}d^n_Y & f^{n+1}\\ 0 & -d_X^{n+1}\end{pmatrix} - \begin{pmatrix}d^{n}_Z & g^{n+1}\circ f^{n+1}\\ 0 & -d_X^{n+1}\end{pmatrix}\begin{pmatrix}g^{n} & 0\\ 0 & \id_X^{n}\end{pmatrix} &= \begin{pmatrix}0 & 0\\ 0 & 0\end{pmatrix}.
+			\end{align*}
+より，複体の射になっている．そこで，$\Cone(\tilde{g}^\bullet)\simeq \Cone(g^\bullet)$を示す．
+			\begin{gather*}
+				\Cone(\tilde{g}) = \left(Z^n\oplus X^{n+1}\oplus Y^{n+1}\oplus X^{n+2},d_{\Cone(\tilde{g})}\right).\\
+				d_{\Cone(\tilde{g})}= \begin{pmatrix}d_Z^n & g^{n+1}\circ f^{n+1} & g^{n+1}& 0\\
+0 & -d_X^{n+1}& 0 & \id^{n+2}_{X}\\
+0 & 0 & -d_Y^{n+1} & -f^{n+2}\\
+0 & 0 & 0 & d_X^{n+2}\end{pmatrix}
+		\end{gather*}
+\begin{align*}
+	\begin{pmatrix}d_Z^n & g^{n+1}\circ f^{n+1} & g^{n+1}& 0\\
+0 & -d_X^{n+1}& 0 & \id^{n+2}_{X}\\
+0 & 0 & -d_Y^{n+1} & -f^{n+2}\\
+0 & 0 & 0 & d_X^{n+2}\end{pmatrix}
+\end{align*}
 \end{proof}
-
-
-
 
 \begin{defn}\cite[p.301]{KS06}
 $\A$ をアーベル圏，$\mathsf{K}(\A)$ をそのホモトピー圏とする．各整数 $n \in \mathbb{Z}$ に対して，函手
@@ -199,7 +349,7 @@ $\D$ を三角圏とする．$\D$ の射の集合 $S$ が以下の条件をみ�
 	を可換にする．双対的に，
   \[
   \begin{tikzcd}
-		X_4\ar[r,"v"]\ar[d,"s'"]& X_3\\
+		X_4\ar[r,"v"]\ar[d,"s'",swap]& X_3\\
   X_1  & .
   \end{tikzcd}
   \]

@@ -1,0 +1,65 @@
+\section{}
+\begin{defn}
+$\mathrm{GL}^+_2(\mathbb{R})$ の普遍被覆 $\widetilde{\mathrm{GL}}^+_2(\mathbb{R})$ を次のように定義する．
+
+元は組 $(M,g)$ であり，
+\begin{itemize}
+  \item $M \in \mathrm{GL}^+_2(\mathbb{R})$，
+  \item $g:\mathbb{R}\to\mathbb{R}$ は単調増加連続函数で $g(\phi+1)=g(\phi)+1$ を満たす，
+\end{itemize}
+ものである．
+
+積は
+\[
+(M_1,g_1)\cdot(M_2,g_2) = (M_1M_2,\, g_1\ast g_2),
+\]
+で定義され，ここで $g_1\ast g_2$ は
+\[
+(g_1\ast g_2)(\phi) = g_1(g_2(\phi)).
+\]
+
+このとき射影写像 $p:\widetilde{\mathrm{GL}}^+_2(\mathbb{R})\to \mathrm{GL}^+_2(\mathbb{R}),\ (M,g)\mapsto M$ が被覆準同型となり，$(\widetilde{\mathrm{GL}}^+_2(\mathbb{R}),p)$ は $\mathrm{GL}^+_2(\mathbb{R})$ の普遍被覆である．
+\end{defn}
+
+\begin{defn}
+三角圏 $\mathcal{D}$ 上の安定性条件 $\sigma=(Z,\mathcal{P})$ に対して，セール函手 $S:\mathcal{D}\to\mathcal{D}$ と組 $(M,g)\in \widetilde{\mathrm{GL}}^+_2(\mathbb{R})$ が存在して
+\[
+S(\sigma)=\sigma \cdot (M,g),
+\]
+が成り立つとき，$\sigma$ を \textbf{Serre不変な安定性条件} という．
+
+ここで右作用 $(M,g)\cdot\sigma=(Z',\mathcal{P}')$ は
+\[
+	Z' = M^{-1}\circ Z,\qquad 
+\mathcal{P}'(\phi)=\mathcal{P}(g(\phi)).
+\]
+で定義される．
+\end{defn}
+
+\begin{defn}
+三角圏 $\mathcal{D}$ 上の安定性条件を $\sigma=(Z,\mathcal{P})$ とする．
+任意の $\lambda\in \CC$ に対し
+\[
+\lambda\cdot\sigma := \bigl(e^{-\pi i \lambda}Z,\ \mathcal{P}(\phi+\Re(\lambda))\bigr)
+\]
+で定まる安定性条件によって， $\sigma$ の $\CC$ 作用を定める．
+三角圏 $\mathcal{D}$ の自己同値函手 $\Phi\in \mathrm{Aut}(\mathcal{D})$ に対して，
+\[
+\Phi_*(\sigma)\ :=\ \bigl(Z\circ \Phi^{-1},\ \Phi(\mathcal{P})\bigr),\quad
+\Phi(\mathcal{P})(\phi)\ :=\ \Phi\bigl(\mathcal{P}(\phi)\bigr)\ \ (\phi\in\mathbb{R})
+\]
+で定まる安定性条件によって，$\sigma$の $\Phi$ による作用を定める．
+\end{defn}
+
+\begin{defn}
+三角圏 $\mathcal{D}$ 上の安定性条件 $\sigma=(Z,\mathcal{P})$ に対して，自己同値 $F:\mathcal{D}\to\mathcal{D}$ と複素数 $s\in\mathbb{C}$ が存在して
+\[
+	F_*(\sigma)=s\cdot \sigma.
+\]
+が成り立つとき，$\sigma$ を \textbf{Gepner型安定性条件} という．
+\end{defn}
+
+
+\begin{thm}
+	射影直線 \(\mathbb{P}^1\) 上の導来圏 \(D^b(\Coh(\PP^1))\) には Serre不変な安定性条件は存在しない．
+\end{thm}

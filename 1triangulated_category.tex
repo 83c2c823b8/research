@@ -25,7 +25,7 @@
 
 
 \begin{defn}\cite[p.171]{KS06}
-	$\C$を前加法圏とする．このとき，$X,Y\in\C$の直和(direct sum)とは，対象$X\oplus Y\in\C$と$\iota_{X}\in\Hom_{\C}(X,X\oplus Y),\iota_{Y}\in\Hom_{\C}(Y,X\oplus Y)$の三つ組$(X\oplus Y,\iota_X,\iota_Y)$であって，以下の普遍性を満たすものである．
+	$\C$を前加法圏とする．このとき，対象$X\oplus Y\in\C$と$\iota_{X}\in\Hom_{\C}(X,X\oplus Y),\iota_{Y}\in\Hom_{\C}(Y,X\oplus Y)$の三つ組$(X\oplus Y,\iota_X,\iota_Y)$であって，以下の普遍性を満たすものを$X,Y\in\C$の直和(direct sum)という．
 	\[\begin{tikzcd}
 		X\ar[r,"\iota_X"]\ar[rd,"f_X",swap]& X\oplus Y\ar[d,dotted,"\exists !h",swap] &Y\ar[l,"\iota_Y",swap]\ar[ld,"f_Y"]\\
 																			 &Z&.
@@ -82,7 +82,7 @@ $f\in\Hom_{\C}(X,Y)$の$\C$の反対圏での核を余核(cokernel)とよび，$
 \end{defn}
 
 \begin{defn}\cite[p.175]{KS06}
-	加法圏$\A$がアーベル圏(abelian category)であるとは以下を満たす場合である．
+	加法圏$\A$が以下を満たすとき，アーベル圏(abelian category)という:
 	\vspace{-3mm}
 	\begin{itemize}
 		\item[(i)]
@@ -132,7 +132,7 @@ $f\in\Hom_{\C}(X,Y)$の$\C$の反対圏での核を余核(cokernel)とよび，$
 	このとき，すべての四角形を可換にする$h$が存在する．
 
 	\item[(TR6)]
-		（八面体公理）3つの完全三角形\\
+		（八面体公理）3つの完全三角形
 			\[
 				\begin{tikzcd}[row sep=5pt]
 			X \ar[r,"f"]& Y\ar[r,"h"]& Z' \ar[r]& X[1]\\
@@ -160,7 +160,7 @@ X' \xrightarrow{f'} Y' \xrightarrow{g'} Z' \xrightarrow{h'} X'[1].
 \]
 が与えられているとする．
 
-このとき，射の三つ組 $(\alpha, \beta, \gamma)$（ただし $\alpha \colon X \to X'$，$\beta \colon Y \to Y'$，$\gamma \colon Z \to Z'$）が完全三角形の間の射（morphism of triangles）であるとは，以下の図式が可換であることをいう：
+このとき，射の三つ組 $(\alpha, \beta, \gamma)$（ただし $\alpha \colon X \to X'$，$\beta \colon Y \to Y'$，$\gamma \colon Z \to Z'$）が以下の図式が可換にするとき，完全三角形の間の射（morphism of triangles）であるという：
 \[
 \begin{tikzcd}
 X \arrow{r}{f} \arrow{d}{\alpha} & Y \arrow{r}{g} \arrow{d}{\beta} & Z \arrow{r}{h} \arrow{d}{\gamma} & X[1] \arrow{d}{\alpha[1]} \\

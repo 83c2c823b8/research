@@ -103,10 +103,10 @@ $L_A$は階数$1$のアーベル群であるため，各次数$\vec{\ell}\in L_A
 を$R_{A,\Lambda}$の核(core)と呼ぶ．
 
 \begin{defn}\cite{GL87}
-	Serreの定理より，重み付き射影直線 $\mathbb{X}$に対応する $L_A$-次数付き環 $R_{A,\Lambda}$ に対して，次のように連接層の圏$\Coh(\mathbb{X})$ を定義する：
+	Serreの定理より，重み付き射影直線 $\PP_{A,\Lambda}$に対応する $L_A$-次数付き環 $R_{A,\Lambda}$ に対して，次のように連接層の圏$\Coh(\PP_{A,\Lambda})$ を定義する：
 
 \[
-\Coh(\mathbb{X}) := \qgr R_{A,\Lambda} = \gr R_{A,\Lambda}\Big{/}\tors R_{A,\Lambda}.
+	\Coh(\PP_{A,\Lambda}) := \qgr R_{A,\Lambda} = \gr R_{A,\Lambda}\Big{/}\tors R_{A,\Lambda}.
 \]
 
 ここで，
@@ -115,20 +115,20 @@ $L_A$は階数$1$のアーベル群であるため，各次数$\vec{\ell}\in L_A
 	\item $\tors R_{A,\Lambda}$ は $\gr R_{A,\Lambda}$のねじれ加群全体の圏．
 \end{itemize}
 このとき，2つの圏の間には自然な射影函手 (projection functor)を
-\[ \pi\colon \gr R_{A,\Lambda} \longrightarrow \Coh(\XX) .\]
+\[ \pi\colon \gr R_{A,\Lambda} \longrightarrow \Coh(\PP_{A,\Lambda}) .\]
 と記す．さらに，$\vec{x} \in L_A$ に対して，ひねり（twist）とは，$R_{A,\Lambda}$-加群 $M$ に対して次のように定義される加群 $M(\vec{x})$ を与える操作である：
 \[
 M(\vec{x})_{\vec{y}} := M_{\vec{x} + \vec{y}} \quad (\vec{y} \in L_A).
 \]
 $(M,\vec{x})\to M(\vec{x})$により，各圏に対して$L_A$作用が定まる．
 \end{defn}
-$R_{A,\Lambda}(\vec{x})$ を射影函手 $\pi$ で写した $\Coh(\XX)$ の対象を，
+$R_{A,\Lambda}(\vec{x})$ を射影函手 $\pi$ で写した $\Coh(\PP_{A,\Lambda})$ の対象を，
 \[ \mathcal{O}(\vec{x}) := \pi(R(\vec{x})). \]
 と書き，（次数 $\vec{x}$ による）捩り層 (twisting sheaf) と呼ぶ．
 
 通常の点$\lambda\in\PP^1\backslash\Lambda = \PP^1\backslash\{\lambda_0,\lambda_1,\ldots, \lambda_r\}$に対して，$u = X_1^{p_1} - \lambda X_0^{p_0}$として，以下の短完全列：
 \[0\longrightarrow \mathcal{O}\xrightarrow{\ u\ }\mathcal{O}(\vec{c})\longrightarrow \mathcal{O}_{\lambda}\longrightarrow 0.\]
-で$S$を定める，すなわち$S\coloneq \Cok u $とすると$\Coh(\XX)$の単純対象であり，$\lambda$にサポートを持つ層である．
+で$S$を定める，すなわち$S\coloneq \Cok u $とすると$\Coh(\PP_{A,\Lambda})$の単純対象であり，$\lambda$にサポートを持つ層である．
 $X_i=0$の点のとき，$X_i$をかける作用:
 \[0\longrightarrow \mathcal{O}(j\vec{x_i})\xrightarrow{\ X_i\ }\mathcal{O}((j+1)\vec{x_i})\longrightarrow \mathcal{O}_{\lambda_i,j}\longrightarrow 0\quad (j\in \ZZ/a_i\ZZ).\]
 で$S_{i,j}$を定める，すなわち$\mathcal{O}_{\lambda_i,j}\coloneq \Cok (\mathcal{O}(j\vec{x_i})\xrightarrow{\ X_i\ }\mathcal{O}((j+1)\vec{x_i}))$とすると，これらは$\lambda_i$にサポートをもつ層である．
@@ -141,7 +141,7 @@ $X_i=0$の点のとき，$X_i$をかける作用:
 \end{prop}
 
 \begin{thm}[Serre 双対性]\cite{GL87}
-重み付き射影直線 $\mathbb{X}$ において，任意の連接層 $\mathcal{F}, \mathcal{G} \in \Coh(\mathbb{X})$ に対して，函手的な同型:
+	重み付き射影直線 $\PP_{A,\Lambda}$ において，任意の連接層 $\mathcal{F}, \mathcal{G} \in \Coh(\PP_{A,\Lambda})$ に対して，函手的な同型:
 \[
 \Ext^1(\mathcal{F}, \mathcal{G})^\vee \cong \Hom(\mathcal{G}, \mathcal{F}(\vec{\omega})).
 \]
@@ -156,11 +156,11 @@ $X_i=0$の点のとき，$X_i$をかける作用:
 \end{proof}
 
 \begin{defn}
-重み付き射影直線 $\XX$ のパラメータ $A = (a_0, \dots, a_r)$ と $\lambda = (\lambda_0, \dots, \lambda_r)$ に対して，有理数 $\chi_A$ を以下のように定義する:
+	重み付き射影直線 $\PP_{A,\Lambda}$ のパラメータ $A = (a_0, \dots, a_r)$ と $\lambda = (\lambda_0, \dots, \lambda_r)$ に対して，有理数 $\chi_A$ を以下のように定義する:
 \[\chi_A = 2 + \sum_{i=0}^{r} \left( \frac{1}{a_i} - 1\right) .\]
-$\F\in\Coh(\XX)$に対して，オイラー標数(Euler characteristic) $\chi(\F)$を以下のように定義する:
-\[ \chi(\mathcal{F}) = \dim_k \Hom_{\XX}(\mathcal{O}, \mathcal{F}) - \dim_k \Ext^1_{\XX}(\mathcal{O}, \mathcal{F}) .\]
-また，$M\in\Coh(\XX)$のランクを
+$\F\in\Coh(\PP_{A,\Lambda})$に対して，オイラー標数(Euler characteristic) $\chi(\F)$を以下のように定義する:
+\[ \chi(\mathcal{F}) = \dim_k \Hom_{\PP_{A,\Lambda}}(\mathcal{O}, \mathcal{F}) - \dim_k \Ext^1_{\PP_{A,\Lambda}}(\mathcal{O}, \mathcal{F}) .\]
+また，$M\in\Coh(\PP_{A,\Lambda})$のランクを
 \[r(M) = \dim_k M_{0} - \dim_k M_{\vec{c}.}\]
  で定義し，群準同型$\delta\colon L_A\to \ZZ$を生成元$\vec{x_i}\quad (1\le i \le r)$に対して
 \[\delta(\vec{x_i}) = \frac{a}{a_i}\quad (1\le i\le r).\]
@@ -168,7 +168,7 @@ $\F\in\Coh(\XX)$に対して，オイラー標数(Euler characteristic) $\chi(\F
 \end{defn}
 
 \begin{prop}
-	次数とよばれる以下の性質をみたす線型写像$d\colon K_0(\Coh(\XX))\to \ZZ$が一意に存在する．
+	次数とよばれる以下の性質をみたす線型写像$d\colon K_0(\Coh(\PP_{A,\Lambda}))\to \ZZ$が一意に存在する．
 	\begin{itemize}
 		\item[(i)]
 			各$\vec{x}\in L_A$に対して，$d(\mathcal{O}(\vec{x})) = \delta(\vec{x})$
@@ -183,7 +183,7 @@ $\F\in\Coh(\XX)$に対して，オイラー標数(Euler characteristic) $\chi(\F
 $\overline{\chi}(\F) = \sum_{j=0}^{a-1}\chi(\F(-j\vec{\omega}))$と定め，セール双対性を用いると
 $a(x)=1$のとき，$\overline{\chi}(\mathcal{O}_\lambda) = a$であり，$\overline{\chi}(\mathcal{O}_{\lambda_i},j) = \frac{a}{a_i}\quad 0\le i \le r,\ 1\le j \le a_i$である．したがって，
 \[d(\F) \coloneq \overline{\chi}(\F) - r(\F)\overline{\chi}(\mathcal{O}).\]
-で$d\colon K_0(\Coh(\XX))\to\ZZ$は条件(ii)を満たす．条件(i)をみたすことは，以下の短完全列:
+で$d\colon K_0(\Coh(\PP_{A,\Lambda}))\to\ZZ$は条件(ii)を満たす．条件(i)をみたすことは，以下の短完全列:
 \[0\longrightarrow \mathcal{O}(\vec{x})\xrightarrow{\ X_i\ }\mathcal{O}(\vec{x}+\vec{x_i})\longrightarrow \mathcal{O}_{\lambda_i,0}\longrightarrow 0\quad (j\in \ZZ/a_i\ZZ).\]
 を繰り返し用いればよい．{\color{red} ?}
 \end{proof}
@@ -214,7 +214,7 @@ $a(x)=1$のとき，$\overline{\chi}(\mathcal{O}_\lambda) = a$であり，$\over
 \end{proof}
 
 \begin{lemm}\label{lemm:exceptional object}
-	$\langle\mathcal{O}(\vec{x}) \mid 0\le \vec{x}\le \vec{c}\rangle$は$\Coh(\XX)$の強例外生成列である．
+	$\langle\mathcal{O}(\vec{x}) \mid 0\le \vec{x}\le \vec{c}\rangle$は$\Coh(\PP_{A,\Lambda})$の強例外生成列である．
 \end{lemm}
 \begin{proof}
 	$0\le \vec{x},\vec{y}\le \vec{c}$に対して，セール双対性より，
@@ -223,18 +223,18 @@ $a(x)=1$のとき，$\overline{\chi}(\mathcal{O}_\lambda) = a$であり，$\over
 \end{proof}
 
 \begin{thm}\cite{GL87}
-重み付き射影直線 $\mathbb{X}$ において，次の加群
+	重み付き射影直線 $\PP_{A,\Lambda}$ において，次の加群
 \[
 T := \bigoplus_{0 \le \vec{x} \le \vec{c}} \mathcal{O}(\vec{x}).
 \]
-をとると，これは $\Coh(\mathbb{X})$ における傾対象である．
+をとると，これは $\Coh(\PP_{A,\Lambda})$ における傾対象である．
 \end{thm}
 \begin{proof}
 	(\ref{lemm:qgr-hom-condition})と(\ref{lemm:exceptional object})よりわかる．
 \end{proof}
 
 \begin{prop}
-	以下の関係式つき道代数と$\End(T)$は環の同型である．したがって，$\mathcal{O}(\vec{x})\quad 0\le\vec{x}\le\vec{c}$で生成される$\Coh(\XX)$の充満部分圏と箙の表現は同値である．
+	以下の関係式つき道代数と$\End(T)$は環の同型である．したがって，$\mathcal{O}(\vec{x})\quad 0\le\vec{x}\le\vec{c}$で生成される$\Coh(\PP_{A,\Lambda})$の充満部分圏と箙の表現は同値である．
 \begin{center}
   \begin{tikzpicture}[->,thick]
       \node (0) at (0,0) {0};
