@@ -159,7 +159,7 @@ $\A$ をアーベル圏とする．このとき，ホモトピー圏 $\mathsf{K}
 													 & = \begin{pmatrix}d^{n-1}_X&\id^n_X\\0 & d^n_X\end{pmatrix}\begin{pmatrix}0&0\\ \id^n_{X} & 0\end{pmatrix} +\begin{pmatrix}0&0\\ \id^{n+1}_{X} & 0\end{pmatrix} \begin{pmatrix}d^{n}_X&\id^{n+1}_X\\0 & d^{n+1}_X\end{pmatrix}\\
 													 &= d^{n-1}_{\Cone(\id_X)}\circ h^n + h^{n+1}\circ d^{n-1}_{\Cone(\id_X)}.
 \end{align*}
-すなわち，$\id_{\Cone{\id_X}}\overset{\mathrm{h.e.}}{\sim}0$．したがって，$\Cone(\id_X)\simeq 0$である．\\
+すなわち，$\id_{\Cone{(\id_X)}}\overset{\mathrm{h.e.}}{\sim}0$．したがって，$\Cone(\id_X)\simeq 0$である．\\
 (TR4) 任意の完全三角形:
   \[
 		X^\bullet \xrightarrow{f^\bullet} Y^\bullet \xrightarrow{g^\bullet} \operatorname{Cone}(f^\bullet) \xrightarrow{h^\bullet} X^\bullet[1].
@@ -259,11 +259,28 @@ $\A$ をアーベル圏とする．このとき，ホモトピー圏 $\mathsf{K}
 \end{align*}
 したがって，
 \[\Cone(h^\bullet)\simeq \Cone(\id^{\bullet}_{X[1]})\oplus Y^\bullet[1]\simeq Y^\bullet[1].\]
-(TR5) 次に八面体公理を示す．			\[
+(TR5) 以下の2つの完全三角形と可換にする射$f_1,f_2$に対して，
+		\[
+		\begin{tikzcd}
+			X_1\ar[r,"u"]\ar[d,"f_1"]& X_2\ar[r]\ar[d,"f_2"]& \Cone(u)\ar[r]\ar[d,"f_3",dotted] & X_1[1]\ar[d,"f_1\texttt{[1]}"]\\
+			Y_1\ar[r,"v"]& Y_2\ar[r]& \Cone(v)\ar[r] & Y_1[1].
+		\end{tikzcd}
+	\]
+	$f_3\colon \Cone(u)\to \Cone(v)$を
+	\[\begin{pmatrix}f_2^n & 0 \\ 0 & f_1^{n+1}\end{pmatrix}\colon \left(X_2^n\oplus X_1^{n+1}, d_{\Cone(u)}\right)\rightarrow \left(Y_2^n\oplus Y_1^{n+1}, d_{\Cone(v)}\right).\]
+	と定めると，
+	\[\begin{pmatrix}f_2^{n+1}&0\\ 0& f_1^{n+2}\end{pmatrix}\begin{pmatrix}d_{X_2}^n & u^{n+1}\\ 0& d_{X_1}^{n+1}\end{pmatrix}- \begin{pmatrix}d_{X_2}^n & u^{n+1}\\ 0& d_{X_1}^{n+1}\end{pmatrix}\begin{pmatrix}f_2^{n}&0\\ 0& f_1^{n+1}\end{pmatrix}= 0.\]
+	なので，複体の射であることが確認でき，
+	\begin{gather*}
+	\begin{pmatrix}f_2^{n}&0\\ 0& f_1^{n+1}\end{pmatrix}\begin{pmatrix}\id_{X_2}^n\\ 0\end{pmatrix}= \begin{pmatrix}\id_{X_2}^n\\ 0\end{pmatrix}\begin{pmatrix}f_2^n\end{pmatrix},\\
+	\begin{pmatrix}0 & \id_{Y_1}^{n+1} \end{pmatrix}\begin{pmatrix}f_2^{n}&0\\ 0& f_1^{n+1}\end{pmatrix}= \begin{pmatrix}f_2^{n}&0\\ 0& f_1^{n+1}\end{pmatrix}\begin{pmatrix}0 & \id_{X_1}^{n+1} \end{pmatrix}.
+\end{gather*}
+であることから，可換性がわかり，$(f_1,f_2,f_3)$が完全三角形の間の射になっている．\\
+(TR6) 次に八面体公理を示す．			\[
 				\begin{tikzcd}[row sep=5pt]
-			X^\bullet \ar[r,"f^\bullet"]& Y^\bullet\ar[r]& Z'^\bullet \ar[r]& X^\bullet[1]\\
-			X^\bullet \ar[r,"g^\bullet\circ f^\bullet"]& Z^\bullet\ar[r]& Y'^\bullet \ar[r]& X^\bullet[1]\\
-			Y^\bullet \ar[r,"g^\bullet"]& Z^\bullet\ar[r]& X'^\bullet \ar[r]& Y^\bullet[1].\\
+			X^\bullet \ar[r,"f^\bullet"]& Y^\bullet\ar[r]& \Cone(f^\bullet) \ar[r]& X^\bullet[1]\\
+			X^\bullet \ar[r,"g^\bullet\circ f^\bullet"]& Z^\bullet\ar[r]& \Cone( g^\bullet \circ f^\bullet) \ar[r]& X^\bullet[1]\\
+			Y^\bullet \ar[r,"g^\bullet"]& Z^\bullet\ar[r]& \Cone(g^\bullet) \ar[r]& Y^\bullet[1].\\
 		\end{tikzcd}
 			\]
 			射:\ $\tilde{g}^\bullet\colon \Cone(f^\bullet)\rightarrow \Cone(g^\bullet\circ f^\bullet)$を
@@ -280,7 +297,7 @@ $\A$ をアーベル圏とする．このとき，ホモトピー圏 $\mathsf{K}
 \end{tikzcd}
 	\]
 			\begin{align*}
-				\begin{pmatrix}g^{n+1} & 0\\ 0 & \id_X^{n+1}\end{pmatrix}\begin{pmatrix}d^n_Y & f^{n+1}\\ 0 & -d_X^{n+1}\end{pmatrix} - \begin{pmatrix}d^{n}_Z & g^{n+1}\circ f^{n+1}\\ 0 & -d_X^{n+1}\end{pmatrix}\begin{pmatrix}g^{n} & 0\\ 0 & \id_X^{n}\end{pmatrix} &= \begin{pmatrix}0 & 0\\ 0 & 0\end{pmatrix}.
+				\begin{pmatrix}g^{n+1} & 0\\ 0 & \id_X^{n+1}\end{pmatrix}\begin{pmatrix}d^n_Y & f^{n+1}\\ 0 & -d_X^{n+1}\end{pmatrix} - \begin{pmatrix}d^{n}_Z & g^{n+1}\circ f^{n+1}\\ 0 & -d_X^{n+1}\end{pmatrix}\begin{pmatrix}g^{n} & 0\\ 0 & \id_X^{n}\end{pmatrix} &= 0,
 			\end{align*}
 より，複体の射になっている．そこで，$\Cone(\tilde{g}^\bullet)\simeq \Cone(g^\bullet)$を示す．
 			\begin{gather*}
@@ -288,14 +305,75 @@ $\A$ をアーベル圏とする．このとき，ホモトピー圏 $\mathsf{K}
 				d_{\Cone(\tilde{g})}= \begin{pmatrix}d_Z^n & g^{n+1}\circ f^{n+1} & g^{n+1}& 0\\
 0 & -d_X^{n+1}& 0 & \id^{n+2}_{X}\\
 0 & 0 & -d_Y^{n+1} & -f^{n+2}\\
-0 & 0 & 0 & d_X^{n+2}\end{pmatrix}
-		\end{gather*}
+0 & 0 & 0 & d_X^{n+2}\end{pmatrix}.
+	\end{gather*}
 \begin{align*}
-	\begin{pmatrix}d_Z^n & g^{n+1}\circ f^{n+1} & g^{n+1}& 0\\
+	&\begin{pmatrix}
+		\id_{Z}^{n+1} & 0 & 0 & 0\\
+		0 & f^{n+2} & \id_{Y}^{n+2}& 0\\
+		0 & \id_{X}^{n+2} & 0 & \id_{Y}^{n+2}\\
+		0 & 0 & 0 & \id_{X}^{n+3}
+	\end{pmatrix}
+	\begin{pmatrix}
+		d_{Z}^{n} & g^{n+1}\circ f^{n+1} & g^{n+1}& 0\\
 0 & -d_X^{n+1}& 0 & \id^{n+2}_{X}\\
 0 & 0 & -d_Y^{n+1} & -f^{n+2}\\
 0 & 0 & 0 & d_X^{n+2}\end{pmatrix}
+	\begin{pmatrix}
+		\id_{Z}^{n} & 0 & 0 & 0\\
+		0 & f^{n+1} & \id_{Y}^{n+1}& 0\\
+		0 & \id_{X}^{n+1} & 0 & \id_{Y}^{n+1}\\
+		0 & 0 & 0 & \id_{X}^{n+2}
+	\end{pmatrix}^{-1}\\
+	&= 
+	\begin{pmatrix}
+		\id_{Z}^{n+1} & 0 & 0 & 0\\
+		0 & f^{n+2} & \id_{Y}^{n+2}& 0\\
+		0 & \id_{X}^{n+2} & 0 & \id_{Y}^{n+2}\\
+		0 & 0 & 0 & \id_{X}^{n+3}
+	\end{pmatrix}
+	\begin{pmatrix}
+		d_{Z}^{n} & g^{n+1}\circ f^{n+1} & g^{n+1}& 0\\
+0 & -d_X^{n+1}& 0 & \id^{n+2}_{X}\\
+0 & 0 & -d_Y^{n+1} & -f^{n+2}\\
+0 & 0 & 0 & d_X^{n+2}\end{pmatrix}
+	\begin{pmatrix}
+		\id_{Z}^{n} & 0 & 0 & 0\\
+		0 & 0 & \id_{X}^{n+1}& 0\\
+		0 & \id_{Y}^{n+1} & -f^{n+1} & \id_{Y}^{n+1}\\
+		0 & 0 & 0 & \id_{X}^{n+2}
+	\end{pmatrix}\\
+	&=
+	\begin{pmatrix}
+		d_{Z}^{n} & g^{n+1}& 0 & 0\\
+0 & -d_Y^{n+1}& 0 & 0\\
+0 & 0 & -d_X^{n+1} & \id_{X}^{n+2}\\
+0 & 0 & 0 & d_X^{n+2}
+	\end{pmatrix}.\\
 \end{align*}
+したがって，
+\[\Cone(\tilde{g})\simeq \Cone(g)\oplus \Cone(\id_{X[1]})\simeq \Cone(g).\]
+次に，可換性を示す．
+\newcommand{\circled}[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+			\[
+		\begin{tikzcd}
+			X \ar[r,"f"]\ar[d,equal]& Y\ar[r,"h"]\ar[d,"g",swap]& Z'\ar[d,"u",dotted] \ar[r]& X[1]\ar[d,equal]\\
+			X \ar[r,"g\circ f"]\ar[d,"f",swap]& Z \arrow[lu,phantom,"\circled{1}"]\ar[r,"l"]\ar[d,equal]& Y'\arrow[lu,phantom,"\circled{2}"]\ar[d,"v",dotted] \ar[r]& X[1]\arrow[lu,phantom,"\circled{4}"]\ar[d,"f\texttt{[1]}"]\\
+			Y \ar[r,"g"]\ar[d,"h",swap]& Z\arrow[lu,phantom,"\circled{1}"]\ar[r,"k"]\ar[d,"l",swap]& X'\arrow[lu,phantom,"\circled{3}"] \ar[r]\ar[d,equal]& Y[1]\arrow[lu,phantom,"\circled{5}"]\ar[d,"h\texttt{[0]}"]\\
+			Z' \ar[r,"u",dotted]& Y'\arrow[lu,phantom,"\circled{2}"]\ar[r,"v",dotted]& X'\arrow[lu,phantom,"\circled{3}"] \ar[r,"w",dotted]& Z'[1]\arrow[lu,phantom,"\circled{6}"].\\
+		\end{tikzcd}
+			\]
+$\circled{1}$は明らか．$\circled{2}$については，以下の図式が可換なことから従う．
+		\[
+			\begin{tikzcd}[column sep=large, row sep=large,ampersand replacement=\&]
+  \cdots \ar[r] \&
+	Y^{n}  \arrow[r, "{\begin{pmatrix}\id_Y^n \\ 0 \end{pmatrix}}"] \ar[d,"g^n",swap] \&Y^{n}\oplus X^{n+1} \ar[r] \ar[d, "{\begin{pmatrix} g^n & 0 \\ 0 & \id_X^{n+1} \end{pmatrix}}"] \&
+  \cdots \\
+  \cdots \ar[r] \&
+	Z^{n} \arrow[r, "{\begin{pmatrix}\id_Z^n \\ 0 \end{pmatrix}}"] \&Z^{n}\oplus X^{n+1} \ar[r] \& \cdots .
+\end{tikzcd}
+	\]
 \end{proof}
 
 \begin{defn}\cite[p.301]{KS06}
@@ -318,9 +396,9 @@ $f^\bullet \overset{\mathrm{h.e.}}{\sim} g^\bullet$ であれば，$\H^n(f^\bull
 \[
 f^n - g^n = d_Y^{n-1} \circ h^n + h^{n+1} \circ d_X^n.
 \]
-が成り立つ．$x + \Ker d_X^{n} \in \H^n(X)$をとると，$d_X^n(x + \Ker d_X^{n}) = 0$なので，
+が成り立つ．$x + \Im d_X^{n-1} \in \H^n(X)$をとると，$d_X^n(x + \Im d_X^{n-1}) = 0$なので，
 \[
-	(f^n - g^n)(x + \Ker d_X^{n}) = d_Y^{n-1} (h^n(x + \Ker d_X^n)) \in \Im d_Y^{n-1}. 
+	(f^n - g^n)(x + \Im d_X^{n-1}) = d_Y^{n-1} (h^n(x + \Im d_X^{n-1})) \in \Im d_Y^{n-1}. 
 \]
 したがって，$[f^\bullet]$の代表元のとり方によらない．
 \end{defn}

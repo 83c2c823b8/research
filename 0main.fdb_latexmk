@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1757172719.76038 "0main.tex" "0main.pdf" "0main" 1757172724.61293 0
+["lualatex"] 1757243559.72452 "0main.tex" "0main.pdf" "0main" 1757243565.79794 0
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1720346179.56229 1924610 5ad0ab270dd7b2d968c525a623c6f575 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1720346139.93902 2011208 896bb74978c1fb2dba5f7bcf7d26c84d ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1720346555.51527 81819 c1a1831503f38fe92f18da76596f7b9d ""
@@ -85,6 +85,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1248133631 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1248133631 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
@@ -358,12 +359,12 @@
   "/usr/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf" 1255129361 94256 a52a5407fe2a4281f96a01e9736568c3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1720342003.09286 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1720342095 12237217 22f2cdc28d4a662257bccd8aa8039d1a ""
-  "0main.aux" 1757172724.34826 5021 5af3b5348902eaa036cc71768bc6a567 "lualatex"
+  "0main.aux" 1757243565.50392 5645 a0b34d66cdaf4015293acd9322ccb2e8 "lualatex"
   "0main.tex" 1752546189.50512 3013 fc49f66b4e4ababfcb40db6d062cde26 ""
-  "0main.toc" 1757172724.34826 635 8dcfe74343e9f1f1ac4d7301395a9b5f "lualatex"
+  "0main.toc" 1757243565.50492 635 4a4f691c926be64e34783ad019d75e98 "lualatex"
   "1triangulated_category.tex" 1757158686.44662 7868 901479299e8d6f04f2a7cc2b5d6e0a74 ""
   "2fundamental_property_of_triangulated_category.tex" 1756458812.52718 7672 699f6c8d33cb1301cb21b2feb897978d ""
-  "3definition_of_derived_category.tex" 1757172714.13727 21158 a12e2f34a7f5bb4dde2e492ef3792c1b ""
+  "3definition_of_derived_category.tex" 1757243558.08041 25082 e3c0a1937152a002095fc74d7888776b ""
   "4properties_tri.tex" 1756459448.61861 6886 95943f8b929d0d10273df19051311986 ""
   "5t_structure.tex" 1751709330.67987 13581 f3b0b60de1a4fca38b1936c687aa0b07 ""
   "6stability_conditions.tex" 1756462231.0184 13038 49b36d3d62e1b99023cdc12e0d3332f4 ""
