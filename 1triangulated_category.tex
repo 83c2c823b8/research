@@ -23,7 +23,6 @@
 	\end{itemize}
 \end{defn}
 
-
 \begin{defn}\cite[p.171]{KS06}
 	$\C$を前加法圏とする．このとき，対象$X\oplus Y\in\C$と$\iota_{X}\in\Hom_{\C}(X,X\oplus Y),\iota_{Y}\in\Hom_{\C}(Y,X\oplus Y)$の三つ組$(X\oplus Y,\iota_X,\iota_Y)$であって，以下の普遍性を満たすものを$X,Y\in\C$の直和(direct sum)という．
 	\[\begin{tikzcd}
@@ -76,9 +75,17 @@
 	\item[(i)]
 		$f\circ\ker f=0$
 	\item[(ii)]
-		任意の$K\in\C$と$k\in\Hom_{\C}(K,X)$で$f\circ k=0$を満たすものに対して，一意に$h\in\Hom_{\C}(K,\Ker f)$が存在して，$\ker f\circ h=k$となる．\\
-$f\in\Hom_{\C}(X,Y)$の$\C$の反対圏での核を余核(cokernel)とよび，$(\Cok f,\cok f)$と記す．
+		任意の$K\in\C$と$k\in\Hom_{\C}(K,X)$で$f\circ k=0$を満たすものに対して，一意に$h\in\Hom_{\C}(K,\Ker f)$が存在して，$\ker f\circ h=k$となる．
 \end{itemize}
+$f\in\Hom_{\C}(X,Y)$の$\C$の反対圏での核を余核(cokernel)とよび，$(\Cok f,\cok f)$と記す．\\
+また，$f$の像(Image) $\Im f$，余像(coimage) $\Coim f$を以下のように定義する．
+\[\Im f\coloneq \Ker(\cok f)\quad \Coim f\coloneq \Cok(\ker f).\]
+このとき，普遍性により以下の図式を可換にする射$\Coim f\to \Im f$が一意的に存在することがわかる．
+	\[\begin{tikzcd}
+		\Ker f\ar[r,"\ker f"]& X \ar[r,"f"]\ar[d,"p",swap]& Y\ar[r, "\cok f"]& \Cok f\\
+												 &\Coim f\ar[ru,dotted]\ar[r,dotted] & \Im f\ar[u,"i",swap].
+\end{tikzcd}\]
+ただし，$p=\ker(\cok f),\, i=\cok(\ker f)$とした．
 \end{defn}
 
 \begin{defn}\cite[p.175]{KS06}

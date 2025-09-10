@@ -269,7 +269,7 @@ $\A$ をアーベル圏とする．このとき，ホモトピー圏 $\mathsf{K}
 	$f_3\colon \Cone(u)\to \Cone(v)$を
 	\[\begin{pmatrix}f_2^n & 0 \\ 0 & f_1^{n+1}\end{pmatrix}\colon \left(X_2^n\oplus X_1^{n+1}, d_{\Cone(u)}\right)\rightarrow \left(Y_2^n\oplus Y_1^{n+1}, d_{\Cone(v)}\right).\]
 	と定めると，
-	\[\begin{pmatrix}f_2^{n+1}&0\\ 0& f_1^{n+2}\end{pmatrix}\begin{pmatrix}d_{X_2}^n & u^{n+1}\\ 0& d_{X_1}^{n+1}\end{pmatrix}- \begin{pmatrix}d_{X_2}^n & u^{n+1}\\ 0& d_{X_1}^{n+1}\end{pmatrix}\begin{pmatrix}f_2^{n}&0\\ 0& f_1^{n+1}\end{pmatrix}= 0.\]
+	\[\begin{pmatrix}f_2^{n+1}&0\\ 0& f_1^{n+2}\end{pmatrix}\begin{pmatrix}d_{X_2}^n & u^{n+1}\\ 0& d_{X_1}^{n+1}\end{pmatrix}- \begin{pmatrix}d_{Y_2}^n & u^{n+1}\\ 0& d_{Y_1}^{n+1}\end{pmatrix}\begin{pmatrix}f_2^{n}&0\\ 0& f_1^{n+1}\end{pmatrix}= 0.\]
 	なので，複体の射であることが確認でき，
 	\begin{gather*}
 	\begin{pmatrix}f_2^{n}&0\\ 0& f_1^{n+1}\end{pmatrix}\begin{pmatrix}\id_{X_2}^n\\ 0\end{pmatrix}= \begin{pmatrix}\id_{X_2}^n\\ 0\end{pmatrix}\begin{pmatrix}f_2^n\end{pmatrix},\\
@@ -373,7 +373,7 @@ $\circled{1}$は明らか．$\circled{2}$については，以下の図式が可
   \cdots \ar[r] \&
 	Z^{n} \arrow[r, "{\begin{pmatrix}\id_Z^n \\ 0 \end{pmatrix}}"] \&Z^{n}\oplus X^{n+1} \ar[r] \& \cdots .
 \end{tikzcd}
-	\]
+	\]{\color{red} 要証明，可換}
 \end{proof}
 
 \begin{defn}\cite[p.301]{KS06}
@@ -389,9 +389,9 @@ $\A$ をアーベル圏，$\mathsf{K}(\A)$ をそのホモトピー圏とする�
 \[
 \H^n(f^\bullet): \H^n(X^\bullet) \to \H^n(Y^\bullet)
 \]
-を対応させる．このとき，任意の$n\in\ZZ$に対して，$\H^n(f^\bullet)$が同型であるとき，$f^\bullet$は擬同型(quasi-isomorophism) であるという．
+を対応させる．このとき，任意の$n\in\ZZ$に対して，$\H^n(f^\bullet)$が同型であるとき，$f^\bullet$は擬同型(quasi-isomorophism) であるという．$\mathsf{C}(\A)$に対しても同様に定義して，同じ記号を用いる．
 
-$f^\bullet \overset{\mathrm{h.e.}}{\sim} g^\bullet$ であれば，$\H^n(f^\bullet) = \H^n(g^\bullet)$ が成り立つため，この定義は well-defined である．\\
+$f^\bullet \overset{\mathrm{h.e.}}{\sim} g^\bullet$ であれば，$\H^n(f^\bullet) = \H^n(g^\bullet)$ が成り立つため，この定義は well-defined である．また，$\H^n(X^\bullet)$が$\mathsf{K}(\A)$での同型類に依らないこともわかる．\\
 \because\ 射の族$h^n\colon X^n\to Y^{n-1}$が存在して，任意の$n\in\ZZ$に対して，
 \[
 f^n - g^n = d_Y^{n-1} \circ h^n + h^{n+1} \circ d_X^n.
@@ -400,8 +400,93 @@ f^n - g^n = d_Y^{n-1} \circ h^n + h^{n+1} \circ d_X^n.
 \[
 	(f^n - g^n)(x + \Im d_X^{n-1}) = d_Y^{n-1} (h^n(x + \Im d_X^{n-1})) \in \Im d_Y^{n-1}. 
 \]
-したがって，$[f^\bullet]$の代表元のとり方によらない．
+したがって，$[f^\bullet]$の代表元のとり方によらない．\\
+また，任意の$n\in\ZZ$に対して，$\H^n(X^\bullet)\simeq 0$のとき，$X^\bullet$が非輪状であるという．
 \end{defn}
+
+\begin{lemm}
+	$X^\bullet\in\mathsf{K}(\A)$に対して，以下の列は完全である．
+	\[0\rightarrow \H^n(X^\bullet) \rightarrow X^n/\Im d^{n-1} \xrightarrow{\widetilde{d_X^n}} \Ker d^{n+1} \rightarrow \H^{n+1}(X^\bullet) \rightarrow 0.\]
+	ただし，$\widetilde{d_X^n}$を
+		\[
+			\begin{array}{ccccc}
+				\widetilde{d_X^n}\colon & X^n/\Im d_X^{n-1} & \longrightarrow & \Ker d_X^{n+1}   \\
+														&\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+														& x + \Im d_X^{n-1}& \longmapsto & d_X^n(x)& .
+					\end{array}
+\]
+で定める．
+\end{lemm}
+\begin{proof}
+	まあまあ明らか．
+\end{proof}
+
+\begin{prop}\label{prop:exact sequence leads cohomology long exact sequence}
+$X^\bullet, Y^\bullet, Z^\bullet \in \mathsf{C}(\A)$に対して，
+\[0\rightarrow X^\bullet \xrightarrow{f^\bullet} Y^\bullet \xrightarrow{g^\bullet} Z^\bullet \rightarrow 0.\]
+	上記の列が完全列となるとき，以下の長完全列が存在する．
+	\[\cdots\xrightarrow{\ \H^{n}(f^\bullet)\ } \H^n(Y)\xrightarrow{\ \H^{n}(g^\bullet)\ } \H^n(Z)\xrightarrow{\ \ \delta^n\ \ } \H^{n+1}(X) \xrightarrow{\H^{n+1}(f^\bullet)} \H^{n+1}(Y)\xrightarrow{\H^{n+1}(g^\bullet)}\cdots .\]
+\end{prop}
+\begin{proof}
+		\[
+			\begin{array}{ccccc}
+				\widetilde{f^n}\colon & X^n/\Im d_X^{n-1} & \longrightarrow & Y^n/\Im d_Y^{n-1}   \\
+														&\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+														& x + \Im d_X^{n-1}& \longmapsto & f(x) + \Im d_Y^{n-1}& .
+					\end{array}
+\]
+		\[
+			\begin{array}{ccccc}
+				\widetilde{g^n}\colon & Y^n/\Im d_Y^{n-1} & \longrightarrow & Z^n/\Im d_Z^{n-1}   \\
+														&\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+														& y + \Im d_Y^{n-1}& \longmapsto & g(y) + \Im d_Z^{n-1}& .
+					\end{array}
+\]
+と定めると，以下の図式の2行が完全列になる．
+		\[
+\begin{tikzcd}[column sep=large, row sep=large]
+	&X^n/\Im d_X^{n-1} \ar[r,"\widetilde{f^n}"] \ar[d,"\widetilde{d_X^{n-1}}"] & Y^n/\Im d_Y^{n-1}\ar[d,"\widetilde{d_Y^{n-1}}"] \ar[r,"\widetilde{g^{n}}"]& Z^n/\Im d_Z^{n}\ar[r]\ar[d,"\widetilde{d_Z^{n-1}}"] &0\\
+	0\ar[r] &  \Ker d_X^{n+1} \ar[r,"f^{n+1}|_{\Ker d_X^{n+1}}"] &\Ker d_Y^{n+1} \ar[r,"g^{n+1}|_{\Ker d_Y^{n+1}}"] &\Ker d_Z^{n+1}  &.
+\end{tikzcd}
+	\]
+	{\color{red} 要証明，完全性}
+	これに，蛇の補題を適用すれば所望の式が得られる．
+\end{proof}
+
+\begin{prop}
+	$\mathsf{K}(\A)$において，$\H^0$はコホモロジー的函手である．すなわち，任意の完全三角形
+  \[
+		X^\bullet \xrightarrow{f^\bullet} Y^\bullet \xrightarrow{g^\bullet} \operatorname{Cone}(f^\bullet) \xrightarrow{h^\bullet} X^\bullet[1].
+  \]
+	に対して，
+  \[
+		\H^0(X^\bullet)\xrightarrow{\H^0(f^\bullet)}\H^0(Y^\bullet)\xrightarrow{\H^0(g^\bullet)}\H^0(\Cone(f^\bullet)).
+  \]
+	が完全列になっている．
+\end{prop}
+\begin{proof}
+	シフトしたものを考えることで，
+  \[
+		\H^0(Y^\bullet)\xrightarrow{\H^0(g^\bullet)}\H^0(\Cone(f^\bullet))\xrightarrow{\H^0(h^\bullet)}\H^0(X^\bullet[1]).
+  \]
+	が完全列になっていることを示せば十分であるが，
+  \[
+		0\longrightarrow Y^\bullet \xrightarrow{\left(\begin{smallmatrix}\id_{Y^\bullet}\\ 0\end{smallmatrix}\right)}Y^\bullet \oplus X^\bullet[1] \xrightarrow{\left(\begin{smallmatrix}0 & \id_{X^\bullet[1]}\end{smallmatrix}\right)} X^\bullet[1]\longrightarrow 0.
+  \]
+	が$\mathsf{C}(\A)$での，完全列であるので，\ref{prop:exact sequence leads cohomology long exact sequence}より，完全列が得られる．
+\end{proof}
+\begin{lemm}
+	$\mathsf{K}(\A)$において，$f^\bullet$が擬同型であることと，$\Cone(f^\bullet)$が非輪状であることは同値である．
+\end{lemm}
+\begin{proof}
+以下の完全三角形:
+  \[
+		X^\bullet \xrightarrow{f^\bullet} Y^\bullet \xrightarrow{g^\bullet} \operatorname{Cone}(f^\bullet) \xrightarrow{h^\bullet} X^\bullet[1].
+  \]
+に対して，コホモロジー的函手$\H^0$を作用させると以下の長完全列が得られる．
+\[\cdots\xrightarrow{}\H^n(X^\bullet)\xrightarrow{\ \H^{n}(f^\bullet)\ } \H^n(Y^\bullet)\xrightarrow{\ \H^{n}(g^\bullet)\ } \H^n(\Cone(f^\bullet))\xrightarrow{\ \ \delta^n\ \ } \H^{n+1}(X^\bullet) \xrightarrow{\H^{n+1}(f^\bullet)} \H^{n+1}(Y^\bullet)\xrightarrow{}\cdots .\]
+$X^\bullet$が擬同型のとき，任意の$n\in\ZZ$に対して$\H^n(f^\bullet)$が同型であることと，列の完全性により，$\H^n(\Cone(f^\bullet))\simeq 0$がわかり，逆に，任意の$n\in\ZZ$に対して，$\H^n(\Cone(f^\bullet))\simeq 0$のとき，$\H^n(f^\bullet)$が同型であることがわかる．
+\end{proof}
 
 \begin{defn}[乗法系]\cite[p.152]{KS06}\label{multiplicative}
 $\D$ を三角圏とする．$\D$ の射の集合 $S$ が以下の条件をみたすとき，$\D$ 上の乗法系（multiplicative system）という．
@@ -466,7 +551,7 @@ S := \{f^\bullet \in \mathrm{Mor}(\mathsf{K}(\A)) \mid \H^n(f^\bullet) \colon\te
 $\mathsf{K}(\A)$における乗法系をなす．
 \end{prop}
 \begin{proof}
-	
+
 \end{proof}
 
 
