@@ -428,18 +428,19 @@ $X^\bullet, Y^\bullet, Z^\bullet \in \mathsf{C}(\A)$に対して，
 	\[\cdots\xrightarrow{\ \H^{n}(f^\bullet)\ } \H^n(Y)\xrightarrow{\ \H^{n}(g^\bullet)\ } \H^n(Z)\xrightarrow{\ \ \delta^n\ \ } \H^{n+1}(X) \xrightarrow{\H^{n+1}(f^\bullet)} \H^{n+1}(Y)\xrightarrow{\H^{n+1}(g^\bullet)}\cdots .\]
 \end{prop}
 \begin{proof}
+	$\widetilde{f^n},\widetilde{g^n}$を以下のように定める：
 		\[
 			\begin{array}{ccccc}
 				\widetilde{f^n}\colon & X^n/\Im d_X^{n-1} & \longrightarrow & Y^n/\Im d_Y^{n-1}   \\
 														&\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
-														& x + \Im d_X^{n-1}& \longmapsto & f(x) + \Im d_Y^{n-1}& .
+														& x + \Im d_X^{n-1}& \longmapsto & f^n(x) + \Im d_Y^{n-1}& .
 					\end{array}
 \]
 		\[
 			\begin{array}{ccccc}
 				\widetilde{g^n}\colon & Y^n/\Im d_Y^{n-1} & \longrightarrow & Z^n/\Im d_Z^{n-1}   \\
 														&\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
-														& y + \Im d_Y^{n-1}& \longmapsto & g(y) + \Im d_Z^{n-1}& .
+														& y + \Im d_Y^{n-1}& \longmapsto & g^n(y) + \Im d_Z^{n-1}& .
 					\end{array}
 \]
 と定めると，以下の図式の2行が完全列になる．
@@ -449,7 +450,10 @@ $X^\bullet, Y^\bullet, Z^\bullet \in \mathsf{C}(\A)$に対して，
 	0\ar[r] &  \Ker d_X^{n+1} \ar[r,"f^{n+1}|_{\Ker d_X^{n+1}}"] &\Ker d_Y^{n+1} \ar[r,"g^{n+1}|_{\Ker d_Y^{n+1}}"] &\Ker d_Z^{n+1}  &.
 \end{tikzcd}
 	\]
-	{\color{red} 要証明，完全性}
+一行目に関して，$g^n$の全射性より$\widetilde{g^n}$の全射性も従い，$\Im f^n\subset \Ker g^n$より，$\Im \widetilde{f^n}\subset \Ker \widetilde{g^n}$がわかる．つぎに，$\Im \widetilde{f^n}\supset \Ker \widetilde{g^n}$を示すために，$y + \Im d_Y^{n-1}\in\Ker \widetilde{g^n}$を任意にとる．すると，$\widetilde{g^n}(y+\Im d_Y^{n-1}) = 0$，すなわち$g^n(y) \in \Im d_Z^{n-1}$なので，ある$z\in \Im d_Z^{n-1}$で$d_Z^{n-1}(z) = g^n(y)$となるものが存在する．$g^{n-1}$の全射性より，$g^{n-1}(y')=z$なる$y'\in Y^{n-1}$が存在する．可換性より，$d_Y^{n-1}(y') - y\in \Ker g^n$．完全性より，$f^n(x)= d_Y^{n-1}(y') - y$となる$x\in X^n$が存在する．したがって，$\widetilde{f^n}(x + \Im d_X^{n-1}) = y + \Im d_Y^{n-1} $がわかり，示された．\\
+二行目に関して，$f^{n+1}$の単射性から$f^{n+1}|_{\Ker d_X^{n+1}}$の単射性はわかる．また，一行目と同様に$\Im f^{n+1}|_{\Ker d_X^{n+1}} \subset \Ker g^{n+1}|_{\Ker d_Y^{n+1}}$もわかる．つぎに，$y\in\Ker g^{n+1}|_{\Ker d_Y^{n+1}}$を任意に取る．すると，$g^{n+1}(y)=0$と完全性から，$f^{n+1}(x)=y$となる$x\in X^{n+1}$がとれる．ここで，
+\[f^{n+1}d_X^{n+1}(x) = d_Y^{n+1}f^n(x) = d_Y^{n+1}(y) = 0.\]
+$f^{n+1}$の単射性より，$d_X^{n+1}(x)=0$がわかった．したがって，$x\in\Ker d_X^{n+1}$
 	これに，蛇の補題を適用すれば所望の式が得られる．
 \end{proof}
 
