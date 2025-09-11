@@ -4,6 +4,6 @@
 \contentsline {section}{\numberline {4}三角圏における基本概念}{16}{}%
 \contentsline {section}{\numberline {5}$t$-structure}{18}{}%
 \contentsline {section}{\numberline {6}Bridgeland安定性条件}{22}{}%
-\contentsline {section}{\numberline {7}Bridgeland安定性条件の空間}{25}{}%
-\contentsline {section}{\numberline {8}$\qgr R$の定義}{26}{}%
+\contentsline {section}{\numberline {7}Bridgeland安定性条件の空間}{26}{}%
+\contentsline {section}{\numberline {8}$\qgr R$の定義}{27}{}%
 \contentsline {section}{\numberline {9}}{32}{}%
