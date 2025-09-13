@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1757598384.15127 "0main.tex" "0main.pdf" "0main" 1757598389.51524 0
+["lualatex"] 1757680275.22051 "0main.tex" "0main.pdf" "0main" 1757680281.17074 0
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1720346179.56229 1924610 5ad0ab270dd7b2d968c525a623c6f575 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1720346139.93902 2011208 896bb74978c1fb2dba5f7bcf7d26c84d ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1720346555.51527 81819 c1a1831503f38fe92f18da76596f7b9d ""
@@ -359,12 +359,12 @@
   "/usr/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf" 1255129361 94256 a52a5407fe2a4281f96a01e9736568c3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1720342003.09286 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1720342095 12237217 22f2cdc28d4a662257bccd8aa8039d1a ""
-  "0main.aux" 1757598389.26129 5857 f8961c4a92784b4fb49d057def3b3891 "lualatex"
+  "0main.aux" 1757680280.87952 5857 ab1c8dc24416f02c024a154ed6a0e3c5 "lualatex"
   "0main.tex" 1752546189.50512 3013 fc49f66b4e4ababfcb40db6d062cde26 ""
-  "0main.toc" 1757598389.26229 635 d578721e7ea5288a500b95ca9a5c2e3a "lualatex"
+  "0main.toc" 1757680280.88052 635 f0a4e6b78b44ac1d5596d291653665c2 "lualatex"
   "1triangulated_category.tex" 1757506121.67 8414 96a7004730a36301fdc90ff3ebdc3af6 ""
   "2fundamental_property_of_triangulated_category.tex" 1757521840.35858 7758 7183ae23451174b1e0ae4053cca990d1 ""
-  "3definition_of_derived_category.tex" 1757598382.49538 31459 3e5267fd30d79b1efa5d984995b388f8 ""
+  "3definition_of_derived_category.tex" 1757680268.6094 33550 ea2e1f620d8ca3e9603ce1e453722b50 ""
   "4properties_tri.tex" 1756459448.61861 6886 95943f8b929d0d10273df19051311986 ""
   "5t_structure.tex" 1757500740.63937 13602 0a75b66404f2a279ca33df635a22da29 ""
   "6stability_conditions.tex" 1756462231.0184 13038 49b36d3d62e1b99023cdc12e0d3332f4 ""
