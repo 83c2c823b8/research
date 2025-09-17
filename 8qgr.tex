@@ -34,26 +34,26 @@ $\A$ をアーベル圏，$\B \subset \A$ を Serre 部分圏とする．すな�
 \begin{defn}[次数付き加群]
 $R = \bigoplus_{i \in \mathbb{Z}} R_i$ を次数付き環とし，$M$ を右 $R$-加群とする．
 $M$ が部分加群の直和
-\[ M = \bigoplus_{n \in \mathbb{Z}} M_n. \]
+\[ M = \bigoplus_{i \in \mathbb{Z}} M_i. \]
 と表され、かつ、任意の $i, j \in \mathbb{Z}$ に対して、環の作用が
 \[ R_i M_j \subseteq M_{i+j} .\]
 をみたすとき、$M$ を次数付き$R$-加群 (graded $R$-module) という。
-このとき、$M_n$ の元を次数 $n$ の斉次元 (homogeneous element of degree $n$) と呼ぶ。
+このとき、$M_i$ の元を次数 $i$ の斉次元 (homogeneous element of degree $i$) と呼ぶ。
 \end{defn}
 	
 \begin{defn}
-	 \( R = \bigoplus_{n \ge 0} R_n \)を次数付き環，\( M \in \gr R \)を$R$上の次数付き加群とする． $M$の元\( x \in M \) に対して，ある整数 \( n \gg 0 \) が存在して，\( R_{\ge n} \cdot x = 0 \) となるとき， 捻れ元（torsion element） であるという．ここで \( R_{\ge n} = \bigoplus_{m \ge n} R_m \) とする．
+	 \( R = \bigoplus_{i \ge 0} R_i \)を次数付き環，\( M \in \gr R \)を$R$上の次数付き加群とする． $M$の元\( x \in M \) に対して，ある整数 \( i \gg 0 \) が存在して，\( R_{\ge i} \cdot x = 0 \) となるとき， 捻れ元（torsion element） であるという．ここで \( R_{\ge i} = \bigoplus_{m \ge i} R_m \) とする．
 
 すべての元 \( x \in M \) が捻れ元である加群 \( M \)のことを捻れ加群（torsion module） であるという．このような加群全体のなす充満部分圏を \(\tors R\) で表す．
 \end{defn}
 
 \begin{prop}
-次数付き環 \( R = \bigoplus_{n \ge 0} R_n \) に対し，その上の次数付き右$R$-加群全体のアーベル圏 \(\gr R\) において，torsion 加群全体からなる部分圏 \(\tors R\) は Serre部分圏である．
+次数付き環 \( R = \bigoplus_{i \ge 0} R_i \) に対し，その上の次数付き右$R$-加群全体のアーベル圏 \(\gr R\) において，torsion 加群全体からなる部分圏 \(\tors R\) は Serre部分圏である．
 \end{prop}
 
 \begin{defn}\cite{AZ94}
 \(
-R = \bigoplus_{n \ge 0} R_n
+R = \bigoplus_{i \ge 0} R_i
 \) を次数付きネーター$\CC$-代数とする．\vspace{-3mm}
 \begin{itemize}
   \item $\gr R$ は $\mathbb{Z}$-次数付き有限生成$R$-加群のアーベル圏とする．
@@ -131,7 +131,7 @@ $R_{A,\Lambda}(\vec{x})$ を射影函手 $\pi$ で写した $\Coh(\PP_{A,\Lambda
 で$S$を定める，すなわち$S\coloneq \Cok u $とすると$\Coh(\PP_{A,\Lambda})$の単純対象であり，$\lambda$にサポートを持つ層である．
 $X_i=0$の点のとき，$X_i$をかける作用:
 \[0\longrightarrow \mathcal{O}(j\vec{x_i})\xrightarrow{\ X_i\ }\mathcal{O}((j+1)\vec{x_i})\longrightarrow \mathcal{O}_{\lambda_i,j}\longrightarrow 0\quad (j\in \ZZ/a_i\ZZ).\]
-で$S_{i,j}$を定める，すなわち$\mathcal{O}_{\lambda_i,j}\coloneq \Cok (\mathcal{O}(j\vec{x_i})\xrightarrow{\ X_i\ }\mathcal{O}((j+1)\vec{x_i}))$とすると，これらは$\lambda_i$にサポートをもつ層である．
+で$\mathcal{O}_{\lambda_i,j}$を定める，すなわち$\mathcal{O}_{\lambda_i,j}\coloneq \Cok (\mathcal{O}(j\vec{x_i})\xrightarrow{\ X_i\ }\mathcal{O}((j+1)\vec{x_i}))$とすると，これらは$\lambda_i$にサポートをもつ層である．
 
 \begin{prop}\label{lemm:qgr-hom-condition}
 	$\vec{x}\le \vec{y}$であることと$\Hom_{\qgr R_{A,\Lambda}}(\mathcal{O}(\vec{x}),\mathcal{O}(\vec{y})) \neq 0$であることは同値である．\\

@@ -452,7 +452,7 @@ $X^\bullet, Y^\bullet, Z^\bullet \in \mathsf{C}(\A)$に対して，
 	\]
 一行目に関して，$g^n$の全射性より$\widetilde{g^n}$の全射性も従い，$\Im f^n\subset \Ker g^n$より，$\Im \widetilde{f^n}\subset \Ker \widetilde{g^n}$がわかる．つぎに，$\Im \widetilde{f^n}\supset \Ker \widetilde{g^n}$を示すために，$y + \Im d_Y^{n-1}\in\Ker \widetilde{g^n}$を任意にとる．すると，$\widetilde{g^n}(y+\Im d_Y^{n-1}) = 0$，すなわち$g^n(y) \in \Im d_Z^{n-1}$なので，ある$z\in \Im d_Z^{n-1}$で$d_Z^{n-1}(z) = g^n(y)$となるものが存在する．$g^{n-1}$の全射性より，$g^{n-1}(y')=z$なる$y'\in Y^{n-1}$が存在する．可換性より，$d_Y^{n-1}(y') - y\in \Ker g^n$．完全性より，$f^n(x)= d_Y^{n-1}(y') - y$となる$x\in X^n$が存在する．したがって，$\widetilde{f^n}(x + \Im d_X^{n-1}) = y + \Im d_Y^{n-1} $がわかり，示された．\\
 二行目に関して，$f^{n+1}$の単射性から$f^{n+1}|_{\Ker d_X^{n+1}}$の単射性はわかる．また，一行目と同様に$\Im f^{n+1}|_{\Ker d_X^{n+1}} \subset \Ker g^{n+1}|_{\Ker d_Y^{n+1}}$もわかる．つぎに，$y\in\Ker g^{n+1}|_{\Ker d_Y^{n+1}}$を任意に取る．すると，$g^{n+1}(y)=0$と完全性から，$f^{n+1}(x)=y$となる$x\in X^{n+1}$がとれる．ここで，
-\[f^{n+1}d_X^{n+1}(x) = d_Y^{n+1}f^n(x) = d_Y^{n+1}(y) = 0.\]
+\[f^{n+1}\circ d_X^{n+1}(x) = d_Y^{n+1}\circ f^{n+1}(x) = d_Y^{n+1}(y) = 0.\]
 $f^{n+1}$の単射性より，$d_X^{n+1}(x)=0$がわかった．したがって，$x\in\Ker d_X^{n+1}$
 	これに，蛇の補題を適用すれば所望の式が得られる．
 \end{proof}
@@ -497,7 +497,7 @@ $\D$ を三角圏とする．$\D$ の射の集合 $S$ が以下の条件をみ�
 \begin{itemize}
   \item[(MS1)] 任意の対象 $X \in \D$ に対して，恒等射 $\id_X$ は $S$ に属する．
   
-  \item[(MS2)] 射 $f, g \in S$ に対して，合成 $g \circ f$ が定義されるならば，$g \circ f \in S$．
+  \item[(MS2)] 射 $s, t \in S$ に対して，合成 $t \circ s$ が定義されるならば，$t \circ s \in S$．
   
   \item[(MS3)] $\D$における以下の任意の図式，
   \[
@@ -547,35 +547,118 @@ $f,g,h$に対して，$f,g\in S$ならば$h\in S$である．
 \end{itemize}
 \end{defn}
 
-\begin{prop}
-	$\mathcal{A}$ をアーベル圏，そのホモトピー圏を$\mathsf{K}(\mathcal{A})$ とし，
+\begin{prop}\label{prop:cohomological functor and triangulated category}
+	$\T$ を三角圏，$H\colon \T\to\A$をコホモロジー的函手とする．
 	\begin{gather*}
-		\mathrm{Ob}(\mathsf{K}_{\mathrm{ac}}(\mathcal{A}))
-:=\{\,X^\bullet\in \mathsf{K}(\mathcal{A}) \mid \H^n(X^\bullet)=0,\ \forall n\in\mathbb{Z}\,\}\\
-\Hom_{\mathsf{K}_{\mathrm{ac}}(\mathcal{A})}(X^\bullet,Y^\bullet) \coloneq\Hom_{\mathsf{K}}(X^\bullet,Y^\bullet) .
+		\Ob(\T_{\mathrm{ac}})
+		:=\{\,X\in \Ob(\T) \mid H(X[n])=0,\ \forall n\in\mathbb{Z}\,\}\\
+		\Hom_{\T_{\mathrm{ac}}}(X,Y) \coloneq\Hom_{\T}(X,Y) .
 \end{gather*}
-上記の非輪状複体からなる充満部分圏$\mathsf{K}_{\mathrm{ac}}(\mathcal{A})$を考える．
-このとき $\mathsf{K}_{\mathrm{ac}}(\mathcal{A})$ は $\mathsf{K}(\mathcal{A})$ の同型をとる操作で閉じている部分三角圏である．
+上記の充満部分三角圏を考える．このとき $\T_{\mathrm{ac}}$ は $\T$ の同型をとる操作で閉じている部分三角圏である．$H(X[n])$を$H^n(X)$と記すことにする．
 \end{prop}
 \begin{proof}
-	$X^\bullet \simeq X'^\bullet$のとき，任意の$n\in\ZZ$に対して，$\H^n(X^\bullet)\simeq \H^n(X'^\bullet)$なので，$X^\bullet\in\mathsf{K}_{\mathrm{ac}}(\mathcal{A})$なら$X'^\bullet\in \mathsf{K}_{\mathrm{ac}}(\mathcal{A})$である．\\
-	任意の$X^\bullet$に対して，
-	\[\H^n(X^\bullet[1])\simeq \H^{n+1}(X^\bullet)\simeq 0,\quad \forall n\in\ZZ.\]
-	したがって，$X^\bullet[1]\in\mathsf{K}_{\mathrm{ac}}(\mathcal{A})$．シフトを取る操作で閉じている．\\
-	任意の$X^\bullet, Y^\bullet\in\mathsf{K}_{\mathrm{ac}}(\mathcal{A}),\ f^\bullet\in\Hom_{\mathsf{K}_{\mathrm{ac}}(\mathcal{A})}(X^\bullet,Y^\bullet)$に対して，
-	\[X^\bullet \xrightarrow{f^\bullet} Y^\bullet\rightarrow \Cone(f^\bullet) \rightarrow X^\bullet[1] .\]
-	前半の結果，任意の$n\in\ZZ$に対して，$\H^0(X^\bullet[n])\simeq\H^0(Y^\bullet[n])\simeq 0$より，$\H^0$がコホモロジー的函手であることから，任意の$n\in\ZZ$に対して，$\H^n(\Cone(f^\bullet))\simeq 0$がわかる．したがって，写像錘をとる操作で閉じている．
+	$X \simeq X'$のとき，任意の$n\in\ZZ$に対して，$H^n(X)\simeq H^n(X')$なので，$X\in\T_{\mathrm{ac}}$なら$X'\in \T_{\mathrm{ac}}$である．\\
+	任意の$X$に対して，
+	\[H^n(X[1])\simeq H^{n+1}(X)\simeq 0,\quad \forall n\in\ZZ.\]
+	したがって，$X[1]\in\T_{\mathrm{ac}}$．シフトを取る操作で閉じている．\\
+	任意の$X, Y\in\T_{\mathrm{ac}},\ f\in\Hom_{\T_{\mathrm{ac}}}(X,Y)$に対して，
+	\[X \xrightarrow{f} Y\rightarrow \Cone(f) \rightarrow X[1] .\]
+	前半の結果，任意の$n\in\ZZ$に対して，$H^0(X[n])\simeq H^0(Y[n])\simeq 0$より，$H^0$がコホモロジー的函手であることから，任意の$n\in\ZZ$に対して，$H^n(\Cone(f))\simeq 0$がわかる．したがって，写像錘をとる操作で閉じている．
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:triangulated category and multiplicative system}
 	$\T$を三角圏，$\N\subset\T$を同型を取る操作で閉じている部分三角圏とする．このとき，$S_{\N}\subset\Mor(\T)$を
 	\[S_{\N}\coloneq \{s\in\Mor(\T) \mid \Cone(s)\in\N\}.\]
 	と定めると$S_{\N}$は乗法系となる．
 \end{prop}
 \begin{proof}
-	
+	(MS1) 任意の$X\in\T$に対して，以下の完全三角形
+	\[X\xrightarrow{\id_X}X\rightarrow 0 \rightarrow X[1].\]
+	が存在し，$0\in\N$なので$\id_X\in S_{\N}$\\
+	(MS2) 
+	$s\circ t$が定義できる任意の$s,t\in S$に対して，八面体公理より
+			\[
+				\begin{tikzcd}[column sep = small]
+			X \ar[r,"s"]\ar[d,equal]& Y\ar[r,""]\ar[d,"t",swap]& \Cone(s)\ar[d,"",dotted] \ar[r]& X[1]\ar[d,equal]\\
+			X \ar[r,"t\circ s"]\ar[d,"s",swap]& Z\ar[r,""]\ar[d,equal]& \Cone(t\circ s)\ar[d,"",dotted] \ar[r]& X[1]\ar[d,"s\texttt{[1]}"]\\
+			Y \ar[r,"t"]\ar[d,"",swap]& Z\ar[r,""]\ar[d,"",swap]& \Cone(t) \ar[r]\ar[d,equal]& Y[1]\ar[d,"t\texttt{[1]}"]\\
+			\Cone(s) \ar[r,"",dotted]& \Cone(t\circ s)\ar[r,"",dotted]& \Cone(t) \ar[r,"",dotted]& \Cone(s)[1].\\
+		\end{tikzcd}
+			\]
+以下の完全三角形が存在する．
+			\[
+		\begin{tikzcd}
+			\Cone(s) \ar[r,"",]& \Cone(t\circ s)\ar[r,"",]& \Cone(t) \ar[r,"",]& \Cone(s)[1].
+		\end{tikzcd}
+	\]
+$\Cone(s),\Cone(t)\in \N$で，$\N$は部分三角圏であることから写像錘とシフトをとる操作で閉じているので，
+$\Cone(t\circ s)\in\N$，つまり，$t\circ s\in S$が従う．\\
+(MS3) $s\in S$である任意の以下の図式に対して，
+  \[
+  \begin{tikzcd}
+		& X_3 \ar[d, "s"] \\
+  X_1 \ar[r, "u"] & X_2.
+  \end{tikzcd}
+  \]
+	$s\colon X_3\to X_2$を延長して，$N\in\N$である以下の完全三角形が存在する．
+			\[
+		\begin{tikzcd}
+			X_3 \ar[r,"s",]& X_2\ar[r,"e",]& N \ar[r,"",]& X_3[1]
+		\end{tikzcd}
+	\]
+	このとき，$e\circ u$を延長してできる完全三角形からの三角形の間の射が以下のように定まる．
+			\[
+		\begin{tikzcd}
+			X_4 \ar[r,"s'",]\ar[d,dotted,"v"]& X_1\ar[r,"e\circ u",]\ar[d,"u"]& N\ar[d,equal]\ar[r,]& X_4[1]\ar[d,dotted,"v\texttt{[1]}"]\\
+			X_3 \ar[r,"s",]& X_2\ar[r,"e",]& N \ar[r,"",]& X_3[1].
+		\end{tikzcd}
+	\]
+$\Cone(s')\in\N$なので，$s'\in S$．もう一つも双対的に，$s'\in S$なる以下の図式に対して，
+  \[
+  \begin{tikzcd}
+		X_4\ar[r,"v"]\ar[d,"s'",swap]& X_3\\
+  X_1  & .
+  \end{tikzcd}
+  \]
+	$s'$を延長した完全三角形と$v[1]\circ f$を延長した完全三角形の間の射が以下のように定義できて，
+			\[
+		\begin{tikzcd}
+			X_4 \ar[r,"s'",]\ar[d,"v"]& X_1\ar[r,"",]\ar[d,dotted,"u"]& N\ar[d,equal]\ar[r,"f"]& X_4[1]\ar[d,"v\texttt{[1]}"]\\
+			X_3 \ar[r,"s",]& X_2\ar[r,]& N \ar[r,"v\texttt{[1]}\circ f",]& X_3[1].
+		\end{tikzcd}
+	\]
+	$s\in S$であるので示された．\\
+	(MS4) $f\colon X\to Y$とする．移項することで，$s\in S$に対して$f\circ s =0$ならば，ある$t\in S$が存在して$t\circ f = 0$であることと，$t\in S$に対して$t\circ f = 0$ならば，ある$s\in S$が存在して$f\circ s =0$であることを示せば良い．\\
+	$f\circ s=0$なので，以下の図式を可換にする$h\in\Hom_{\T}(N,Y)$が存在する．
+			\[
+		\begin{tikzcd}
+			Z \ar[r,"s",]\ar[d]& X\ar[r,"g"]\ar[d,"f"]& N\ar[r,]\ar[d,dotted,"h"]& Z[1]\ar[d]\\
+			0\ar[r]&Y\ar[r,"\id_Y"]&Y\ar[r]&0.
+		\end{tikzcd}
+	\]
+	すなわち，$f=h\circ g$である．$h$を延長して，
+			\[
+		\begin{tikzcd}
+			N \ar[r,"h",]& Y\ar[r,"t"]& \Cone(h)\ar[r,]& N[1].
+		\end{tikzcd}
+	\]
+	が得られ$t\in S$であり，$t\circ f =  t\circ g \circ h = 0$．双対的に，
+			\[
+		\begin{tikzcd}
+			X \ar[r,"\id_X",]\ar[d,dotted,"h'"]& X\ar[r,"",]\ar[d,"f"]& 0\ar[d,]\ar[r,]& 0\ar[d,]\\
+			N'\ar[r,"g'"]& Y\ar[r,"t"]& Z' \ar[r,]& N'[1].
+		\end{tikzcd}
+	\]
+	で得られる$h'$を延長して，
+			\[
+		\begin{tikzcd}
+			N'[-1] \ar[r,]& \Cone(h')[-1]\ar[r,"s"]&X \ar[r,"h'"]& N'.
+		\end{tikzcd}
+	\]
+	とすると，$s\in S$で$s\circ f = s\circ h'\circ g' = 0$ \\
+	(MS5) $\N$がシフトで閉じていることからわかる．\\
+	(MS6)
 \end{proof}
-
 \begin{prop}\cite[p.320]{KS06}
 $\A$ をアーベル圏とする．ホモトピー圏 $\mathsf{K}(\A)$ において，擬同型射全体の集合
 \[
@@ -584,67 +667,78 @@ S := \{f^\bullet \in \mathrm{Mor}(\mathsf{K}(\A)) \mid \H^n(f^\bullet) \colon\te
 $\mathsf{K}(\A)$における乗法系をなす．
 \end{prop}
 \begin{proof}
-
+	(\ref{prop:cohomological functor and triangulated category})，(\ref{prop:triangulated category and multiplicative system})より従う．
 \end{proof}
 
 
+\newcommand{\xsquigglyarrow}[2][]{%
+	\mathrel{\tikz[baseline=-0.5ex]\draw[->,>={Straight Barb[length=3pt]}, decorate, decoration={snake, amplitude=0.6, segment length=5}] (0,0) -- node[above]{\scriptsize #2} (0.6,0);}%
+}
 \begin{defn}[三角圏の局所化]\cite[p.320]{KS06}
-三角圏 $\D$ とその乗法系$S \subset \mathrm{Mor}(\D)$ に対し， 局所化 (localization) $S^{-1}\D$ を次のように定義する．
+三角圏 $\T$ とその乗法系$S \subset \mathrm{Mor}(\T)$ に対し， 局所化 (localization) $S^{-1}\T$ を次のように定義する．
 
 \begin{itemize}
-  \item 対象集合は $\mathrm{Ob}(S^{-1}\D) := \mathrm{Ob}(\D)$ とする．
+  \item 対象集合は $\mathrm{Ob}(S^{-1}\T) := \mathrm{Ob}(\T)$ とする．
   \item 射の集合は，
   \[
   \begin{tikzcd}[column sep=small]
-  X & \arrow{l}[swap]{s} Z \arrow{r}{f} & Y
+	|[shift={(0,-0.3)}]|X & |[shift={(0,0.3)}]| \arrow[squiggly]{l}[swap,]{s}  W \arrow{r}{f} &|[shift={(0,-0.3)}]|Y
   \end{tikzcd}
-  \quad (s \in S,\ f \in \Hom_{\D}(Z, Y)).
+  \quad (s \in S,\ f \in \Hom_{\T}(Z, Y)).
   \]
   の同値類によって与えられ，次のように定義される：
   \[
-  \Hom_{S^{-1}\D}(X, Y) := 
+  \Hom_{S^{-1}\T}(X, Y) := 
   \left\{
     \begin{tikzcd}[column sep=small]
-    X & \arrow{l}[swap]{s} Z \arrow{r}{f} & Y.
+			|[shift={(0,-0.3)}]|X &|[shift={(0,0.3)}]| \arrow[squiggly]{l}[swap]{s} W \arrow{r}{f} &|[shift={(0,-0.3)}]|Y
     \end{tikzcd}
-    \ \middle| \ s \in S,\ f \in \Hom_{\D}(Z, Y)
+    \ \middle| \ s \in S,\ f \in \Hom_{\T}(Z, Y)
   \right\} \big/\sim.
   \]
 \end{itemize}
 
 ここで，以下の2つ
-\[
-X \xleftarrow{s_1} Z_1 \xrightarrow{f_1} Y, \quad
-X \xleftarrow{s_2} Z_2 \xrightarrow{f_2} Y.
-\]
-が同値（$ \sim $）であるとは，ある対象 $Z_3$ と射 $t_1 \colon Z_3 \to Z_1$，$t_2 \colon Z_3 \to Z_2,\quad t_1, t_2 \in S$ が存在して，以下を満たすときである：
+  \[
+  \begin{tikzcd}[column sep=small]
+		X & |[shift={(0,0.6)}]| \arrow[squiggly]{l}[swap,]{s_1}  W_1 \arrow{r}{f_1} & Y
+  \end{tikzcd}\quad
+  \begin{tikzcd}[column sep=small]
+		X & |[shift={(0,0.6)}]| \arrow[squiggly]{l}[swap,]{s_2}  W_2 \arrow{r}{f_2} & Y.
+  \end{tikzcd}
+  \]
+	が同値（$ \sim $）であることを，ある対象 $Z_3$ と射 $t_1 \colon W_3 \xsquigglyarrow{} W_1$，$t_2 \colon W_3 \xsquigglyarrow{} W_2,\quad t_1, t_2 \in S$ が存在して，以下を満たすときと定める：
 \[
 s_1 \circ t_1 = s_2 \circ t_2, \quad f_1 \circ t_1 = f_2 \circ t_2.
 \]
 
 射の合成は，
 \[
-X \xleftarrow{s} Z \xrightarrow{f} Y, \quad
-Y \xleftarrow{t} Z' \xrightarrow{g} W.
+    \begin{tikzcd}[column sep=small]
+			|[shift={(0,-0.3)}]|X &|[shift={(0,0.3)}]| \arrow[squiggly]{l}[swap]{s} W \arrow{r}{f} &|[shift={(0,-0.3)}]|Y
+    \end{tikzcd}\quad
+    \begin{tikzcd}[column sep=small]
+			|[shift={(0,-0.3)}]|Y &|[shift={(0,0.3)}]| \arrow[squiggly]{l}[swap]{t} W' \arrow{r}{g} &|[shift={(0,-0.3)}]|Z.
+    \end{tikzcd}
 \]
 に対し，定義\ref{multiplicative}\ (MS3)より
-  \[
-  \begin{tikzcd}
-  P\ar[r,"f'"] \ar[d, "t'"'] & Z'\ar[d, "t"] \\
-  Z\ar[r, "f"] & Y.
-  \end{tikzcd}
-  \]
+\[
+    \begin{tikzcd}[column sep=small, row sep=0.15em]
+			&&P\arrow[squiggly]{ld}[swap]{t'}\arrow{rd}{v}&&\\
+			|[shift={(0,-0.3)}]|X &|[shift={(0,0.3)}]| \arrow[squiggly]{l}[swap]{s} W \arrow{r}{f} &|[shift={(0,-0.3)}]|Y &|[shift={(0,0.3)}]| \arrow[squiggly]{l}[swap]{t} W' \arrow{r}{g} &|[shift={(0,-0.3)}]|Z.
+    \end{tikzcd}
+\]
 が可換になるような$P,t',v$をとり，
 \[
-X \xleftarrow{s \circ t'} P \xrightarrow{f' \circ v} W.
+    \begin{tikzcd}[column sep=small]
+			|[shift={(0,-0.3)}]|X &|[shift={(0,0.3)}]| \arrow[squiggly]{l}[swap]{s\circ t'} P \arrow{r}{g\circ v} &|[shift={(0,-0.3)}]|W.
+    \end{tikzcd}
 \]
 と定める．
 \end{defn}
 
 \begin{defn}[導来圏]
-$\A$ をアーベル圏とし，そのホモトピー圏を $\mathsf{K}(\A)$ とする．
-
-このとき，$\A$ の導来圏 $\D(\A)$を
+$\A$ をアーベル圏とし，そのホモトピー圏を $\mathsf{K}(\A)$ とする．このとき，$\A$ の導来圏 $\D(\A)$を
 \[
 \D(\A) := S^{-1} \mathsf{K}(\A).
 \]

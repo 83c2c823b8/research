@@ -1,4 +1,25 @@
 \section{三角圏の基本的な性質}
+\begin{prop}\cite[p.245]{KS06}
+三角圏 $\D$ において，任意の完全三角形
+\[
+X \xrightarrow{f} Y \xrightarrow{g} Z \xrightarrow{h} X[1].
+\]
+に対して，$Y\simeq Y'$なる$Y'\in\D$に対して，
+\[
+X \xrightarrow{} Y' \xrightarrow{g} Z \xrightarrow{h} X[1].
+\]
+なる完全三角形が存在する．
+\end{prop}
+\begin{proof}
+	$u\colon X\to X'$を同型射とすると
+		\[
+\begin{tikzcd}
+	X\ar[r,"f"]\ar[d,"\id_X"]&Y \ar[r,"g"]\ar[d,"u"]& Z\ar[r,"h"]\ar[d,"\id_Z"]& X[1]\ar[d,"\id_X\texttt{[1]}"]\\
+	X\ar[r,"u\circ f"]&Y' \ar[r,"g\circ u^{-1}"]& Z\ar[r,"h"]& X'[1].
+\end{tikzcd}
+	\]
+とすると，上の行は完全三角形で各射は可換にする同型射なので下の行が完全三角形であることがわかる．
+\end{proof}
 \begin{prop}\cite[p.245]{KS06}\label{gf=0}
 三角圏 $\D$ において，完全三角形
 \[
