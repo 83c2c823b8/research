@@ -536,14 +536,14 @@ $\D$ を三角圏とする．$\D$ の射の集合 $S$ が以下の条件をみ�
 \item[(MS5)]
 	$[1]$を$\D$のシフト函手とすると，$s\in S$であることと$s[1]\in S$であることが同値である．
 \item[(MS6)]
-三角圏$\D$における2つの完全三角形と以下の図式を可換にする完全三角形の間の射
+三角圏$\D$における2つの完全三角形において，
 			\[
 		\begin{tikzcd}
-			X_1\ar[r]\ar[d,"f"]& X_2\ar[r]\ar[d,"g"]& X_3\ar[r]\ar[d,"h"] & X_1[1]\ar[d,"f\texttt{[1]}"]\\
-			Y_1\ar[r]& Y_2\ar[r]& Y_3\ar[r] & Y_1[1].\\
+			X_1\ar[r]\ar[d,"s"]& X_2\ar[r]\ar[d,"t"]& X_3\ar[r]\ar[d,"u",dotted] & X_1[1]\ar[d,"s\texttt{[1]}"]\\
+			Y_1\ar[r]& Y_2\ar[r]& Y_3\ar[r] & Y_1[1].
 		\end{tikzcd}
 			\]
-$f,g,h$に対して，$f,g\in S$ならば$h\in S$である．
+		$s,t\in S$なら，$u\in S$で図式を可換にするものが存在する．	
 \end{itemize}
 \end{defn}
 
@@ -567,14 +567,14 @@ $f,g,h$に対して，$f,g\in S$ならば$h\in S$である．
 \end{proof}
 
 \begin{prop}\label{prop:triangulated category and multiplicative system}
-	$\T$を三角圏，$\N\subset\T$を同型を取る操作で閉じている部分三角圏とする．このとき，$S_{\N}\subset\Mor(\T)$を
-	\[S_{\N}\coloneq \{s\in\Mor(\T) \mid \Cone(s)\in\N\}.\]
-	と定めると$S_{\N}$は乗法系となる．
+	$\T$を三角圏，$\N\subset\T$を同型を取る操作で閉じている部分三角圏とする．このとき，$S\subset\Mor(\T)$を
+	\[S\coloneq \{s\in\Mor(\T) \mid \Cone(s)\in\N\}.\]
+	と定めると$S$は乗法系となる．
 \end{prop}
 \begin{proof}
 	(MS1) 任意の$X\in\T$に対して，以下の完全三角形
 	\[X\xrightarrow{\id_X}X\rightarrow 0 \rightarrow X[1].\]
-	が存在し，$0\in\N$なので$\id_X\in S_{\N}$\\
+	が存在し，$0\in\N$なので$\id_X\in S$\\
 	(MS2) 
 	$s\circ t$が定義できる任意の$s,t\in S$に対して，八面体公理より
 			\[
@@ -658,6 +658,36 @@ $\Cone(s')\in\N$なので，$s'\in S$．もう一つも双対的に，$s'\in S$�
 	とすると，$s\in S$で$s\circ f = s\circ h'\circ g' = 0$ \\
 	(MS5) $\N$がシフトで閉じていることからわかる．\\
 	(MS6)
+	$s,t\in S$である以下の図式に対して，
+			\[
+		\begin{tikzcd}
+			X \ar[r,"f",]\ar[d,"s"]& Y\ar[r,"",]\ar[d,"t"]& Z\ar[r,]& X[1]\ar[d,"s\texttt{[1]}"]\\
+			X'\ar[r,"f'"]& Y'\ar[r]& Z' \ar[r,]& X'[1].
+		\end{tikzcd}
+	\]
+	$f'\circ s = t\circ f$であり，八面体公理から
+			\[
+		\begin{tikzcd}
+			X \ar[r,"s"]\ar[d,equal]& Y\ar[r]\ar[d,"f'",swap]& N\ar[d,,dotted] \ar[r]& X[1]\ar[d,equal]\\
+			X \ar[r,"f'\circ s"]\ar[d,"s",swap]& Y'\ar[r,]\ar[d,equal]& W\ar[d,"\xi",dotted] \ar[r]& X[1]\ar[d,"s\texttt{[1]}"]\\
+			X' \ar[r,"f'"]\ar[d,swap]& Y'\ar[r,]\ar[d,swap]& Z' \ar[r]\ar[d,equal]& X'[1]\ar[d,]\\
+			N \ar[r,dotted]& W\ar[r,"\xi",dotted]& Z' \ar[r,dotted]& N[1]\\
+		\end{tikzcd}\quad
+		\begin{tikzcd}
+			X \ar[r,"f"]\ar[d,equal]& Y\ar[r]\ar[d,"t",swap]& Z\ar[d,"\zeta",dotted] \ar[r]& X[1]\ar[d,equal]\\
+			X \ar[r,"t\circ f"]\ar[d,"f",swap]& Y'\ar[r,]\ar[d,equal]& W\ar[d,dotted] \ar[r]& X[1]\ar[d,"f\texttt{[1]}"]\\
+			Y \ar[r,"t"]\ar[d,swap]& Y'\ar[r,]\ar[d,swap]& M \ar[r]\ar[d,equal]& Y[1]\ar[d,]\\
+			Z \ar[r,"\zeta",dotted]& W\ar[r,dotted]& M \ar[r,dotted]& Z[1].\\
+		\end{tikzcd}
+			\]
+$M,N\in \N$なので，$\zeta,\xi\in S$，したがって，$\xi\circ\zeta\in S$であり，
+			\[
+		\begin{tikzcd}
+			X \ar[r,"f",]\ar[d,"s"]& Y\ar[r,"",]\ar[d,"t"]& Z\ar[r,]\ar[d,"\xi\circ\zeta"]& X[1]\ar[d,"s\texttt{[1]}"]\\
+			X'\ar[r,"f'"]& Y'\ar[r]& Z' \ar[r,]& X'[1].
+		\end{tikzcd}
+	\]
+	は以下の図式を可換にする．
 \end{proof}
 \begin{prop}\cite[p.320]{KS06}
 $\A$ をアーベル圏とする．ホモトピー圏 $\mathsf{K}(\A)$ において，擬同型射全体の集合
