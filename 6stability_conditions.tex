@@ -1,6 +1,6 @@
 \section{Bridgeland安定性条件}
 \begin{defn}\cite{Bri07}
-三角圏 $\D$ において，部分圏の族 $\{ \P(\phi) \}_{\phi \in \RR} \subset \D$が，次の条件を満たすとき，スライスという：
+三角圏 $\D$ において，充満部分加法圏の族 $\{ \P(\phi) \}_{\phi \in \RR} \subset \D$が，次の条件を満たすとき，スライスという：
 \begin{itemize}
   \item 任意の $\phi \in \RR$ に対して，$\P(\phi + 1) = \P(\phi)[1]$ が成り立つ．
   \item 任意の $\phi_1 > \phi_2$ に対して，$X_i \in \P(\phi_i)$ であるならば，$\Hom_{\D}(X_1, X_2) = 0$ である．
@@ -12,6 +12,10 @@
     \end{tikzcd}
   \]
 \end{itemize}
+スライス$\P$と群準同型$Z\colon K(\D)\to \CC$の組$(\P,Z)$をBridgeland安定性条件という．ただし，$Z$は以下の条件をみたすものとする．\\
+任意の$0\neq E\in\P(\phi)$に対して，ある$m(E)\in\RR_{>0}$存在して，
+\[Z(E) = m(E)e^{i\pi\phi}.\]
+と表すことができる．
 \end{defn}
 
 
@@ -47,11 +51,7 @@ $\A$をアーベル圏とする．群準同型:
 が成り立つとき，$X$は$Z$-半安定であるという．
 \end{defn}
 
-\begin{prop}\cite{Bri07}
-三角圏 $\D$ に対して，$\D$ 上の有界な $t$-構造と，その核のアーベル圏上の stability函数 $Z$ を与えることと，$\D$ 上のBridgeland安定性条件 $(Z, \P)$で，任意の $\phi \in \RR$ と $0 \neq X \in \P(\phi)$ に対して $Z(X) \in \RR_{>0} e^{i\pi\phi}$ を満たすものを与えることは同値である．
-\end{prop}
-
-\begin{lemm}\cite{Bri07}
+\begin{lemm}\cite{Bri07}\label{lemm:Hom is 0}
 	$\D$をt-構造が与えられた三角圏，その核に安定性条件が与えられているとする．$X,Y\in\D^{\le 0}\cap\D^{\ge 0}$が半安定で$\phi(X)>\phi(Y)$であるとき，
 	\[\Hom_{\D}(X,Y)=0.\]
 	である．
@@ -62,7 +62,11 @@ $\A$をアーベル圏とする．群準同型:
 	の完全列が存在して$X$が半安定対象であることから$\phi(\Im f)\ge\phi(X)$．$\Im f\neq 0$が$Y$の部分対象で$Y$も半安定であることから$\phi(Y)\ge\phi(\Im f)$．これらを合わせると$\phi(Y)\ge\phi(X)$．仮定に矛盾．
 \end{proof}
 
-	\begin{proof}
+\begin{prop}\cite{Bri07}
+三角圏 $\D$ に対して，$\D$ 上の有界な $t$-構造と，その核のアーベル圏上の stability函数 $Z$ を与えることと，$\D$ 上のBridgeland安定性条件 $(Z, \P)$で，任意の $\phi \in \RR$ と $0 \neq X \in \P(\phi)$ に対して $Z(X) \in \RR_{>0} e^{i\pi\phi}$ を満たすものを与えることは同値である．
+\end{prop}
+
+\begin{proof}
 		アーベル圏上の安定性条件$(Z,\A)\rightarrow$三角圏上のBridgeland安定性条件$\P$の構成\\
 		各$0<\phi\le 1$に対して，
 		\[\P(\phi)\coloneq \{X\in\A\mid X\colon Z\text{-半安定 }Z(X)\in\RR_{>0}e^{i\pi\phi}\}\cup \{0\}.\]
@@ -71,9 +75,8 @@ $\A$をアーベル圏とする．群準同型:
 		こう定めたとき，Bridgeland安定性条件を定めていることを確かめる．\\
 		\bullet \ 任意の$\phi\in\RR$ に対して，$ \P(\phi + 1) = \P(\phi)[1]$は定義から従う．\\
 		\bullet \ $\phi_1 > \phi_2$と$X_i\in\P(\phi_i)$対して，$\Hom_{\D}(X_1,X_2)=0$\\
-		このとき$Y_1,Y_2\in\P((0,1])$を用いて，$X_1=Y_1[m],\ X_2=Y_2[n], (m>n \text{または}\ m=n, \phi(Y_1) > \phi(Y_2))$とかける．\\
-		$m=n$のときは補題より$0$であることがわかる．$m>n$のとき
-		$\Hom_{\D}(Y_1[m],Y_2[n])\simeq \Hom_{\D}(Y_1,Y_2[-(m-n)])$なので，$\Hom_{\D}(Y_1,Y_2[-k])=0\ k>0$を示せばよいが，$Y_1\in\D^{\le 0},\ Y_2[-k]\in\D^{\ge k}$なのでt-構造の定義より$0$となることがわかる．\\
+		このとき$Y_1,Y_2\in\P((0,1])$を用いて，$X_1=Y_1[m],\ X_2=Y_2[n], (m>n\ \text{または}\ m=n,\ \phi(Y_1) > \phi(Y_2))$とかける．$m=n$のときは補題(\ref{lemm:Hom is 0})より$0$であることがわかる．$m>n$のとき
+		$\Hom_{\D}(Y_1[m],Y_2[n])\simeq \Hom_{\D}(Y_1,Y_2[-(m-n)])$なので，$\Hom_{\D}(Y_1,Y_2[-k])=0,\ (k>0)$を示せばよいが，$Y_1\in\D^{\le 0},\ Y_2[-k]\in\D^{\ge k}$なのでt-構造の定義より$0$となることがわかる．\\
 分解をもつことはt-構造の性質より，整数の列$k_1>k_2 \cdots > k_n$と分解
 	\[
 		\begin{tikzcd}[column sep=1.0em]
@@ -82,8 +85,45 @@ $\A$をアーベル圏とする．群準同型:
 		\end{tikzcd}
 	\]
 	$A_j\in \A$が存在する．各$A_j$には仮定よりHN分解が存在するので更に分解することで3つ目の条件が得られる．\\
-	逆に$\P$が与えられたとき，$\F^{\perp}[1]=\D^{\ge 0}\coloneq\P((0,\infty)), \F=\D^{\le 0}\coloneq\P((-\infty,1])$がt-構造を定める．スライスの条件より，
-
+	逆に$\P$が与えられたとき，$\F^{\perp}[1]=\D^{\ge 0}\coloneq\P((0,\infty)), \F=\D^{\le 0}\coloneq\P((-\infty,1])$がt-構造を定めることを確かめる．\\
+\bullet\ $\D^{\le 0}\subset\D^{\le 1}\hspace{3mm}\D^{\ge 1}\subset\D^{\ge 0}\\ 
+$\bullet\ $\D^{\ge 1}\subset (\D^{\le 0})^\perp$．つまり，任意の$X\in \D^{\le 0}, Y\in\D^{\ge 1}$に対して，$\Hom_{\D}(X,Y)=0$である\\
+上記2つの条件については，スライスの定め方からしたがう．\\
+\bullet\ 任意の$X\in\D$に対して
+\[\tau_{\le 0}X\rightarrow X \rightarrow \tau_{\ge 1}X\rightarrow \tau_{\le 0}X[1].\]
+	となるような$\tau_{\le 0}X\in\D^{\le 0},\ \tau_{\ge 1}X\in\D^{\ge 1}$が存在する．\\
+ スライスの定義から，任意の$X\in \D$に対して，実数列$\phi_1 > \phi_2 > \cdots > \phi_n$ と $Y_i \in \P(\phi_i)$と以下の分解：
+  \[
+    \begin{tikzcd}[column sep=1.5em]
+			0 \ar[r, equal] & X_0 \ar[rr] && X_1 \ar[rr]\ar[ld]&&X_2\ar[r]\ar[ld] & \cdots \ar[r] & X_{n-2} \ar[rr] && X_{n-1} \ar[ld] \ar[rr] && X_n \ar[ld] \ar[r, equal] & X \\
+											&& Y_1 \ar[lu, dotted,swap, "{[1]}"'] &&Y_2 \ar[lu, dotted,swap, "{[1]}"']&&&& Y_{n-1} \ar[lu, dotted,swap, "{[1]}"'] && Y_n \ar[lu, dotted,swap, "{[1]}"'].
+    \end{tikzcd}
+  \]
+	が存在する．八面体公理より，$Y_{1,2},Y_{n-1,n}$が存在して，
+			\[
+		\begin{tikzcd}
+			X_0 \ar[r,]\ar[d,equal]& X_1\ar[r,]\ar[d,,swap]& Y_1\ar[d,,dotted] \ar[r]& X_0[1]\ar[d,equal]\\
+			X_0 \ar[r,]\ar[d,,swap]& X_2\ar[r,]\ar[d,equal]& Y_{1,2}\ar[d,dotted] \ar[r]& X_0[1]\ar[d,]\\
+			X_1 \ar[r,]\ar[d,,swap]& X_2\ar[r,]\ar[d,,swap]& Y_2 \ar[r]\ar[d,equal]& X_1[1]\ar[d,]\\
+			Y_1 \ar[r,,dotted]& Y_{1,2}\ar[r,,dotted]& Y_2 \ar[r,,dotted]& Y_1[1]
+		\end{tikzcd}\quad
+\begin{tikzcd}
+	X_{n-2} \ar[r,]\ar[d,equal]& X_{n-1}\ar[r,]\ar[d,,swap]& Y_{n-1}\ar[d,,dotted] \ar[r]& X_{n-2}[1]\ar[d,equal]\\
+	X_{n-2}\ar[r,]\ar[d,,swap]& X_{n}\ar[r,]\ar[d,equal]& Y_{n-1,n}\ar[d,dotted] \ar[r]& X_{n-2}[1]\ar[d,]\\
+	X_{n-1} \ar[r,]\ar[d,,swap]& X_n\ar[r,]\ar[d,,swap]& Y_n \ar[r]\ar[d,equal]& X_{n-1}[1]\ar[d,]\\
+	Y_{n-1}\ar[r,,dotted]& Y_{n-1,n}\ar[r,,dotted]& Y_n \ar[r,,dotted]& Y_{n-1}[1].
+		\end{tikzcd}
+			\]
+			それぞれ，二行目が完全三角形なので，
+  \[
+    \begin{tikzcd}[column sep=1.5em]
+			0 \ar[r, equal] & X_0 \ar[rr] && X_2 \ar[rr]\ar[ld]&&X_3\ar[r]\ar[ld] & \cdots \ar[r] & X_{n-3} \ar[rr] && X_{n-2} \ar[ld] \ar[rr] && X_n \ar[ld] \ar[r, equal] & X \\
+											&& Y_{1,2} \ar[lu, dotted,swap, "{[1]}"'] &&Y_3 \ar[lu, dotted,swap, "{[1]}"']&&&& Y_{n-2} \ar[lu, dotted,swap, "{[1]}"'] && Y_{n-1,n} \ar[lu, dotted,swap, "{[1]}"'].
+    \end{tikzcd}
+  \]
+	とできる．また，四行目の完全三角形より$Y_1,Y_2\in\D^{\ge 1}$なら，$Y_{1,2}\in\D^{\ge 1}$であり，$Y_{n-1},Y_n\in\D^{\le 0}$なら，$Y_{n-1,n}\in\D^{\le 0}$がわかる．この操作を$\phi_k > 1$と$\phi_k\le 1$まで左右とも続ければ，
+\[\tau_{\le 0}X\rightarrow X \rightarrow \tau_{\ge 1}X\rightarrow \tau_{\le 0}X[1].\]
+	が完全三角形となるような$\tau_{\le 0}X\in\D^{\le 0},\ \tau_{\ge 1}X\in\D^{\ge 1}$の存在がわかる．
 \end{proof}
 
 

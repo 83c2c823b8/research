@@ -1,9 +1,0 @@
-\contentsline {section}{\numberline {1}三角圏の定義}{1}{}%
-\contentsline {section}{\numberline {2}三角圏の基本的な性質}{4}{}%
-\contentsline {section}{\numberline {3}アーベル圏の導来圏の定義}{7}{}%
-\contentsline {section}{\numberline {4}三角圏における基本概念}{19}{}%
-\contentsline {section}{\numberline {5}$t$-structure}{21}{}%
-\contentsline {section}{\numberline {6}Bridgeland安定性条件}{26}{}%
-\contentsline {section}{\numberline {7}Bridgeland安定性条件の空間}{29}{}%
-\contentsline {section}{\numberline {8}$\qgr R$の定義}{30}{}%
-\contentsline {section}{\numberline {9}}{36}{}%
