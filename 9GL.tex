@@ -1,54 +1,73 @@
-\section{}
-\begin{defn}
-$\mathrm{GL}^+_2(\mathbb{R})$ の普遍被覆 $\widetilde{\mathrm{GL}}^+_2(\mathbb{R})$ を次のように定義する．
-
-元は組 $(M,g)$ であり，
+\section{安定性条件}
+\begin{defn}\cite{Bri07}
+$\GL^+_2(\RR)$ の普遍被覆 $\tildeGL^+_2(\RR)$ を次のように定義する．\\
+元は$A\in\GL^+_2(\RR)$と$g\colon\RR\to\RR$の組$(A,g)$ であり，次を満たすものである：
 \begin{itemize}
-  \item $M \in \mathrm{GL}^+_2(\mathbb{R})$，
-  \item $g:\mathbb{R}\to\mathbb{R}$ は単調増加連続函数で $g(\phi+1)=g(\phi)+1$ を満たす，
+  \item $g:\mathbb{R}\to\mathbb{R}$ は単調増加連続函数で $g(\phi+1)=g(\phi)+1$ を満たす．
+	\item 次の同一視：
+		\[S^1 = \RR/2\ZZ = (\RR^2\backslash \{0\})/\RR_{>0}.\]
+		によって，$g$と$A$が$S^1$に誘導する写像が等しい．
 \end{itemize}
-ものである．
 
 積は
 \[
-(M_1,g_1)\cdot(M_2,g_2) = (M_1M_2,\, g_1\ast g_2),
+(A_1,g_1)\cdot(A_2,g_2) = (A_1A_2,\, g_1\ast g_2),
 \]
-で定義され，ここで $g_1\ast g_2$ は
+で定義される．ただし， $g_1\ast g_2$ は
 \[
 (g_1\ast g_2)(\phi) = g_1(g_2(\phi)).
 \]
-
-このとき射影写像 $p:\widetilde{\mathrm{GL}}^+_2(\mathbb{R})\to \mathrm{GL}^+_2(\mathbb{R}),\ (M,g)\mapsto M$ が被覆準同型となり，$(\widetilde{\mathrm{GL}}^+_2(\mathbb{R}),p)$ は $\mathrm{GL}^+_2(\mathbb{R})$ の普遍被覆である．
+と定める．\\
+このとき射影写像 $p:\widetilde{\mathrm{GL}}^+_2(\mathbb{R})\to \mathrm{GL}^+_2(\mathbb{R}),\ (A,g)\mapsto A$ が被覆準同型となり，$(\widetilde{\mathrm{GL}}^+_2(\mathbb{R}),p)$ は $\mathrm{GL}^+_2(\mathbb{R})$ の普遍被覆である．また，$\CC^\ast $は，
+		\[
+			\begin{array}{ccccc}
+				\CC^\ast & \longrightarrow &\GL^+_2(\RR)  \\
+				\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+				x + iy& \longmapsto & \begin{pmatrix}x&-y\\ y&x \end{pmatrix}& .
+					\end{array}
+\]
+によって，$\GL^+_2(\RR)$の部分群なので，$\CC$は$\tildeGL^+_2(\RR)$の部分群であり以下のように埋め込まれる．
+		\[
+			\begin{array}{ccccc}
+				\CC & \longrightarrow &\tildeGL^+_2(\RR)  \\
+				\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+				\lambda& \longmapsto & (e^{i\pi\lambda},\, g\colon x + \Re \lambda)& .
+					\end{array}
+\]
 \end{defn}
 
 \begin{defn}
-三角圏 $\mathcal{D}$ 上の安定性条件 $\sigma=(Z,\mathcal{P})$ に対して，セール函手 $S:\mathcal{D}\to\mathcal{D}$ と組 $(M,g)\in \widetilde{\mathrm{GL}}^+_2(\mathbb{R})$ が存在して
+三角圏 $\mathcal{D}$ 上の安定性条件を $\sigma=(Z,\mathcal{P})$ とする．\\
+\bullet \ $(A,g)\in\tildeGL^+_2(\RR)$に対し，右作用 $\sigma\cdot(A,g)=(Z',\mathcal{P}')$ を以下のように定める：
 \[
-S(\sigma)=\sigma \cdot (M,g),
+	Z' = A^{-1}\circ Z,\qquad 
+\mathcal{P}'(\phi)=\mathcal{P}(g(\phi)),
+\]
+ただし，$\CC \simeq \RR^2$と同一視して$A^{-1}$の作用を考える．
+
+\bullet \ $\lambda\in \CC$ に対し， $\sigma$への左作用を以下で定める：
+\[
+\lambda\cdot\sigma := \bigl(e^{-i\pi\lambda}Z,\ \mathcal{P}(\phi+\Re \lambda)\bigr),
+\]
+\bullet\ 三角圏 $\mathcal{D}$ の自己同値函手 $\Phi\in \Aut(\mathcal{D})$に対して，これが誘導する左作用$\Phi_\ast(\sigma)$を以下で定める：
+\[
+\Phi_*(\sigma)\ :=\ \bigl(Z\circ \Phi^{-1},\ \Phi(\mathcal{P})\bigr),\quad
+\Phi(\mathcal{P})(\phi)\ :=\ \Phi\bigl(\mathcal{P}(\phi)\bigr)\ \ (\phi\in\mathbb{R}).
+\]
+\end{defn}
+ここで，$k\in\ZZ \subset \CC$の左作用と$[k]\in\Aut(\D)$の左作用は，
+\begin{equation*}
+	k\cdot \sigma = (e^{-ik\pi}Z, \P(\phi + k)) =  (Z\circ [-k], \P(\phi)[k]) = [k]_\ast\cdot \sigma .
+\end{equation*}
+であるので，同じ作用を定めている．また，$\CC\subset\tildeGL^+_2(\RR)$による右作用と$\CC$の左作用は同じ作用を定めている．
+
+\begin{defn}\cite{Kuz03}
+三角圏 $\mathcal{D}$ 上の安定性条件 $\sigma=(Z,\mathcal{P})$ に対して，Serre函手 $S:\mathcal{D}\to\mathcal{D}$ と組 $(A,g)\in \widetilde{\mathrm{GL}}^+_2(\mathbb{R})$ が存在して
+\[
+S(\sigma)=\sigma \cdot (A,g),
 \]
 が成り立つとき，$\sigma$ を Serre不変な安定性条件という．
 
-ここで右作用 $(M,g)\cdot\sigma=(Z',\mathcal{P}')$ は
-\[
-	Z' = M^{-1}\circ Z,\qquad 
-\mathcal{P}'(\phi)=\mathcal{P}(g(\phi)).
-\]
-で定義される．
-\end{defn}
-
-\begin{defn}
-三角圏 $\mathcal{D}$ 上の安定性条件を $\sigma=(Z,\mathcal{P})$ とする．
-任意の $\lambda\in \CC$ に対し
-\[
-\lambda\cdot\sigma := \bigl(e^{-\pi i \lambda}Z,\ \mathcal{P}(\phi+\Re(\lambda))\bigr)
-\]
-で定まる安定性条件によって， $\sigma$ の $\CC$ 作用を定める．
-三角圏 $\mathcal{D}$ の自己同値函手 $\Phi\in \mathrm{Aut}(\mathcal{D})$ に対して，
-\[
-\Phi_*(\sigma)\ :=\ \bigl(Z\circ \Phi^{-1},\ \Phi(\mathcal{P})\bigr),\quad
-\Phi(\mathcal{P})(\phi)\ :=\ \Phi\bigl(\mathcal{P}(\phi)\bigr)\ \ (\phi\in\mathbb{R})
-\]
-で定まる安定性条件によって，$\sigma$の $\Phi$ による作用を定める．
 \end{defn}
 
 \begin{defn}
@@ -58,7 +77,6 @@ S(\sigma)=\sigma \cdot (M,g),
 \]
 が成り立つとき，$\sigma$ を Gepner型安定性条件という．
 \end{defn}
-
 
 \begin{thm}
 	射影直線 \(\mathbb{P}^1\) 上の導来圏 \(D^b(\Coh(\PP^1))\) には Serre不変な安定性条件は存在しない．

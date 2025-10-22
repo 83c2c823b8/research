@@ -128,7 +128,7 @@ $R_{A,\Lambda}(\vec{x})$ を射影函手 $\pi$ で写した $\Coh(\PP_{A,\Lambda
 
 通常の点$\lambda\in\PP^1\backslash\Lambda = \PP^1\backslash\{\lambda_0,\lambda_1,\ldots, \lambda_r\}$に対して，$u = X_1^{p_1} - \lambda X_0^{p_0}$として，以下の短完全列：
 \[0\longrightarrow \mathcal{O}\xrightarrow{\ u\ }\mathcal{O}(\vec{c})\longrightarrow \mathcal{O}_{\lambda}\longrightarrow 0.\]
-で$S$を定める，すなわち$\mathcal{O}_{\lambda}\coloneq \Cok u $とすると$\Coh(\PP_{A,\Lambda})$の単純対象であり，$\lambda$にサポートを持つ層である．
+で$\mathcal{O}_{\lambda}$を定める，すなわち$\mathcal{O}_{\lambda}\coloneq \Cok u $とすると$\Coh(\PP_{A,\Lambda})$の単純対象であり，$\lambda$にサポートを持つ層である．
 $X_i=0$の点のとき，$X_i$をかける作用:
 \[0\longrightarrow \mathcal{O}(j\vec{x_i})\xrightarrow{\ X_i\ }\mathcal{O}((j+1)\vec{x_i})\longrightarrow \mathcal{O}_{\lambda_i,j}\longrightarrow 0\quad (j\in \ZZ/a_i\ZZ).\]
 で$\mathcal{O}_{\lambda_i,j}$を定める，すなわち$\mathcal{O}_{\lambda_i,j}\coloneq \Cok (\mathcal{O}(j\vec{x_i})\xrightarrow{\ X_i\ }\mathcal{O}((j+1)\vec{x_i}))$とすると，これらは$\lambda_i$にサポートをもつ層である．
@@ -160,8 +160,8 @@ $X_i=0$の点のとき，$X_i$をかける作用:
 \[\chi_A = 2 + \sum_{i=0}^{r} \left( \frac{1}{a_i} - 1\right) .\]
 $\F\in\Coh(\PP_{A,\Lambda})$に対して，オイラー標数(Euler characteristic) $\chi(\F)$を以下のように定義する:
 \[ \chi(\mathcal{F}) = \dim_k \Hom_{\PP_{A,\Lambda}}(\mathcal{O}, \mathcal{F}) - \dim_k \Ext^1_{\PP_{A,\Lambda}}(\mathcal{O}, \mathcal{F}) .\]
-また，$M\in\Coh(\PP_{A,\Lambda})$のランクを
-\[r(M) = \dim_k M_{0} - \dim_k M_{\vec{c}.}\]
+また，$\F\in\Coh(\PP_{A,\Lambda})$のランクを
+\[r(M) = \dim_{\CC} \F_{\vec{0}} - \dim_{\CC} \F_{\vec{c}}.\]
  で定義し，群準同型$\delta\colon L_A\to \ZZ$を生成元$\vec{x_i}\quad (1\le i \le r)$に対して
 \[\delta(\vec{x_i}) = \frac{a}{a_i}\quad (1\le i\le r).\]
 で定義する．ただし，$a\coloneq \text{lcm}(a_0,\ldots ,a_r)$である．
@@ -277,48 +277,59 @@ T := \bigoplus_{0 \le \vec{x} \le \vec{c}} \mathcal{O}(\vec{x}).
 \end{prop}
 
 \begin{thm}[Krull--Schmidt 性]\cite{GL87}
-重み付き射影直線 $\mathbb{X} $ に対して，連接層のアーベル圏
+	重み付き射影直線 $\PP_{A,\Lambda} $ に対して，連接層のアーベル圏
 \[
-\Coh(\mathbb{X}) = \qgr R_{A,\Lambda} = \gr R_{A,\Lambda}\Big{/}\tors R_{A,\Lambda}.
+	\Coh(\PP_{A,\Lambda}) = \qgr R_{A,\Lambda} = \gr R_{A,\Lambda}\Big{/}\tors R_{A,\Lambda}.
 \]
-は Krull--Schmidt 圏である．すなわち，任意の対象 $\mathcal{F} \in \Coh(\mathbb{X})$ は直既約対象の有限直和に分解でき，その分解は同型と順序を除いて一意である：
+は Krull--Schmidt 圏である．すなわち，任意の対象 $\mathcal{F} \in \Coh(\PP_{A,\Lambda})$ は直既約対象の有限直和に分解でき，その分解は同型と順序を除いて一意である：
 \[
 \mathcal{F} \cong \bigoplus_{i=1}^n \mathcal{F}_i \quad (\text{各} \mathcal{F}_i \text{が既約対象}).
 \]
 \end{thm}
 
 \begin{exmp}
-$R = \CC[x, y]$ を $\ZZ$次数付き多項式環とし，$\deg(x) = 1$，$\deg(y) = 2$ とする．このとき，$R$ は重み付き射影直線 $\mathbb{P}(1,2)$ に対応し，次のような圏同値が成り立つ：
+	$R = \CC[x, y]$ を $\ZZ$次数付き多項式環とし，$\deg(x_1) = 1$，$\deg(x_2) = 2$ とする．このとき，$R$ は重み付き射影直線 $\mathbb{P}_{A},\quad A = (1,2)$ に対応し，次のような圏同値が成り立つ：
 \[
-\qgr R := \gr R / \tors R \simeq \Coh(\mathbb{P}(1,2)).
+	\qgr R := \gr R / \tors R \simeq \Coh(\mathbb{P}_{A}).
 \]
 \[
-R := \CC[x, y], \quad \deg(x) = 1,\quad \deg(y) = 2.
+R := \CC[x_1, x_2], \quad \deg(x_1) = 1,\quad \deg(x_2) = 2.
 \]
 
 各\(n \in \ZZ_{\ge 0}\) に対して次数成分 \(R_n\) は次のように与えられる：
 \[
 \begin{aligned}
 R_0 &= \CC \\
-R_1 &= \CC x \\
-R_2 &= \CC x^2 \oplus \CC y \\
-R_3 &= \CC x^3 \oplus \CC x y \\
-R_4 &= \CC x^4 \oplus \CC x^2 y \oplus \CC y^2 \\
+R_1 &= \CC x_1 \\
+R_2 &= \CC x_1^2 \oplus \CC x_2 \\
+R_3 &= \CC x_1^3 \oplus \CC x_1 x_2 \\
+R_4 &= \CC x_1^4 \oplus \CC x_1^2 x_2 \oplus \CC x_2^2 \\
 &\vdots 
 \end{aligned}
 \]
-
+箙は以下で与えられる：
+\begin{center}
+  \begin{tikzpicture}[->,thick]
+      \node (0) at (0,0) {$\mathcal{O}{(\vec{0}})$};
+			\node (x1) at (1.5,1.5) {$\mathcal{O}{(\vec{x_1}})$};
+			\node (c) at (2,0) {$\mathcal{O}{(\vec{c}})$};
+      \draw (0) -- node[left] {$x_1$} (x1);
+      \draw (x1) -- node[right] {$x_1$} (c);
+      \draw (0) -- node[below] {$x_2$} (c);
+  \end{tikzpicture}
+  \end{center}
+	\[\vec{c} = 2\vec{x_1} = \vec{x_2}.\]
 このとき，次の列
 \[
-(\mathcal{O},\ \mathcal{O}(1),\ \mathcal{O}(2)),
+(\mathcal{O},\ \mathcal{O}(x_1),\ \mathcal{O}(c)),
 \]
-は \(\D^b(\Coh(\mathbb{P}(1,2)))\) における強例外生成列(\ref{defn:strong exceptional collection})であり，その直和
+は \(\D^b(\Coh(\mathbb{P}_A))\) における強例外生成列(\ref{defn:strong exceptional collection})であり，その直和
 \[
-T := \mathcal{O} \oplus \mathcal{O}(1) \oplus \mathcal{O}(2),
+	T := \mathcal{O} \oplus \mathcal{O}(\vec{x_1}) \oplus \mathcal{O}(\vec{c}),
 \]
-は傾斜対象(\ref{defn:tilting object})となる．したがって，導来函手
+は傾斜対象(\ref{defn:tilting object})となる．したがって，$A \coloneq \End(T)$とすると導来函手：
 \[
-\RHom(T, -) \colon \D^b(\Coh(\mathbb{P}(1,2))) \longrightarrow \D^b(\mod \End(T)).
+\RHom(T, -) \colon \D^b(\Coh(\mathbb{P}_A)) \longrightarrow \D^b(\mod A).
 \]
 は三角同値を与える．
 \end{exmp}
