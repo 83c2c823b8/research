@@ -81,3 +81,24 @@ S(\sigma)=\sigma \cdot (A,g),
 \begin{thm}
 	射影直線 \(\mathbb{P}^1\) 上の導来圏 \(D^b(\Coh(\PP^1))\) には Serre不変な安定性条件は存在しない．
 \end{thm}
+\begin{proof}
+	\[(\mathcal{O},\mathcal{O}(1)).\]
+	は，$\PP^1$上の強例外生成列であるので，$([\mathcal{O}],[\mathcal{O}(1))])$が$K(\PP^1)$の基底となる．$\PP^1$上の短完全列：
+	\begin{gather*}
+		0\longrightarrow \mathcal{O}(-1) \longrightarrow \mathcal{O}^{\oplus 2}\longrightarrow \mathcal{O}(1)\longrightarrow 0\\
+		0\longrightarrow \mathcal{O} \longrightarrow \mathcal{O}(-1)^{\oplus 2}\longrightarrow \mathcal{O}\longrightarrow 0
+	\end{gather*}
+	により，$K(\PP^1)$での関係式：
+	\begin{gather*}
+		[\mathcal{O}(-1)] = 2[\mathcal{O}] - [\mathcal{O}(1)]\\
+		[\mathcal{O}(-2)] = 3[\mathcal{O}] - 2[\mathcal{O}(1)]
+	\end{gather*}
+	がわかる．Serre函手が，
+	\[S(-) = (-)\otimes\omega[1] = \Bigl((-)\otimes\mathcal{O}(-2)\Bigr)[1].\]
+	と表されることと上記の関係式により，Serre函手が$K(\PP^1)$上に誘導する線型写像$[S]$は，
+	\[[S]= \begin{pmatrix}-3& -2\\2 & 1\end{pmatrix},\quad [S]^{-1}=\begin{pmatrix}1& 2\\-2 & -3\end{pmatrix}.\]
+	と行列表示される．特に$\CC$上で固有値$-1$のみを持つ．ここで$(\sigma,\lambda)$が，Gepner型安定性条件であると仮定すると，
+	\[Z\circ S^{-1} = e^{-i\lambda \pi}Z.\]
+	と表され，$[S^{-1}]$の固有値が$-1$のみであることから，$\lambda \in 1 + 2\ZZ$であることがしたがう．ここで$\sigma$が，自己同値函手がSerre函手であることを用いると，
+	\[\phi(\mathcal{O})\]
+\end{proof}
