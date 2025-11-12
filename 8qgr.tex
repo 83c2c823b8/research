@@ -66,38 +66,38 @@ R = \bigoplus_{i \ge 0} R_i
 重み付き射影直線（weighted projective line）とは，以下のデータによって定まる射影曲線である：
 
 \begin{itemize}
-  \item 正の整数からなる列 $A = (a_0, a_1, \dots, a_r)$，
-  \item $\mathbb{P}^1(k)$ の互いに異なる点の列 $\Lambda = (\lambda_0, \lambda_1, \dots, \lambda_r)$，
+  \item 正の整数からなる列 $A = (a_1, a_2, \dots, a_r)$，
+  \item $\mathbb{P}^1(k)$ の互いに異なる点の列 $\Lambda = (\lambda_1, \lambda_2, \dots, \lambda_r)$，
 \end{itemize}
 
-ただし，通常 $\lambda_0 = \infty,\ \lambda_1 = 0,\ \lambda_2 = 1$ と正規化する．次に，アーベル群
+ただし，通常 $\lambda_1 = \infty,\ \lambda_2 = 0,\ \lambda_3 = 1$ と正規化する．次に，アーベル群
 \[
 	L_{A} \coloneq \ZZ \vec{x_1}\oplus\cdots\oplus\ZZ \vec{x_r}\oplus \ZZ\vec{c}\Big{/}\langle\vec{c} -a_i\vec{x_i}\mid i=1,\ldots,r\rangle.
 \]
 を定義し，これを次数付き群とする．多項式環: 
 \[
-	S = k[X_0, X_1, \dots, X_r], \quad \deg X_i = \vec{x}_i. 
+	S = k[X_1, X_2, \dots, X_r], \quad \deg X_i = \vec{x}_i. 
 \]
 において，以下の $L_A$-斉次イデアル:
 \[
-	I_{A,\Lambda} = \left( X_i^{a_i} - X_1^{a_1} + \lambda_i X_0^{a_0} \ \middle|\ i = 2, \dots, r \right).
+	I_{A,\Lambda} = \left( X_i^{a_i} - X_2^{a_2} + \lambda_i X_1^{a_1} \ \middle|\ i = 3, \dots, r \right).
 \]
 を用いて商環
 \[
-	R_{A,\Lambda} = k[X_0, X_1, \dots, X_r]\Big{/}I_{A,\Lambda} \quad \deg(X_i)=\vec{x_i}.
+	R_{A,\Lambda} = k[X_1, X_2, \dots, X_r]\Big{/}I_{A,\Lambda} \quad \deg(X_i)=\vec{x_i}.
 \]
 を定義する．このとき，$R_{A,\Lambda}$は，部分環$k[X_0^{a_0},X_1^{a_1}]$が存在する．
 \end{defn}
 
 $L_A$は階数$1$のアーベル群であるため，各次数$\vec{\ell}\in L_A$は一意的に，
-\[\vec{\ell} = \sum_{i=0}^r \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\]
+\[\vec{\ell} = \sum_{i=1}^r \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\]
 と表すことができ，$\ell,m\in L_A$に対して順序$\le$を
 \begin{gather*}
-\vec{\ell} = \sum_{i=0}^r \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\\
-\vec{m} = \sum_{i=0}^r m_i\vec{x_i} + m\vec{c}\quad (0\le m_i < p_i,\ \ \ell \in \ZZ).
+\vec{\ell} = \sum_{i=1}^r \ell_i\vec{x_i} + \ell\vec{c}\quad (0\le \ell_i < p_i,\ \ \ell \in \ZZ).\\
+\vec{m} = \sum_{i=1}^r m_i\vec{x_i} + m\vec{c}\quad (0\le m_i < p_i,\ \ \ell \in \ZZ).
 \end{gather*}
 とあらわしたときに，すべての$0\le i\le r$で$\ell_i\le m_i$かつ$\ell\le m_i$とさだめる．ここで，
-\[\vec{\omega} \coloneq (r-1)\vec{c} - \sum_{i=0}^r\vec{x_i}.\]
+\[\vec{\omega} \coloneq (r-2)\vec{c} - \sum_{i=1}^r\vec{x_i}.\]
 と$\vec{\omega}$を定義し，双対化元(dualizing element)と呼ぶ．また，
 \[R(A)= \bigoplus_{\ell=0}^\infty R_{\ell},\quad R_\ell = S_{\ell\vec{c}}.\]
 を$R_{A,\Lambda}$の核(core)と呼ぶ．
@@ -148,7 +148,7 @@ $X_i=0$の点のとき，$X_i$をかける作用:
 が存在する．ここで，
 \begin{itemize}
 	\item $(-)^\vee := \Hom_{\CC}(-, \CC)$ は $\CC$ 上の線型双対，
-  \item $\vec{\omega} = (n - 1)\vec{c} - \sum_{i=0}^n \vec{x}_i$ は dualizing element（双対化元）である．
+  \item $\vec{\omega} = (n - 2)\vec{c} - \sum_{i=1}^n \vec{x}_i$ は dualizing element（双対化元）である．
 \end{itemize}
 \end{thm}
 \begin{proof}
@@ -157,14 +157,14 @@ $X_i=0$の点のとき，$X_i$をかける作用:
 
 \begin{defn}
 	重み付き射影直線 $\PP_{A,\Lambda}$ のパラメータ $A = (a_0, \dots, a_r)$ と $\lambda = (\lambda_0, \dots, \lambda_r)$ に対して，有理数 $\chi_A$ を以下のように定義する:
-\[\chi_A = 2 + \sum_{i=0}^{r} \left( \frac{1}{a_i} - 1\right) .\]
+\[\chi_A = 2 + \sum_{i=1}^{r} \left( \frac{1}{a_i} - 1\right) .\]
 $\F\in\Coh(\PP_{A,\Lambda})$に対して，オイラー標数(Euler characteristic) $\chi(\F)$を以下のように定義する:
 \[ \chi(\mathcal{F}) = \dim_k \Hom_{\PP_{A,\Lambda}}(\mathcal{O}, \mathcal{F}) - \dim_k \Ext^1_{\PP_{A,\Lambda}}(\mathcal{O}, \mathcal{F}) .\]
 また，$\F\in\Coh(\PP_{A,\Lambda})$のランクを
 \[r(M) = \dim_{\CC} \F_{\vec{0}} - \dim_{\CC} \F_{\vec{c}}.\]
  で定義し，群準同型$\delta\colon L_A\to \ZZ$を生成元$\vec{x_i}\quad (1\le i \le r)$に対して
 \[\delta(\vec{x_i}) = \frac{a}{a_i}\quad (1\le i\le r).\]
-で定義する．ただし，$a\coloneq \text{lcm}(a_0,\ldots ,a_r)$である．
+で定義する．ただし，$a\coloneq \text{lcm}(a_1,\ldots ,a_r)$である．
 \end{defn}
 
 \begin{prop}

@@ -43,7 +43,7 @@ $\GL^+_2(\RR)$ の普遍被覆 $\tildeGL^+_2(\RR)$ を次のように定義す�
 	Z' = A^{-1}\circ Z,\qquad 
 \mathcal{P}'(\phi)=\mathcal{P}(g(\phi)),
 \]
-ただし，$\CC \simeq \RR^2$と同一視して$A^{-1}$の作用を考える．
+ただし，$\CC \simeq \RR^2$と同一視して$A^{-1}$の作用を考える．この作用によって対象同士の位相の大小関係は不変であるため，半安定対象は変わらない．
 
 \bullet \ $\lambda\in \CC$ に対し， $\sigma$への左作用を以下で定める：
 \[
@@ -67,7 +67,6 @@ $\GL^+_2(\RR)$ の普遍被覆 $\tildeGL^+_2(\RR)$ を次のように定義す�
 S(\sigma)=\sigma \cdot (A,g),
 \]
 が成り立つとき，$\sigma$ を Serre不変な安定性条件という．
-
 \end{defn}
 
 \begin{defn}
@@ -78,27 +77,54 @@ S(\sigma)=\sigma \cdot (A,g),
 が成り立つとき，$\sigma$ を Gepner型安定性条件という．
 \end{defn}
 
+%\begin{lemm}
+%\end{lemm}
+%$\deg(\mathcal{O}(\vec{\omega})) = -a\cdot \chi_{A}$であること，
+
 \begin{thm}
-	射影直線 \(\mathbb{P}^1\) 上の導来圏 \(D^b(\Coh(\PP^1))\) には Serre不変な安定性条件は存在しない．
+	重み付き射影直線 \(\PP_{A,\Lambda}\) 上の導来圏 \(D^b(\Coh\PP_{A,\Lambda})\) に，自己同値函手がSerre函手であるようなGepner型安定性条件が存在することとオービフォールドオイラー標数$\chi_{A}\neq 0$であることは同値である．
 \end{thm}
 \begin{proof}
-	\[(\mathcal{O},\mathcal{O}(1)).\]
-	は，$\PP^1$上の強例外生成列であるので，$([\mathcal{O}],[\mathcal{O}(1))])$が$K(\PP^1)$の基底となる．$\PP^1$上の短完全列：
-	\begin{gather*}
-		0\longrightarrow \mathcal{O}(-1) \longrightarrow \mathcal{O}^{\oplus 2}\longrightarrow \mathcal{O}(1)\longrightarrow 0\\
-		0\longrightarrow \mathcal{O} \longrightarrow \mathcal{O}(-1)^{\oplus 2}\longrightarrow \mathcal{O}\longrightarrow 0
-	\end{gather*}
-	により，$K(\PP^1)$での関係式：
-	\begin{gather*}
-		[\mathcal{O}(-1)] = 2[\mathcal{O}] - [\mathcal{O}(1)]\\
-		[\mathcal{O}(-2)] = 3[\mathcal{O}] - 2[\mathcal{O}(1)]
-	\end{gather*}
-	がわかる．Serre函手が，
-	\[S(-) = (-)\otimes\omega[1] = \Bigl((-)\otimes\mathcal{O}(-2)\Bigr)[1].\]
-	と表されることと上記の関係式により，Serre函手が$K(\PP^1)$上に誘導する線型写像$[S]$は，
-	\[[S]= \begin{pmatrix}-3& -2\\2 & 1\end{pmatrix},\quad [S]^{-1}=\begin{pmatrix}1& 2\\-2 & -3\end{pmatrix}.\]
-	と行列表示される．特に$\CC$上で固有値$-1$のみを持つ．ここで$(\sigma,\lambda)$が，Gepner型安定性条件であると仮定すると，
-	\[Z\circ S^{-1} = e^{-i\lambda \pi}Z.\]
-	と表され，$[S^{-1}]$の固有値が$-1$のみであることから，$\lambda \in 1 + 2\ZZ$であることがしたがう．ここで$\sigma$が，自己同値函手がSerre函手であることを用いると，
-	\[\phi(\mathcal{O})\]
+		\[
+			\begin{array}{ccccc}
+				v\colon K(\PP_{A,\Lambda})&\longrightarrow &\ZZ^{\oplus 2}\\
+				\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+				X & \longmapsto & (\rk(X),\deg(X))& .
+					\end{array}
+\]
+と定めると，$K(\PP_{A,\Lambda})$の自由部分との同型写像となっているのでこの上でのGepner型安定性条件の存在・非存在と一致する．Serre函手の擬逆函手$S^{-1}$が$\ZZ^{\oplus 2}$に誘導する線型写像$[S^{-1}]$は，
+\begin{align*}
+	\begin{pmatrix}
+		-1 & 0\\ -a \cdot \chi_{A}& -1
+	\end{pmatrix},
+\end{align*}
+と行列表示される．自己同値函手がSerre函手であるようなGepner型安定性条件が存在すると仮定すると，
+\begin{align*}
+	e^{-is\pi}\begin{pmatrix}
+		x_1 & x_2\\ y_1 & y_2
+	\end{pmatrix}  =
+	\begin{pmatrix}
+		-1 & 0\\ -a \cdot \chi_{A}& -1
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_1 & x_2\\ y_1 & y_2
+	\end{pmatrix}
+\end{align*}
+したがって，$e^{-is\pi}$は$[S^{-1}]$の固有値になっていることがわかり，$[S^{-1}]$の固有値は$-1$のみであるため，$e^{-is\pi}=-1$がしたがう．
+\begin{align*}
+\begin{pmatrix}
+		-x_1 & -x_2\\ -y_1 & -y_2
+	\end{pmatrix}  =
+	\begin{pmatrix}
+		-1 & 0\\ -a \cdot \chi_{A}& -1
+	\end{pmatrix}
+	\begin{pmatrix}
+		x_1 & x_2\\ y_1 & y_2
+	\end{pmatrix}
+	= \begin{pmatrix}
+		-x_1 -x_2\cdot a\cdot \chi_{A} & x_2\\
+		-y_1 -y_2\cdot a\cdot \chi_{A} & y_2
+	\end{pmatrix}
+\end{align*}
+この両辺を比較すると$\chi_{A}\neq 0$のときは$x_2=y_2=0$となり，安定性条件の定義に矛盾する．
 \end{proof}
