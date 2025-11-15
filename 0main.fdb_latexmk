@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1762927003.8241 "0main.tex" "0main.pdf" "0main" 1762927012.03485 0
+["lualatex"] 1763195470.30187 "0main.tex" "0main.pdf" "0main" 1763195478.31804 0
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1720346179.56229 1924610 5ad0ab270dd7b2d968c525a623c6f575 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1720346139.93902 2011208 896bb74978c1fb2dba5f7bcf7d26c84d ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1720346555.51527 81819 c1a1831503f38fe92f18da76596f7b9d ""
@@ -363,9 +363,9 @@
   "/usr/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf" 1255129361 94256 a52a5407fe2a4281f96a01e9736568c3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1720342003.09286 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1720342095 12237217 22f2cdc28d4a662257bccd8aa8039d1a ""
-  "0main.aux" 1762927011.74681 7663 f06173701d48201a981d945d28fba462 "lualatex"
+  "0main.aux" 1763195478.04216 7662 671fcbc577ca31e852afacd511ddcc83 "lualatex"
   "0main.tex" 1762431237.72666 3291 46bd990482f91c495adeebb360a07f51 ""
-  "0main.toc" 1762927011.74781 650 eb13cc5dc439de980e86b865ceac6740 "lualatex"
+  "0main.toc" 1763195478.04316 650 eb13cc5dc439de980e86b865ceac6740 "lualatex"
   "1triangulated_category.tex" 1762431237.72666 8414 96a7004730a36301fdc90ff3ebdc3af6 ""
   "2fundamental_property_of_triangulated_category.tex" 1762431237.72666 8514 b9de87cfe7f3b794dc2164357cfdb078 ""
   "3definition_of_derived_category.tex" 1762431237.72666 39674 9c06b84021194bd084bc7639bb9049d0 ""
@@ -373,8 +373,8 @@
   "5t_structure.tex" 1762431237.72666 14391 443f7012a158f99cc0b0adc91cc59d0d ""
   "6stability_conditions.tex" 1762431237.72666 16359 6280df1a1358b610c55ff782ba94971f ""
   "7space_of_stability_conditions.tex" 1762432834.51269 3263 130250e8f8c3a1372ce46a468a6a16a5 ""
-  "8qgr.tex" 1762926453.79132 17285 ead219161c00ff3fef9257e00f0e7fff ""
-  "9GL.tex" 1762926996.12715 5657 65ea1275270e916ee1e65c817adfb28f ""
+  "8qgr.tex" 1763195465.54154 17402 e4c183028d5f678abecb6376c766f3b3 ""
+  "9GL.tex" 1763188832.15165 5530 ef3dc7ab829886b0d690f4559cb05c13 ""
   "test.sty" 1762923902.10204 4488 ee45a6d1a3fb8c491bcb2984721bc2d8 ""
   (generated)
   "0main.aux"

@@ -100,31 +100,25 @@ S(\sigma)=\sigma \cdot (A,g),
 \end{align*}
 と行列表示される．自己同値函手がSerre函手であるようなGepner型安定性条件が存在すると仮定すると，
 \begin{align*}
-	e^{-is\pi}\begin{pmatrix}
-		x_1 & x_2\\ y_1 & y_2
-	\end{pmatrix}  =
+	e^{-is\pi} Z =  
 	\begin{pmatrix}
 		-1 & 0\\ -a \cdot \chi_{A}& -1
 	\end{pmatrix}
-	\begin{pmatrix}
-		x_1 & x_2\\ y_1 & y_2
-	\end{pmatrix}
+	Z
 \end{align*}
 したがって，$e^{-is\pi}$は$[S^{-1}]$の固有値になっていることがわかり，$[S^{-1}]$の固有値は$-1$のみであるため，$e^{-is\pi}=-1$がしたがう．
 \begin{align*}
-\begin{pmatrix}
-		-x_1 & -x_2\\ -y_1 & -y_2
-	\end{pmatrix}  =
+	e^{-is\pi}Z  =
 	\begin{pmatrix}
 		-1 & 0\\ -a \cdot \chi_{A}& -1
-	\end{pmatrix}
+	\end{pmatrix} Z	
+	\intertext{$Z$は正則なので，}	
 	\begin{pmatrix}
-		x_1 & x_2\\ y_1 & y_2
-	\end{pmatrix}
-	= \begin{pmatrix}
-		-x_1 -x_2\cdot a\cdot \chi_{A} & x_2\\
-		-y_1 -y_2\cdot a\cdot \chi_{A} & y_2
-	\end{pmatrix}
+		e^{-is\pi} & 0\\ 0 \cdot \chi_{A}& e^{-is\pi} 
+	\end{pmatrix} Z	
+	\begin{pmatrix}
+		-1 & 0\\ -a \cdot \chi_{A}& -1
+	\end{pmatrix} 	
 \end{align*}
 この両辺を比較すると$\chi_{A}\neq 0$のときは$x_2=y_2=0$となり，安定性条件の定義に矛盾する．
 \end{proof}

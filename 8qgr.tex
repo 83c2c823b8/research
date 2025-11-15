@@ -148,7 +148,7 @@ $X_i=0$の点のとき，$X_i$をかける作用:
 が存在する．ここで，
 \begin{itemize}
 	\item $(-)^\vee := \Hom_{\CC}(-, \CC)$ は $\CC$ 上の線型双対，
-  \item $\vec{\omega} = (n - 2)\vec{c} - \sum_{i=1}^n \vec{x}_i$ は dualizing element（双対化元）である．
+  \item $\vec{\omega} = (r - 2)\vec{c} - \sum_{i=1}^r \vec{x}_i$ は dualizing element（双対化元）である．
 \end{itemize}
 \end{thm}
 \begin{proof}
@@ -156,33 +156,33 @@ $X_i=0$の点のとき，$X_i$をかける作用:
 \end{proof}
 
 \begin{defn}
-	重み付き射影直線 $\PP_{A,\Lambda}$ のパラメータ $A = (a_0, \dots, a_r)$ と $\lambda = (\lambda_0, \dots, \lambda_r)$ に対して，有理数 $\chi_A$ を以下のように定義する:
+	重み付き射影直線 $\PP_{A,\Lambda}$ のパラメータ $A = (a_1, \dots, a_r)$ と $\lambda = (\lambda_1, \dots, \lambda_r)$ に対して，有理数 $\chi_A$ を以下のように定義する:
 \[\chi_A = 2 + \sum_{i=1}^{r} \left( \frac{1}{a_i} - 1\right) .\]
 $\F\in\Coh(\PP_{A,\Lambda})$に対して，オイラー標数(Euler characteristic) $\chi(\F)$を以下のように定義する:
 \[ \chi(\mathcal{F}) = \dim_k \Hom_{\PP_{A,\Lambda}}(\mathcal{O}, \mathcal{F}) - \dim_k \Ext^1_{\PP_{A,\Lambda}}(\mathcal{O}, \mathcal{F}) .\]
 また，$\F\in\Coh(\PP_{A,\Lambda})$のランクを
-\[r(M) = \dim_{\CC} \F_{\vec{0}} - \dim_{\CC} \F_{\vec{c}}.\]
+\[\rk(M) = \dim_{\CC} \F_{\vec{0}} - \dim_{\CC} \F_{\vec{c}}.\]
  で定義し，群準同型$\delta\colon L_A\to \ZZ$を生成元$\vec{x_i}\quad (1\le i \le r)$に対して
 \[\delta(\vec{x_i}) = \frac{a}{a_i}\quad (1\le i\le r).\]
 で定義する．ただし，$a\coloneq \text{lcm}(a_1,\ldots ,a_r)$である．
 \end{defn}
 
 \begin{prop}
-	次数とよばれる以下の性質をみたす線型写像$d\colon K_0(\Coh(\PP_{A,\Lambda}))\to \ZZ$が一意に存在する．
+	次数とよばれる以下の性質をみたす線型写像$\deg\colon K_0(\Coh(\PP_{A,\Lambda}))\to \ZZ$が一意に存在する．
 	\begin{itemize}
 		\item[(i)]
-			各$\vec{x}\in L_A$に対して，$d(\mathcal{O}(\vec{x})) = \delta(\vec{x})$
+			各$\vec{x}\in L_A$に対して，$\deg(\mathcal{O}(\vec{x})) = \delta(\vec{x})$
 		\item[(ii)]
-			$d(\mathcal{O}) = 0$
+			$\deg(\mathcal{O}) = 0$
 		\item[(iii)]
 			$\mathcal{O}_{\lambda}$が$\lambda$にサポートを持つ単純層であるとき，
-		\[ d(\mathcal{O}_{\lambda}) = \frac{a}{a(\lambda)}.\]
+		\[ \deg(\mathcal{O}_{\lambda}) = \frac{a}{a(\lambda)}.\]
 	\end{itemize}
 \end{prop}
 \begin{proof}
 $\overline{\chi}(\F) = \sum_{j=0}^{a-1}\chi(\F(-j\vec{\omega}))$と定め，セール双対性を用いると
 $a(x)=1$のとき，$\overline{\chi}(\mathcal{O}_\lambda) = a$であり，$\overline{\chi}(\mathcal{O}_{\lambda_i},j) = \frac{a}{a_i}\quad 0\le i \le r,\ 1\le j \le a_i$である．したがって，
-\[d(\F) \coloneq \overline{\chi}(\F) - r(\F)\overline{\chi}(\mathcal{O}).\]
+\[\deg(\F) \coloneq \overline{\chi}(\F) - \rk(\F)\overline{\chi}(\mathcal{O}).\]
 で$d\colon K_0(\Coh(\PP_{A,\Lambda}))\to\ZZ$は条件(ii)を満たす．条件(i)をみたすことは，以下の短完全列:
 \[0\longrightarrow \mathcal{O}(\vec{x})\xrightarrow{\ X_i\ }\mathcal{O}(\vec{x}+\vec{x_i})\longrightarrow \mathcal{O}_{\lambda_i,0}\longrightarrow 0\quad (j\in \ZZ/a_i\ZZ).\]
 を繰り返し用いればよい．{\color{red} ?}
@@ -205,10 +205,12 @@ $a(x)=1$のとき，$\overline{\chi}(\mathcal{O}_\lambda) = a$であり，$\over
 																																						 &= \sum_{j=-(a-1)}^{a}\chi(\mathcal{O}(j\vec{\omega}))\\
 																																						 &= 0.
 \end{align*}
-したがって，$2\overline{\chi}(\mathcal{O}) + a\delta(\vec{\omega}) = 0$である．また，$\vec{\omega} = (r-1)\vec{c} - \sum_{i=0}^r\vec{x_i}$なので，
+したがって，$2\overline{\chi}(\mathcal{O}) + a\delta(\vec{\omega}) = 0$である．また，$\vec{\omega} = (r-2)\vec{c} - \sum_{i=0}^r\vec{x_i}$なので，
 \begin{align*}
-	\delta(\vec{\omega}) &= -\sum_{i=0}^r\frac{a}{a_i} +(r-1)a\\
-											 &= -a\qty(\sum_{i=0}^r\frac{1}{a_i} - (r-1)).
+	\delta(\vec{\omega}) &= -\sum_{i=0}^r\frac{a}{a_i} +(r-2)a\\
+											 &= -a\qty(\sum_{i=0}^r\frac{1}{a_i} - (r-2))\\
+											 &= -a\qty(2 + \sum_{i=0}^r\qty(\frac{1}{a_i} - 1)))\\
+											 &= -a\cdot\chi_{A}
 \end{align*}
  から示された．
 \end{proof}
