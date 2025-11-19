@@ -69,20 +69,25 @@ S(\sigma)=\sigma \cdot (A,g),
 が成り立つとき，$\sigma$ を Serre不変な安定性条件という．
 \end{defn}
 
-\begin{defn}
-三角圏 $\mathcal{D}$ 上の安定性条件 $\sigma=(Z,\mathcal{P})$ に対して，自己同値 $F:\mathcal{D}\to\mathcal{D}$ と複素数 $s\in\mathbb{C}$ が存在して
+\begin{defn}\cite{Tod13}
+三角圏 $\mathcal{D}$ 上の安定性条件 $\sigma=(Z,\mathcal{P})$ に対して，自己同値 $F:\mathcal{D}\to\mathcal{D}$ と複素数 $\xi\in\mathbb{C}$ が存在して
 \[
-	F_*(\sigma)=s\cdot \sigma.
+	F_*(\sigma)=\xi\cdot \sigma.
 \]
-が成り立つとき，$\sigma$ を Gepner型安定性条件という．
+が成り立つとき，$\sigma$ を$(F,\xi)$に関するGepner型安定性条件という．
 \end{defn}
 
-%\begin{lemm}
-%\end{lemm}
-%$\deg(\mathcal{O}(\vec{\omega})) = -a\cdot \chi_{A}$であること，
+\begin{rem}
+	$\sigma$が$(F,\xi)$に関するGepner型安定性条件であるとき，任意の$s\in
+	CC$に対して，$s \cdot \sigma$も$(F,\xi)$に関してGepner型安定性条件である．
+\end{rem}
 
 \begin{thm}
-	重み付き射影直線 \(\PP_{A,\Lambda}\) 上の導来圏 \(D^b(\Coh\PP_{A,\Lambda})\) に，自己同値函手がSerre函手であるようなGepner型安定性条件が存在することとオービフォールドオイラー標数$\chi_{A}\neq 0$であることは同値である．
+	重み付き射影直線 \(\PP_{A,\Lambda}\) 上の導来圏 \(D^b(\Coh\PP_{A,\Lambda})\) 上のSerre函手を$S$とする．このとき，以下は同値である：\vspace{-3mm}
+	\begin{itemize}
+		\item $(S,\xi)$に関して$\sigma$がGepner型であるような安定性条件$\sigma$が存在する．
+		\item オービフォールドオイラー標数$\chi_A$が$0$である．
+	\end{itemize}
 \end{thm}
 \begin{proof}
 		\[
@@ -92,7 +97,7 @@ S(\sigma)=\sigma \cdot (A,g),
 				X & \longmapsto & (\rk(X),\deg(X))& .
 					\end{array}
 \]
-と定めると，$K(\PP_{A,\Lambda})$の自由部分との同型写像となっているのでこの上でのGepner型安定性条件の存在・非存在と一致する．Serre函手の擬逆函手$S^{-1}$が$\ZZ^{\oplus 2}$に誘導する線型写像$[S^{-1}]$は，
+と定めると，$K(\PP_{A,\Lambda})$．Serre函手の擬逆函手$S^{-1}$が$\ZZ^{\oplus 2}$に誘導する線型写像$[S^{-1}]$は，
 \begin{align*}
 	\begin{pmatrix}
 		-1 & 0\\ -a \cdot \chi_{A}& -1
@@ -100,7 +105,7 @@ S(\sigma)=\sigma \cdot (A,g),
 \end{align*}
 と行列表示される．自己同値函手がSerre函手であるようなGepner型安定性条件が存在すると仮定すると，
 \begin{align*}
-	e^{-is\pi} Z =  
+	e^{-i\xi\pi} Z =  
 	\begin{pmatrix}
 		-1 & 0\\ -a \cdot \chi_{A}& -1
 	\end{pmatrix}
@@ -108,17 +113,17 @@ S(\sigma)=\sigma \cdot (A,g),
 \end{align*}
 したがって，$e^{-is\pi}$は$[S^{-1}]$の固有値になっていることがわかり，$[S^{-1}]$の固有値は$-1$のみであるため，$e^{-is\pi}=-1$がしたがう．
 \begin{align*}
-	e^{-is\pi}Z  =
+	e^{-i\xi\pi}Z  =
 	\begin{pmatrix}
 		-1 & 0\\ -a \cdot \chi_{A}& -1
 	\end{pmatrix} Z	
 	\intertext{$Z$は正則なので，}	
 	\begin{pmatrix}
-		e^{-is\pi} & 0\\ 0 \cdot \chi_{A}& e^{-is\pi} 
-	\end{pmatrix} Z	
+		e^{-i\xi\pi} & 0\\ 0 & e^{-i\xi\pi} 
+	\end{pmatrix} = 	
 	\begin{pmatrix}
 		-1 & 0\\ -a \cdot \chi_{A}& -1
 	\end{pmatrix} 	
 \end{align*}
-この両辺を比較すると$\chi_{A}\neq 0$のときは$x_2=y_2=0$となり，安定性条件の定義に矛盾する．
+等しくなる必要条件が$\chi_A = 0$であることがわかる．
 \end{proof}
