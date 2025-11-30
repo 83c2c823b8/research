@@ -62,9 +62,9 @@ $\GL^+_2(\RR)$ の普遍被覆 $\tildeGL^+_2(\RR)$ を次のように定義す�
 であるので，同じ作用を定めている．また，$\CC\subset\tildeGL^+_2(\RR)$による右作用と$\CC$の左作用は同じ作用を定めている．
 
 \begin{defn}\cite{Kuz03}
-三角圏 $\mathcal{D}$ 上の安定性条件 $\sigma=(Z,\mathcal{P})$ に対して，Serre函手 $S:\mathcal{D}\to\mathcal{D}$ と組 $(A,g)\in \widetilde{\mathrm{GL}}^+_2(\mathbb{R})$ が存在して
+	三角圏 $\mathcal{D}$ 上の安定性条件 $\sigma=(Z,\mathcal{P})$ に対して，Serre函手 $\mathcal{S}:\mathcal{D}\to\mathcal{D}$ と組 $(A,g)\in \widetilde{\mathrm{GL}}^+_2(\mathbb{R})$ が存在して
 \[
-S(\sigma)=\sigma \cdot (A,g),
+	\mathcal{S}(\sigma)=\sigma \cdot (A,g),
 \]
 が成り立つとき，$\sigma$ を Serre不変な安定性条件という．
 \end{defn}
@@ -79,25 +79,25 @@ S(\sigma)=\sigma \cdot (A,g),
 
 \begin{rem}
 	$\sigma$が$(F,\xi)$に関するGepner型安定性条件であるとき，任意の$s\in
-	CC$に対して，$s \cdot \sigma$も$(F,\xi)$に関してGepner型安定性条件である．
+	\CC$に対して，$s \cdot \sigma$も$(F,\xi)$に関してGepner型安定性条件である．
 \end{rem}
 
 \begin{thm}
-	重み付き射影直線 \(\PP_{A,\Lambda}\) 上の導来圏 \(D^b(\Coh\PP_{A,\Lambda})\) 上のSerre函手を$S$とする．このとき，以下は同値である：\vspace{-3mm}
+	重み付き射影直線 \(\PP_{A,\Lambda}\) 上の導来圏 \(D^b(\Coh\PP_{A,\Lambda})\) 上のSerre函手を$\mathcal{S}$とする．このとき，以下は同値である：\vspace{-3mm}
 	\begin{itemize}
-		\item $(S,\xi)$に関して$\sigma$がGepner型であるような安定性条件$\sigma$が存在する．
+		\item $(\mathcal{S},\xi)$に関して$\sigma$がGepner型であるような安定性条件$\sigma$が存在する．
 		\item オービフォールドオイラー標数$\chi_A$が$0$である．
 	\end{itemize}
 \end{thm}
 \begin{proof}
 		\[
 			\begin{array}{ccccc}
-				v\colon K(\PP_{A,\Lambda})&\longrightarrow &\ZZ^{\oplus 2}\\
-				\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
-				X & \longmapsto & (\rk(X),\deg(X))& .
+				(\rk,\deg)&\colon K(\PP_{A,\Lambda})&\longrightarrow &\ZZ^{\oplus 2}\\
+									&\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+													 &X & \longmapsto & (\rk(X),\deg(X))& .
 					\end{array}
 \]
-と定めると，$K(\PP_{A,\Lambda})$．Serre函手の擬逆函手$S^{-1}$が$\ZZ^{\oplus 2}$に誘導する線型写像$[S^{-1}]$は，
+と定めると，$K(\PP_{A,\Lambda})$．Serre函手の擬逆函手$\mathcal{S}^{-1}$が$\ZZ^{\oplus 2}$に誘導する線型写像$[\mathcal{S}^{-1}]$は，
 \begin{align*}
 	\begin{pmatrix}
 		-1 & 0\\ -a \cdot \chi_{A}& -1
@@ -111,7 +111,7 @@ S(\sigma)=\sigma \cdot (A,g),
 	\end{pmatrix}
 	Z
 \end{align*}
-したがって，$e^{-is\pi}$は$[S^{-1}]$の固有値になっていることがわかり，$[S^{-1}]$の固有値は$-1$のみであるため，$e^{-is\pi}=-1$がしたがう．
+したがって，$e^{-is\pi}$は$[\mathcal{S}^{-1}]$の固有値になっていることがわかり，$[\mathcal{S}^{-1}]$の固有値は$-1$のみであるため，$e^{-is\pi}=-1$がしたがう．
 \begin{align*}
 	e^{-i\xi\pi}Z  =
 	\begin{pmatrix}
@@ -126,4 +126,55 @@ S(\sigma)=\sigma \cdot (A,g),
 	\end{pmatrix} 	
 \end{align*}
 等しくなる必要条件が$\chi_A = 0$であることがわかる．
+\end{proof}
+
+\begin{thm}\cite{ESP09}
+	$G$を$X$に作用する有限群とし，$\Gamma_X\subset\Stab(D^b(X))$を$G$-不変な安定性条件とする．このとき，$\Gamma_X$は，$\Stab(D^b(X))$の閉部分多様体になり，忘却函手$\Forg_G$は以下の条件を満たす閉埋め込みを誘導する：
+	\[\Forg_G^{-1}\colon \Gamma_X \hookrightarrow \Stab(D^b_G(X)).\]
+	\bullet\ $\Forg_G^{-1}(\sigma)$に関して半安定であるものと$D^b_G(X)$の対象であって$\sigma$に関して半安定であるもが一致する．
+\end{thm}
+
+\begin{lemm}
+	$\A$をアーベル圏とする．零対象でない単純対象：$S_1,S_2\in\A$に対して非零射$f\colon S_1\to S_2$が存在すれば，$f$は同型射である．
+\end{lemm}
+\begin{proof}
+		$f$を非零射とすると$S_1$が単純対象であることから$\Ker f = 0$．$0\subsetneq\Im f \subseteq S_2$で$S_2$が単純対象であることから$\Im f\simeq S_2$がわかり，同型である．
+\end{proof}
+
+\begin{thm}\cite{Bri07}
+	$C$を楕円曲線とする．このとき，$\widetilde{\mathrm{GL}}^+_2(\mathbb{R})$の$\Stab(C)$への作用は自由・推移的である．したがって，位相同型：
+	\[\Stab(C)\cong \widetilde{\mathrm{GL}}^+_2(\mathbb{R}).\]
+が成り立つ．
+\end{thm}
+\begin{proof}
+	\bullet \ 任意の直既約な対象$0\neq X\in\Coh C$は，任意の$\sigma\in\Stab(C)$に対し半安定である．\\
+$X$が半安定でないと仮定するとHN分解を考えることで，$0$でない$Y_1,Y_2\in D^b(\Coh C)$で
+\[Y_1\longrightarrow X\longrightarrow Y_2 \longrightarrow Y_1[1].\]
+となるものが存在する．Serre双対性より，
+\[\Hom_{D^b(\Coh C)}(Y_2,Y_1[1])\simeq \Hom_{D^b(\Coh C)}(Y_1,Y_2)^\vee = 0.\]
+したがって，$X\simeq Y_1\oplus Y_2$となり，$X$が直既約であることに矛盾．\\\\
+\bullet \ $\sigma = (Z,\P)\in\Stab(C)$に対して，$Z\colon \Gamma\to\CC$は$Z_{\RR}\colon\Gamma_{\RR}\cong \RR^2 $を誘導する． \\
+$Z_{\RR}$が同型でないとすると，$Z_{\RR}$の像を含む$\ell\subset \RR^2$が存在する．したがって，ある$\phi\in (0,1]$が存在して，
+\[\A = \P((0,1]) = \P(\phi).\]
+となる．したがって，$\A$は単純対象で生成される．ここで，$X_1,X_2\in\A$を同型でない単純対象とするとSerre双対定理も用いて，
+\[\Hom_{D^b(\Coh C)}(X_1,X_2) = \Hom_{D^b(\Coh C)}(X_2,X_1) \simeq \Hom_{D^b(\Coh C)}(X_1,X_2[1]) = 0.\]
+がわかる．したがって，$\chi(X_1,X_2) = 0$である．$v(X_1) \coloneq (r_1,d_1),\, v(X_2) \coloneq (r_2,d_2)$と定めるとHirzebruch-Riemann-Roch の定理より，
+\[r_1d_2 - r_2d_1 = 0.\]
+$v(X_1)$と$v(X_2)$が$\Gamma_\RR$で比例することがわかり，$\A$はこれらで生成されていたので任意の対象$X_1,X_2\in D^b(C)$に対して，$v(X_1)$と$v(X_2)$が比例する．しかし，$v\colon K(C)\to \ZZ^{\oplus 2}$は全射であったので矛盾．\\\\
+\bullet\ 任意の$\sigma = (Z,\P)\in\Stab(C)$に対して，$Z_{\RR}\colon \RR^2 \to \RR^2$は向きを保つ．\\
+$\rk(X)=\rk(Y)=1,\, \deg(X)<\deg(Y)$となるように，$X,Y\in\Coh C$をとる．$X,Y$は直既約対象なので半安定であり，$\phi,\psi\in\RR$が存在して，$A\in\P(\phi),\, B\in\P(\psi)$となる．
+\[\Hom_{D^b(\Coh C)}(A,B)\simeq \Hom_{D^b(\Coh C)}(B,A[1])\neq 0.\]
+したがって，$\phi\leq \psi \leq \phi + 1$．向きを保つ．\\\\
+\bullet\ 以下の写像：
+		\[
+			\begin{array}{ccccc}
+				\sigma_0\cdot &\colon \widetilde{\mathrm{GL}}^+_2(\mathbb{R}) &\longrightarrow &\Stab(C)\\
+									&\rotatebox{90}{\in}& &\rotatebox{90}{\in}\\
+													 &(g,A) & \longmapsto & \sigma_0\cdot (g,A)& .
+					\end{array}
+\]
+は全単射である．\\
+まず，単射性を示す．
+\[\sigma_0\cdot (g,A) = \sigma_0.\]
+のとき，このとき，$A^{-1}\circ Z_0 = Z_0$であるが$Z_0\colon \Gamma_{\RR}\to\RR^2$が同型なので，$A = I$となる．このとき，$f(x) = x + 2m\, (m\in\ZZ)$という函数になるが$\Coh(C)[2m] = \Coh(C)$より$m = 0$である．したがって，$(g,A) = (\id_{\RR},I)$が示され単射性がわかった．次に，全射性を示す．{\color{red}{要証明：全射性}}
 \end{proof}
