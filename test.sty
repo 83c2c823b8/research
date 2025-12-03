@@ -95,6 +95,13 @@
 \newcommand{\X}{{\mathcal X}}
 \newcommand{\Z}{{\mathcal Z}}
 \newcommand{\Serre}{{\mathcal{S}}}
+\newcommand{\mf}[4]{
+	\Bigl(
+  \mbox{\begin{tikzcd}[ampersand replacement=\&]
+    #1 \ar[r, shift left=0.8ex, "{#2}"] \& #4 \ar[l, swap, shift left=0.8ex, "{#3}"']
+  \end{tikzcd}}
+	\Bigr)
+}
 \theoremstyle{plain}
 	\newtheorem{thm}{定理}[section]
 	\newtheorem*{thm*}{定理}
@@ -124,3 +131,4 @@
 \newcommand{\unicode}[1]{{}}
 \newcounter{mathematicapage}
 \def\proofname{証明}
+

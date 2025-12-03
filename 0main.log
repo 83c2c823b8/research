@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2024.7.7)  3 DEC 2025 00:10
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2024.10.26)  3 DEC 2025 11:32
  restricted system commands enabled.
  file:line:error style messages enabled.
 **0main.tex
@@ -674,7 +674,7 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \c@thm=\count317
 
 
-Package amsthm Warning: Unknown theoremstyle `proof' on input line 120.
+Package amsthm Warning: Unknown theoremstyle `proof' on input line 127.
 
 \c@mathematicapage=\count318
 ) (/usr/share/texlive/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
@@ -1314,16 +1314,16 @@ LaTeX Font Info:    Font shape `JY3/mc/m/it' in size <5> not available
 (Font)              Font shape `JY3/mc/m/n' tried instead on input line 296.
 LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
 (Font)              scaled to size 4.62357pt on input line 296.
- [36]) (./9GL.tex [37] [38] [39])
+ [36]) (./9GL.tex [37] [38] [39]) (./10matrix_factorization.tex [40])
 LaTeX Font Info:    Font shape `JT3/gt/m/it' in size <10> not available
-(Font)              Font shape `JT3/gt/m/n' tried instead on input line 71.
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 71.
+(Font)              scaled to size 9.24713pt on input line 81.
 LaTeX Font Info:    Font shape `JY3/gt/m/it' in size <10> not available
-(Font)              Font shape `JY3/gt/m/n' tried instead on input line 71.
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
-(Font)              scaled to size 9.24713pt on input line 71.
- [40] [41] (./0main.aux)
+(Font)              scaled to size 9.24713pt on input line 81.
+ [41] [42] (./0main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1331,20 +1331,20 @@ L3 programming layer <2024-01-22>
 )
 
 Here is how much of LuaTeX's memory you used:
- 35785 strings out of 476553
- 477812,1977958 words of node,token memory allocated
- 10897 words of node memory still in use:
-   35 hlist, 2 vlist, 17 rule, 2 glue, 4 kern, 6 sub_mlist, 1 glyph, 4389 attribute, 64 glue_spec, 431 attribute_list, 2 write, 38 user_defined, 24 pdf_literal, 24 pdf_colorstack nodes
-   avail lists: 1:48,2:119773,3:5142,4:2474,5:700,6:44,7:10917,8:84,9:3207,10:23,11:179
- 56828 multiletter control sequences out of 65536+600000
+ 36034 strings out of 476553
+ 477801,1977958 words of node,token memory allocated
+ 11209 words of node memory still in use:
+   35 hlist, 2 vlist, 17 rule, 2 glue, 4 kern, 6 sub_mlist, 1 glyph, 4532 attribute, 64 glue_spec, 444 attribute_list, 2 write, 38 user_defined, 24 pdf_literal, 24 pdf_colorstack nodes
+   avail lists: 1:43,2:119617,3:5142,4:2474,5:700,6:44,7:10917,8:84,9:3207,10:23,11:216
+ 57072 multiletter control sequences out of 65536+600000
  97 fonts using 51708047 bytes
- 125i,16n,128p,1773b,1700s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman5-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf/fonts/opentype/public/lm/lmmono8-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman7-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmsans10-regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman17-regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on 0main.pdf (41 pages, 557454 bytes).
+ 125i,17n,128p,1773b,1700s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/opentype/public/lm/lmroman7-italic.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman5-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf/fonts/opentype/public/lm/lmmono8-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman7-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmsans10-regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman17-regular.otf></usr/share/texlive/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on 0main.pdf (42 pages, 570127 bytes).
 
-PDF statistics: 332 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
+PDF statistics: 342 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 131072)
  256 words of extra memory for PDF output out of 10000 (max. 100000000)
 

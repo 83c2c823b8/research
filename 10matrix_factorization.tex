@@ -1,0 +1,44 @@
+\section{行列因子化の圏}
+\begin{defn}\cite{KST06}
+	多項式$f$に対して，次数付き行列因子化$M$を次のように定義する：
+\[M\coloneq\mf{P_0}{p_0}{p_1}{P_1},\]
+$P_0,P_1$は次数付き有限階数自由右$R$-加群，$p_0\colon P_0\rightarrow P_1$は次数$0$の$R$-準同型，$p_1\colon P_1\rightarrow P_0$は次数$2$の$R$-準同型であって，$p_1p_0 = f\cdot\id_{P_0},\ p_0p_1 = f\cdot\id_{P_1}$となるものである．$f$のすべての次数付き行列因子化の集合を$\mathrm{MF}^{\text{gr}}_{R}(f)$と記す．\\
+2つの次数付き行列因子化$\ M= \mf{P_0}{p_0}{p_1}{P_1},\ M' =\mf{P_0'}{p_0'}{p_1'}{P_1'}\in\mathrm{MF}^{\text{gr}}_{R}(f)$に対して，その間の射$\Phi = (\phi_0,\phi_1)$を以下のように定める：\\
+次数0の$R$-準同型：$\phi_0\colon P_0 \rightarrow P_0'\ \phi_1\colon P_1 \rightarrow P_1' $であって，以下の図式を可換にするもの：
+		\[
+		\begin{tikzcd}
+			P_0\ar[r,"p_0"]\ar[d,"\phi_0"]& P_1\ar[r,"p_1"]\ar[d,"\phi_1"]& P_0\ar[d,"\phi_0"]\\
+			P_0'\ar[r,"p_0'",swap]& P_1'\ar[r,"p_1'",swap]& P_0' .
+		\end{tikzcd}
+	\]
+\end{defn}
+
+\begin{defn}\cite{KST06}
+	次数付き行列因子化の加法圏$\mathrm{HMF}^{\text{gr}}_{R}(f)$を以下のように定める：
+	\[\Ob(\mathrm{HMF}^{\text{gr}}_{R}(f)) \coloneq \mathrm{MF}^{\text{gr}}_{R}(f).\]
+	任意の$M,M'\in \mathrm{MF}^{\text{gr}}_{R}(f)$に対して，
+	\[\Hom_{\mathrm{HMF}^{\text{gr}}_{R}(f)}(M,M')\coloneq \Hom_{\mathrm{MF}^{\text{gr}}_{R}(f)}(M,M')/\mathbin{\sim}.\]
+	ここで，$\Phi,\Phi'\in\Hom_{\mathrm{MF}^{\text{gr}}_{R}(f)}(M,M')$に対して，次数0の$R$-準同型の組：$(h_0,h_1)\colon (P_0\to P_1), (P_1\to P_0)$であって，$\Phi- \Phi' = (\tau^{-h}(p_1')h_0 + h_1p_0,\ p_0'h_1 + \tau^h(h_0)p_1)$となるようなものが存在するとき，同値$\Phi\sim\Phi'$と定める．
+		\[
+		\begin{tikzcd}
+			P_0\ar[r,"p_0"]\ar[d,"\phi_0",swap]& P_1\ar[r,"p_1"]\ar[d,"\phi_1",swap]\ar[ld,"h_1"description,dotted]& P_0\ar[d,"\phi_0"]\ar[ld,"h_0"description,dotted]\\
+			P_0'\ar[r,"p_0'",swap]& P_1'\ar[r,"p_1'",swap]& P_0' .
+		\end{tikzcd}
+	\]
+	ただし，$\tau = (1)$は次数シフトである．
+\end{defn}
+
+\begin{thm}\cite{KST06}
+	$f\in\CC[x,y,z]$をADE型の多項式とし，$\vec{\Delta}$を対応する向きが固定されたディンキン箙とする．このとき，以下の三角圏の同値が存在する：
+	\[\mathrm{HMF}^{\text{gr}}_{R}(f)\simeq D^b(\mod \CC\vec{\Delta}).\]
+\end{thm}
+
+\begin{defn}\cite{KST06}
+	次数付き行列因子化$M = (Q,S)\in\mathrm{HMF}^{\text{gr}}_{R}(f) $に対して，複素数を以下のように対応させる：
+	\[\Z(M) \coloneq \Tr(e^{\pi\sqrt{-1}S}).\]
+	これをグロタンディーク群上に線型に延長する$\Z\colon K(\mathrm{HMF}^{\text{gr}}_{R}(f))\to\CC$．
+\end{defn}
+
+\begin{thm}\cite{KST06}
+	$f\in R$をADE型の多項式とする．$\P(\phi)$を$\mathrm{HMF}^{\text{gr}}_{R}(f)$の位相$\phi$の既約対象から生成される充満部分加法圏とする．このとき，$\P(\phi),\Z$は，$\mathrm{HMF}^{\text{gr}}_{R}(f)$上にBridgeland安定性条件をさだめる．
+\end{thm}
