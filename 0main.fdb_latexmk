@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1764735914.02859 "0main.tex" "0main.pdf" "0main" 1764736029.04243 0
+["lualatex"] 1766549341.8996 "0main.tex" "0main.pdf" "0main" 1766549359.29779 0
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1729935327.13847 1924610 5ad0ab270dd7b2d968c525a623c6f575 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1729935325.36636 2011208 896bb74978c1fb2dba5f7bcf7d26c84d ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1734707237.59444 81819 c1a1831503f38fe92f18da76596f7b9d ""
@@ -364,9 +364,9 @@
   "/usr/share/texmf/fonts/opentype/public/lm/lmsans8-regular.otf" 1255129361 94256 a52a5407fe2a4281f96a01e9736568c3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1729907913.19293 5472669 54eaf61a88b6b7896ebd0dac973cb29c ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1729908003 12241061 a232f2a347a2f14b190c6b62af6ba738 ""
-  "0main.aux" 1764736028.49946 8269 6b0a099522979dcf9ab2ae080782dee0 "lualatex"
-  "0main.tex" 1764723369.55657 3831 1d2420a82aeb6a8f634d631c81227a09 ""
-  "0main.toc" 1764736028.50146 720 8abf584e75add0a4e6e1d6bfe8d072c6 "lualatex"
+  "0main.aux" 1766549358.64733 8269 3afa5270e236a2878288c428958c7f6d "lualatex"
+  "0main.tex" 1766456811.48569 3831 1d2420a82aeb6a8f634d631c81227a09 ""
+  "0main.toc" 1766549358.64933 720 8f8e7c867ba13aff068315d4b0de4818 "lualatex"
   "10matrix_factorization.tex" 1764735898.90779 3903 8ab02d026e59221e60452dd0ac8263b0 ""
   "1triangulated_category.tex" 1764692189.77588 8414 96a7004730a36301fdc90ff3ebdc3af6 ""
   "2fundamental_property_of_triangulated_category.tex" 1764692189.77588 8514 b9de87cfe7f3b794dc2164357cfdb078 ""
@@ -376,8 +376,8 @@
   "6stability_conditions.tex" 1764692189.77688 16359 6280df1a1358b610c55ff782ba94971f ""
   "7space_of_stability_conditions.tex" 1764692189.77688 3263 130250e8f8c3a1372ce46a468a6a16a5 ""
   "8qgr.tex" 1764692189.77788 17692 b7d9ad977f447783ccbf523768feda7c ""
-  "9GL.tex" 1764720795.70173 10520 f54772fa5a8f3b7507c7a2250024f35f ""
-  "test.sty" 1764735464.29323 4852 58c79f3711867895870cafa1c1f0b62e ""
+  "9GL.tex" 1766549341.30962 12388 b9feac17dccb5dc8e25f3a2015957e4e ""
+  "test.sty" 1766542449.13751 4976 ca75815912161b5e080179f54cfc6718 ""
   (generated)
   "0main.aux"
   "0main.log"
