@@ -286,6 +286,37 @@ T := \bigoplus_{0 \le \vec{x} \le \vec{c}} \mathcal{O}(\vec{x}).
 	
 \end{prop}
 
+\begin{defn}
+	加法圏$\C$が以下の条件を満たすときKrull-Schmidt圏という．\\
+			任意の$X\in\C$に対して，
+			\[X \simeq X_1\oplus \cdots \oplus X_n.\]
+			となるような$X_1,\ldots, X_n\in\C$が存在する．ただし，$\End(X_i)\ (1\le i\le n)$は局所環である．
+\end{defn}
+
+\begin{prop}
+	$\C$を加法圏，$X\in\C$とする．このとき，(1) $\Longrightarrow$ (2) $\Longrightarrow$ (3)が成り立つ．\vspace{-3mm}
+	\begin{itemize}
+		\item[(1)]
+			$\End(X)$が局所環である．
+		\item[(2)]
+			$\End(X)$が$0,1$以外に冪等元を持たない．
+		\item[(3)]
+			$X$は既約である．
+	\end{itemize}
+\end{prop}
+\begin{proof}
+	(1) $\Longrightarrow$ (2)\\
+	$e\in\End(X)$を冪等元，すなわち$e^2 = e$とする．$e + (1-e) = 1$なので，唯一の極大イデアルである非単元全体の集合に$e,1-e$の両方が入ることはない．したがって，$e$か$1-e$が単元である．$e$が単元のとき，
+	\[e = e^2\cdot e^{-1} = e\cdot e^{-1} =1.\]
+	$1-e$が単元のとき，
+	\[1-e = (1-e)^2\cdot (1-e)^{-1} = (1-e)\cdot (1-e)^{-1} =1.\]
+	したがって，$e = 0,1$がわかった．\\
+	(2) $\Longrightarrow$ (3)\\
+	対偶を示す．$X$が既約でないとすると，$X\simeq Y\oplus Z\ (Y,Z\neq 0)$となるが，
+	$\begin{pmatrix}\id_Y& 0\\0&0 \end{pmatrix}\in\End(X)$が非自明な冪等元となっている．
+\end{proof}
+$\End(X)$が有限次元$k$-代数となっているときは，$(1)\Longleftarrow (2)$もなりたつ．
+
 \begin{thm}[Krull--Schmidt 性]\cite{GL87}
 	重み付き射影直線 $\PP_{A,\Lambda} $ に対して，連接層のアーベル圏
 \[

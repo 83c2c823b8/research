@@ -8,3 +8,4 @@
 \contentsline {section}{\numberline {8}$\qgr R$の定義}{31}{}%
 \contentsline {section}{\numberline {9}安定性条件}{37}{}%
 \contentsline {section}{\numberline {10}行列因子化の圏}{41}{}%
+\contentsline {section}{\numberline {11}Auslander-Reiten理論}{43}{}%

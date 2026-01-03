@@ -1,0 +1,50 @@
+\section{Auslander-Reiten理論}
+
+\begin{defn}
+	加法圏$\C$が次の条件を満たすとき，冪等完備という．\\
+	任意の$X\in\C$と冪等射
+	\[e\colon X\to X\quad (e^2 = e),\]
+	に対して，
+	\[p\circ i = \id_Y,\quad i\circ p = e.\]
+	を満たす$Y\in\C$，$i\colon Y\to X,\ p\colon X\to Y$が存在する．
+\end{defn}
+
+\begin{prop}
+$k$を体とする．$\T$を$k$-線型，$\Hom$-finite，冪等完備な三角圏とする．このとき，$\T$はKrull-Schmidt圏である．
+\end{prop}
+以下，$\T$を$k$-線型，$\Hom$-finite，冪等完備な三角圏，$\Serre$をそのSerre函手とする．
+
+
+\begin{defn}
+	$\C$をKrull-Schmidt圏，$f\in\Hom_{\C}(X,Y)$とする．このとき，\vspace{-3mm}
+	\begin{itemize}
+		\item[(1)]
+			$f\circ g = \id_Y$となるような$g\colon Y\to X$が存在するとき，$f$はsplit epimorphismであるという．
+		\item[(2)]
+			$f$がsplit epimorphismでなく，任意のsplit epimorphismでない$g\colon Z\to Y$に対して，$g = f\circ h$となるような$h\colon Z\to X$が存在するとき，$f$をright almost splitという．
+		\item[(3)]
+			任意の$g\in\End(X)$に対して，$f=g\circ f$ならば$g$が同型射がなりたつならば，$f$をright minimalという．
+		\item[(4)]
+			$f$がright almost splitかつright minimalのとき，$f$をsink morphismという．
+	\end{itemize}
+\end{defn}
+
+\begin{thm}
+	任意の$X\in\ind\T$に対して，以下の完全三角形が存在する：\vspace{-3mm}
+	\begin{itemize}
+		\item 
+		\[
+		\begin{tikzcd}
+			\Serre(X[-1])\ar[r,"g"]& Y\ar[r,"f"]& X\ar[r] & \Serre(X)
+		\end{tikzcd}.
+	\]
+ただし，$f$はsink morphismで，$g$はsource morphismである．
+\item
+		\[
+		\begin{tikzcd}
+			X\ar[r,"f'"]& Y'\ar[r,"g'"]& \Serre^{-1}(X[1])\ar[r] & X[1]
+		\end{tikzcd}.
+	\]
+ただし，$f$はsource morphismで，$g$はsink morphismである．
+	\end{itemize}
+\end{thm}
