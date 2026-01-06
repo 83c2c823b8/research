@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1767341486.3645 "0main.tex" "0main.pdf" "0main" 1767341494.79053 0
+["lualatex"] 1767623838.58534 "0main.tex" "0main.pdf" "0main" 1767623848.3533 0
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1720346179.56229 1924610 5ad0ab270dd7b2d968c525a623c6f575 ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1720346139.93902 2011208 896bb74978c1fb2dba5f7bcf7d26c84d ""
   "/home/gf1cg8to/.texlive2023/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc" 1720346555.51527 81819 c1a1831503f38fe92f18da76596f7b9d ""
@@ -373,11 +373,11 @@
   "07space_of_stability_conditions.tex" 1764573064.98077 3263 130250e8f8c3a1372ce46a468a6a16a5 ""
   "08qgr.tex" 1767257271.36324 19204 5c5cf347f8803cad1e9b9c1cbd622d95 ""
   "09GL.tex" 1766635830.96774 12388 b9feac17dccb5dc8e25f3a2015957e4e ""
-  "0main.aux" 1767341494.50097 8472 0fcdf4cecbe2d7ae9c3914d2fc8ca239 "lualatex"
+  "0main.aux" 1767623848.0204 8542 f15ca26585d9d3cc3f95437833b3be09 "lualatex"
   "0main.tex" 1767231723.45513 3857 cd2a8ac92c96a35c7a200730633e8743 ""
-  "0main.toc" 1767341494.50135 791 56d210df28b801760e77ebb4d55bb0d2 "lualatex"
+  "0main.toc" 1767623848.0224 791 56d210df28b801760e77ebb4d55bb0d2 "lualatex"
   "10matrix_factorization.tex" 1766635830.96774 3903 8ab02d026e59221e60452dd0ac8263b0 ""
-  "11AR.tex" 1767341485.096 1892 cbb2b8a1ec08e37c4db9c2c911ec8832 ""
+  "11AR.tex" 1767623837.33479 3399 49459e9490adc366b7d91809c07f826f ""
   "test.sty" 1767336809.3581 5009 f44c5e792cb52d4949eff5db46189668 ""
   (generated)
   "0main.aux"

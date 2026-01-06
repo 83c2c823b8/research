@@ -48,3 +48,29 @@ $k$を体とする．$\T$を$k$-線型，$\Hom$-finite，冪等完備な三角�
 ただし，$f$はsource morphismで，$g$はsink morphismである．
 	\end{itemize}
 \end{thm}
+
+\begin{lemm}\label{lemm:free-C-action}
+	安定性条件$\sigma = (Z,\P)$への複素数の作用は自由である．すなわち以下が成り立つ：\\
+	$\xi,\eta\in\CC$としたとき，
+	\[\sigma\cdot \xi = \sigma\cdot \eta\Longrightarrow  \xi= \eta.\]
+\end{lemm}
+\begin{proof}
+	$\sigma = (Z,\P)$に対して，$\sigma\cdot (x+\sqrt{-1}y)= \sigma$のとき，$x+\sqrt{-1}y = 0 \quad (x,y\in\RR)$を示せばよい．$ (e^{-\sqrt{-1}\pi(x+\sqrt{-1}y)}Z,\P(\bullet + x))$であるので，任意の$\phi\in\RR$に対して，
+	\[\P(\phi + x) = \P(\phi).\]
+	が成り立つ，したがって，$x=0$である．また，$e^{\pi y}Z = Z$なので$e^{\pi y} =1$．したがって，$y =0$
+\end{proof}
+
+\begin{thm}
+	$\overrightarrow{\Delta}$をADE型箙，$\D = D^b(\mod k\overrightarrow{\Delta})$とし，そのSerre函手を$\Serre$
+	とする．このとき，$\Serre$に関してGepner型である安定性条件が存在し，$\CC$作用を除いて一意である．
+\end{thm}
+\begin{proof}
+	$\sigma = (Z,\P)$を$\Serre$に関してGepner型であるとすると，$\xi\in\CC$を用いて
+\[\Serre\cdot \sigma = \sigma\cdot\xi .\]
+したがって，$\Serre^h\cdot\sigma = \sigma\cdot h\xi$となる．また，AR理論より，
+	\[\Serre^h \simeq (\tau[1])^h \simeq \tau^h[h] \simeq [h-2].\]
+したがって，
+	\[\sigma \cdot (h-2)=[h-2]\cdot \sigma = \sigma\cdot h\xi.\]
+	(補題\ref{lemm:free-C-action})より，$h-2 = h\xi$，すなわち，$\xi = 1 -\frac{2}{h}$がしたがう．
+\end{proof}
+
