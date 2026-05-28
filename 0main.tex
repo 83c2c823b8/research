@@ -4,12 +4,55 @@
 \usepackage[a4paper, top=25mm, bottom=25mm, left=25mm, right=25mm]{geometry}
 \usepackage{luatexja} 
 \usepackage{multicol,amsmath,amssymb,mathtools,ascmac,amsthm,amscd,physics,comment,dcolumn,titlesec,mathrsfs,test,tikz-cd,enumitem}
-\usetikzlibrary{arrows.meta,calc}
-\titleformat*{\section}{\Large\bfseries}
+\usetikzlibrary{
+arrows.meta,
+  positioning,
+  fit,
+  backgrounds,
+	calc,
+	decorations.pathmorphing,
+	decorations.markings,
+	fit
+}
+
 \setlength{\parindent}{0pt}
 \usepackage[most]{tcolorbox}
 \tikzset{every picture/.style={remember picture,baseline=(current bounding box.center)}}
-\usetikzlibrary{decorations.pathmorphing}
+
+\usetikzlibrary{decorations.markings}
+
+\tikzset{
+  midtriangle/.style={
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position .5 with {
+          \fill[black]
+            (-.10cm,-.08cm) --
+            ( .10cm,0cm) --
+            (-.10cm,.08cm) --
+            cycle;
+        }
+      }
+    }
+  },
+midgt/.style={
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position .5 with {
+          \draw[line width=.5pt]
+            (-4pt,4pt) --
+            (0pt,0pt) --
+            (-4pt,-4pt);
+        }
+      }
+    }
+  }
+}
+
 %\everymath{\displaystyle}
 \begin{document}
 \title{三角圏上のBridgeland安定性条件}
@@ -28,6 +71,7 @@
 \input{09GL}
 \input{10matrix_factorization}
 \input{11AR.tex}
+\input{12hariawase}
 
 \begin{thebibliography}{99}
 
