@@ -50,6 +50,39 @@ midgt/.style={
         }
       }
     }
+  },
+midtriangle2/.style={
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position .5 with {
+          \begin{scope}[xshift=30pt]
+            \fill[black]
+              (-.10cm,-.08cm) --
+              ( .10cm,0cm) --
+              (-.10cm,.08cm) --
+              cycle;
+          \end{scope}
+        }
+      }
+    }
+  },
+midgt2/.style={
+    postaction={
+      decorate,
+      decoration={
+        markings,
+        mark=at position .5 with {
+          \begin{scope}[xshift=48pt]
+            \draw[line width=.5pt]
+              (-4pt,4pt) --
+              (0pt,0pt) --
+              (-4pt,-4pt);
+          \end{scope}
+        }
+      }
+    }
   }
 }
 

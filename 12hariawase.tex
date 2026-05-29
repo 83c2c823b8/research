@@ -32,11 +32,11 @@ scale = 0.9,
 \node (LZ) at (22.5,-1.8) {$(A,B,C)$};
 
 \node (U1) at (1.5,1.8) {$(S_2,P_3,P_1)$};
-\node (U2) at (7.5,1.8) {$(S_3,M,P_2)$};
-\node (U3) at (13.5,1.8) {$(M,S_1,S_2)$};
+\node (U2) at (7.5,1.8) {$(C,S_1,P_2)$};
+\node (U3) at (13.5,1.8) {$(S_3,M,P_3)$};
 
-\node (L1) at (4.5,-1.8) {$(P_2,P_1,C)$};
-\node (L2) at (10.5,-1.8) {$(S_1,P_3,S_3)$};
+\node (L1) at (4.5,-1.8) {$(P_3,P_1,C)$};
+\node (L2) at (10.5,-1.8) {$(S_1,P_2,S_2)$};
 
 \draw[midtriangle] (A) -- (B);
 \draw[midtriangle] (B) -- node[above] {$\sigma_1$} (U1);
@@ -94,116 +94,105 @@ scale = 0.9,
 % outer octagon
 %================================================
 
-\node (F) at (-1.8, 4.3) {$(P_1,S,S_2)$};
-
-\node (G) at ( 1.8, 4.3) {$(P_1,X,S_1)$};
-
-\node (A) at (-4.3, 1.8) {$(S_1,P_2,S)$};
-
-\node (E) at ( 4.3, 1.8) {$(P_3,P_1,S_1)$};
-
-\node (H) at (-4.3,-1.8) {$(S_1,S_2,P_3)$};
-
-\node (L) at ( 4.3,-1.8) {$(P_3,P_2,P_1)$};
-
-\node (O) at (-1.8,-4.3) {$(S_2,X,S_3)$};
-
-\node (P) at ( 1.8,-4.3) {$(S_2,P_3,P_1)$};
+\node (A) at (-1.8, 4.3) {$(P_1,S_1,S_2)$};
+\node (B) at ( 1.8, 4.3) {$(P_1,X,S_1)$};
+\node (C) at ( 4.3, 1.8) {$(P_3,P_1,S_1)$};
+\node (D) at ( 4.3,-1.8) {$(P_3,P_2,P_1)$};
+\node (E) at ( 1.8,-4.3) {$(S_2,P_3,P_1)$};
+\node (F) at (-1.8,-4.3) {$(S_2,X,S_3)$};
+\node (G) at (-4.3,-1.8) {$(S_1,S_2,P_3)$};
+\node (H) at (-4.3, 1.8) {$(S_1,P_2,S_2)$};
 
 %================================================
 % inner square + edge midpoints
 %================================================
 
-% square vertices
-
-\node (C) at ( 0,  1.8) {$(P_1,S_2,X)$};
-
-\node (D) at ( 1.8 ,  1.8) {$(X,P_3,S_1)$};
-
-\node (K) at ( 0, -1.8) {$(P_2,S_3,P_1)$};
-
-\node (I) at (-1.8,  0) {$(X,S_1,S_3)$};
-
-% edge midpoints
-
-\node (B) at (-1.8,  1.8) {$(P_2,P_1,S_2)$};
-
-\node (N) at ( 1.8, 0) {$(P_3,S_1,P_2)$};
-
-\node (J) at (1.8, -1.8) {$(S_2,P_1,X)$};
-
-\node (M) at (-1.8, -1.8) {$(S_1,P_3,P_2)$};
-
+\node (I) at (-1.8,  1.8) {$(P_2,P_1,S_2)$};
+\node (J) at ( 0,  2.4) {$(P_1,S_2,X)$};
+\node (K) at ( 1.8 ,  1.8) {$(X,P_3,S_1)$};
+\node (L) at ( 2.4, 0) {$(P_3,S_1,P_2)$};
+\node (M) at (1.8, -1.8) {$(P_2,S_2,P_1)$};
+\node (N) at ( 0, -2.4) {$(S_2,P_1,X)$};
+\node (O) at (-1.8, -1.8) {$(X,S_1,S_3)$};
+\node (P) at (-2.4,  0) {$(S_1,P_3,P_2)$};
 %================================================
 % outer cycle
 %================================================
 
-\draw[midtriangle] (A) -- (F);
-
-\draw[midgt] (G) -- (F);
-
-\draw[midtriangle] (G) -- (E);
-
-\draw[midtriangle] (E) -- (L);
-
-\draw[midgt] (L) -- (P);
-
-\draw[midgt] (P) -- (O);
-
-\draw[midtriangle] (H) -- (O);
-
 \draw[midtriangle] (A) -- (H);
+
+\draw[midgt] (H) -- (G);
+
+\draw[midtriangle] (G) -- (F);
+
+\draw[midgt] (F) -- (E);
+
+\draw[midtriangle] (E) -- (D);
+
+\draw[midgt] (D) -- (C);
+
+\draw[midtriangle] (C) -- (B);
+
+\draw[midgt] (B) -- (A);
 
 %================================================
 % outer -> inner
 %================================================
 
-\draw[midtriangle] (A) -- (B);
+\draw[midgt] (A) -- (J);
 
-\draw[midtriangle] (F) -- (B);
+\draw[midtriangle] (B) -- (K);
 
-\draw[midtriangle] (F) -- (C);
+\draw[midgt] (C) -- (L);
 
-\draw[midtriangle] (G) -- (D);
+\draw[midtriangle] (D) -- (M);
 
-\draw[midtriangle] (E) -- (D);
+\draw[midgt] (E) -- (N);
 
-\draw[midtriangle] (L) -- (N);
+\draw[midtriangle] (F) -- (O);
 
-\draw[midtriangle] (P) -- (K);
+\draw[midgt] (G) -- (P);
 
-\draw[midtriangle] (P) -- (J);
+\draw[midtriangle] (H) -- (I);
 
-\draw[midtriangle] (O) -- (J);
+%================================================
+% inner -> outer
+%================================================
 
-\draw[midtriangle] (H) -- (M);
+\draw[midtriangle] (I) -- (A);
+
+\draw[midgt] (J) -- (B);
+
+\draw[midtriangle] (K) -- (C);
+
+\draw[midgt] (L) -- (D);
+
+\draw[midtriangle] (M) -- (E);
+
+\draw[midgt] (N) -- (F);
+
+\draw[midtriangle] (O) -- (G);
+
+\draw[midgt] (P) -- (H);
 
 %================================================
 % inner structure
 %================================================
 
-\draw[midtriangle] (B) -- (C);
+\draw[midgt2] ($(I)+(5pt,-5pt)$) -- ($(M)+(5pt,5pt)$);
+\draw[midgt2] ($(M)+(-5pt,5pt)$) -- ($(I)+(-5pt,-5pt)$);
 
-\draw[midtriangle] (C) -- (D);
+\draw[midgt2] ($(K)+(5pt,-5pt)$) -- ($(O)+(5pt,5pt)$);
+\draw[midgt2] ($(O)+(-5pt,5pt)$) -- ($(K)+(-5pt,-5pt)$);
 
-\draw[midtriangle] (D) -- (N);
+\draw[midtriangle2] ($(J)+(3pt,-5pt)$) -- ($(N)+(3pt,5pt)$);
+\draw[midtriangle2] ($(N)+(-3pt,5pt)$) -- ($(J)+(-3pt,-5pt)$);
 
-\draw[midtriangle] (N) -- (K);
-
-\draw[midtriangle] (K) -- (J);
-
-\draw[midtriangle] (J) -- (I);
-
-\draw[midtriangle] (I) -- (M);
-
-\draw[midtriangle] (M) -- (B);
-
-
+\draw[midtriangle2] ($(P)+(25pt,3pt)$) -- ($(L)+(-25pt,3pt)$);
+\draw[midtriangle2] ($(L)+(-25pt,-3pt)$) -- ($(P)+(25pt,-3pt)$);
 %================================================
 % labels
 %================================================
-
-\node at (-4.8,-2.7) {$S_3$};
 
 \node at (2.45,-3.0) {$\sigma_1$};
 
