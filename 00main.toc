@@ -3,10 +3,10 @@
 \contentsline {section}{\numberline {3}アーベル圏の導来圏の定義}{7}{}%
 \contentsline {section}{\numberline {4}三角圏における基本概念}{19}{}%
 \contentsline {section}{\numberline {5}$t$-structure}{21}{}%
-\contentsline {section}{\numberline {6}Bridgeland安定性条件}{26}{}%
-\contentsline {section}{\numberline {7}Bridgeland安定性条件の空間}{30}{}%
-\contentsline {section}{\numberline {8}$\qgr R$の定義}{31}{}%
-\contentsline {section}{\numberline {9}安定性条件}{37}{}%
-\contentsline {section}{\numberline {10}行列因子化の圏}{41}{}%
-\contentsline {section}{\numberline {11}Auslander-Reiten理論}{43}{}%
-\contentsline {section}{\numberline {12}貼り合わせ}{44}{}%
+\contentsline {section}{\numberline {6}Bridgeland安定性条件}{28}{}%
+\contentsline {section}{\numberline {7}Bridgeland安定性条件の空間}{33}{}%
+\contentsline {section}{\numberline {8}$\qgr R$の定義}{34}{}%
+\contentsline {section}{\numberline {9}安定性条件}{40}{}%
+\contentsline {section}{\numberline {10}行列因子化の圏}{44}{}%
+\contentsline {section}{\numberline {11}Auslander-Reiten理論}{45}{}%
+\contentsline {section}{\numberline {12}貼り合わせ}{47}{}%

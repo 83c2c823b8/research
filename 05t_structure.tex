@@ -201,3 +201,230 @@ $X[1]\in\D^{\le -1}$なので，
 \[F\colon\Hom_{\D^b(\A)}(X,Y)\simeq \Hom_{\D}(F(X),F(Y)) .\]
 {\color{red} 要証明}
 \end{proof}
+
+ミューテーションの定義で現れる評価射を説明する．三角圏 $\mathcal D$ と $E,F\in\mathcal D$ に対して，
+\[
+\RHom(E,-)
+:
+\mathcal D
+\longrightarrow
+D^b(\mod k)
+\]
+と
+\[
+-\otimes E
+:
+D^b(\mod k)
+\longrightarrow
+\mathcal D
+\]
+は随伴関手をなす．したがって，任意の $V\in D(\mod k)$ に対して自然同型
+\[
+\varphi\colon\Hom_{D^b(\mod k)}
+\bigl(
+V,\RHom(E,F)
+\bigr)
+\simeq
+\Hom_{\mathcal D}
+\bigl(
+V\otimes E,F
+\bigr)
+\]
+が存在する．特に，$V=\RHom(E,F)$とすると，
+\[
+\mathrm{id}_{\RHom(E,F)}
+\in
+\Hom_{D^b(\mod k)}
+\bigl(
+\RHom(E,F),
+\RHom(E,F)
+\bigr)
+\]
+が存在する．この恒等射に対応する射
+\[
+\RHom(E,F)\otimes E
+\longrightarrow
+F
+\]
+を評価射 (evaluation morphism) と呼び，
+\[
+\mathrm{ev}
+:
+\RHom(E,F)\otimes E
+\longrightarrow
+F
+\]
+と記す．
+
+\begin{lemm}
+任意の $X,Y\in\mathcal D$ および $V\in D^b(\mod k)$に対して同型
+\[
+\RHom(X,V\otimes Y)
+\simeq
+V\otimes\RHom(X,Y).
+\]
+が存在する．
+\end{lemm}
+\begin{proof}
+$D^b(\mod k)$ は半単純であるから，任意の$V\in D^b(\mod k)$ に対して
+\[
+V\simeq \bigoplus_i H^i(V)[-i]
+\]
+が成り立つ．したがって
+\[
+V\otimes Y
+\simeq
+\bigoplus_i H^i(V)\otimes Y[-i]
+\]
+である．これに $\RHom(X,-)$ を作用させると
+\[
+\begin{aligned}
+\RHom(X,V\otimes Y)
+&\simeq
+\RHom\left(X,\bigoplus_i H^i(V)\otimes Y[-i]\right)\\
+&\simeq
+\bigoplus_i H^i(V)\otimes \RHom(X,Y[-i])\\
+&\simeq
+\bigoplus_i H^i(V)\otimes \RHom(X,Y)[-i]\\
+&\simeq
+V\otimes \RHom(X,Y).
+\end{aligned}
+\]
+よって所望の同型
+\[
+\RHom(X,V\otimes Y)
+\simeq
+V\otimes\RHom(X,Y)
+\]
+を得る．
+\end{proof}
+
+\begin{defn}
+$\mathcal D$ を三角圏とし，$E,F\in\mathcal D$ を対象とする． $F$ による $E$ の左ミューテーション $L_FE$ を，完全三角形：
+\[ E \xrightarrow{\mathrm{coev}} \RHom(E,F)^\vee\otimes F \longrightarrow R_FE \longrightarrow E[1],\]
+によって定義する．同様に，$E$ による $F$ の右ミューテーション $R_EF$ を，完全三角形：
+\[ L_E F \longrightarrow \RHom(E,F)\otimes E \xrightarrow{\mathrm{ev}} F\longrightarrow  L_E F[1].\]
+によって定義する．
+\end{defn}
+
+\begin{thm}
+$\mathcal D$ を三角圏とし，
+\[
+(E_1,\dots,E_n).
+\]
+をその充満例外対象列とする．このとき，各 $1\le i<n$ に対して定まる左ミューテーション：
+\[
+(E_1,\dots,E_i,E_{i+1},\dots,E_n)
+\longmapsto
+(E_1,\dots,E_{i-1},L_{E_{i}}E_{i+1},E_i,\dots,E_n).
+\]
+および右ミューテーション：
+\[
+(E_1,\dots,E_i,E_{i+1},\dots,E_n)
+\longmapsto
+(E_1,\dots,E_{i-1,},E_{i+1},R_{E_{i+1}}E_{i},E_{i+2},\dots,E_n).
+\]
+は，再び充満例外対象列を与える．
+\end{thm}
+
+\begin{proof}
+$(E,F)$ を例外対象列とする．すなわち$\RHom(F,E)=0$である．左ミューテーション $L_EF$ は，完全三角形：
+\[L_EF\longrightarrow\RHom(E,F)\otimes E\longrightarrow F\longrightarrow L_EF[1],
+\]
+によって定義される．まず$\RHom(E,L_EF)=0$を示す．上の完全三角形に共変函手$\RHom(E,-)$を作用させると，完全三角形：
+\[
+\RHom(E,L_EF)
+\longrightarrow
+\RHom(E,\RHom(E,F)\otimes E)
+\longrightarrow
+\RHom(E,F)
+\longrightarrow
+\RHom(E,L_EF)[1]
+\]
+を得る．ここで $E$ は例外対象なので$\RHom(E,E)\simeq k$である．したがって，補題を用いて，
+\[
+\RHom(E,\RHom(E,F)\otimes E)
+\simeq
+\RHom(E,F)\otimes \RHom(E,E)
+\simeq
+\RHom(E,F)
+\]
+である．また，この同型のもとで
+\[
+\RHom(E,\RHom(E,F)\otimes E)
+\longrightarrow
+\RHom(E,F)
+\]
+は評価射の定義により恒等射に対応する．よって，その写像錘は $0$ であるから
+\[
+\RHom(E,L_EF)=0
+\]
+が従う．次に，$L_EF$ が例外対象であることを示す．完全三角形
+\[
+L_EF
+\longrightarrow
+\RHom(E,F)\otimes E
+\longrightarrow
+F
+\longrightarrow
+L_EF[1]
+\]
+に $\RHom(-,L_EF)$ を作用させると，完全三角形：
+\[
+\RHom(F,L_EF)
+\longrightarrow
+\RHom(\RHom(E,F)\otimes E,L_EF)
+\longrightarrow
+\RHom(L_EF,L_EF)
+\longrightarrow
+\RHom(F,L_EF)[1].
+\]
+を得る．すでに示した$\RHom(E,L_EF)=0$と補題より，
+\[
+\RHom(\RHom(E,F)\otimes E,L_EF)\simeq\RHom(E,F)^\vee\otimes\RHom(E,L_EF)=0.
+\]
+である．したがって
+\[
+\RHom(L_EF,L_EF)
+\simeq
+\RHom(F,L_EF)[1].
+\]
+である．一方，定義の完全三角形に $\RHom(F,-)$ を作用させると
+\[
+\RHom(F,L_EF)
+\longrightarrow
+\RHom(F,\RHom(E,F)\otimes E)
+\longrightarrow
+\RHom(F,F)
+\longrightarrow
+\RHom(F,L_EF)[1].
+\]
+を得る．ここで補題と$\RHom(F,E)=0$より，
+\[
+\RHom(F,\RHom(E,F)\otimes E)=\RHom(E,F)\otimes\RHom(F,E)\simeq0,
+\]
+であり，また $F$ は例外対象であることから，
+\[
+	\RHom(L_EF,L_EF) \simeq\RHom(F,L_E F)[1]\simeq\RHom(F,F)\simeq k.
+\]
+以上より
+\[
+(L_EF,E).
+\]
+は例外対象列である．最後に充満性に関しては，
+\[
+F\in \langle L_EF,E\rangle .
+\]
+から明らか．ゆえに，充満例外対象列
+\[
+(E_1,\dots,E_n)
+\]
+に対して
+\[
+(E_1,\dots,E_{i-1},
+L_{E_i}E_{i+1},
+E_i,
+E_{i+2},\dots,E_n)
+\]
+も再び充満例外対象列である．
+\end{proof}
