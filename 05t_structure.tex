@@ -107,8 +107,7 @@
 	\[X\xrightarrow{x} C[1]\xrightarrow{y} Y\rightarrow X[1].\]
 $X[1]\in\D^{\le -1}$なので，
 	\[0\rightarrow \Hom_{\D}(Y[1],Q) \rightarrow \Hom_{\D}(C[1],Q).\]
-	$q'=q''\circ y$となる$q''$の一意性がわかる．したがって，$y\circ g\colon B\to Y$が$f\colon A\to B$の余核を与えていることが示された．双対的に核の存在も証明される．\\
-	核，余核の存在は示されたので任意の射$f\in\Hom_{\H}(A,B)$に対して，自然な同型
+	$q'=q''\circ y$となる$q''$の一意性がわかる．したがって，$y\circ g\colon B\to Y$が$f\colon A\to B$の余核を与えていることが示された．双対的に核の存在も証明される．核，余核の存在は示されたので任意の射$f\in\Hom_{\H}(A,B)$に対して，自然な同型
 \[\Im(f)\simeq \Coim(f).\]
 の存在を言えばよい．完全三角形
 	\[C\xrightarrow{e}A\xrightarrow{f}B\xrightarrow{g}C[1].\]
@@ -312,7 +311,7 @@ $\mathcal D$ を三角圏とし，
 \[
 (E_1,\dots,E_n).
 \]
-をその充満例外対象列とする．このとき，各 $1\le i<n$ に対して定まる左ミューテーション：
+をその例外生成列とする．このとき，各 $1\le i<n$ に対して定まる左ミューテーション：
 \[
 (E_1,\dots,E_i,E_{i+1},\dots,E_n)
 \longmapsto
@@ -324,11 +323,11 @@ $\mathcal D$ を三角圏とし，
 \longmapsto
 (E_1,\dots,E_{i-1,},E_{i+1},R_{E_{i+1}}E_{i},E_{i+2},\dots,E_n).
 \]
-は，再び充満例外対象列を与える．
+は，再び例外生成列を与える．
 \end{thm}
 
 \begin{proof}
-$(E,F)$ を例外対象列とする．すなわち$\RHom(F,E)=0$である．左ミューテーション $L_EF$ は，完全三角形：
+$(E,F)$ を例外列とする．すなわち$\RHom(F,E)=0$である．左ミューテーション $L_EF$ は，完全三角形：
 \[L_EF\longrightarrow\RHom(E,F)\otimes E\longrightarrow F\longrightarrow L_EF[1],
 \]
 によって定義される．まず$\RHom(E,L_EF)=0$を示す．上の完全三角形に共変函手$\RHom(E,-)$を作用させると，完全三角形：
@@ -407,24 +406,64 @@ L_EF[1]
 \[
 	\RHom(L_EF,L_EF) \simeq\RHom(F,L_E F)[1]\simeq\RHom(F,F)\simeq k.
 \]
-以上より
+以上より$(L_EF,E)$ は例外列である．最後に充満性に関しては，$F\in \langle L_EF,E\rangle $から明らか．ゆえに，例外生成列：
 \[
-(L_EF,E).
-\]
-は例外対象列である．最後に充満性に関しては，
-\[
-F\in \langle L_EF,E\rangle .
-\]
-から明らか．ゆえに，充満例外対象列
-\[
-(E_1,\dots,E_n)
+(E_1,\dots,E_n),
 \]
 に対して
 \[
 (E_1,\dots,E_{i-1},
 L_{E_i}E_{i+1},
 E_i,
-E_{i+2},\dots,E_n)
+E_{i+2},\dots,E_n).
 \]
-も再び充満例外対象列である．
+も再び例外生成列である．
 \end{proof}
+
+\begin{prop}
+$\operatorname{FEC}(\mathcal D)$ を $\mathcal D$ の例外生成列全体の集合とする．このとき上記のミューテーションおよびシフトは，
+\[
+G_n=\operatorname{Br}_n\ltimes \mathbb Z^n.
+\]
+の $\operatorname{FEC}(\mathcal D)$ への作用を定める．
+\end{prop}
+
+\begin{proof}
+まず，$\operatorname{Br}_n$ の標準生成元 $\sigma_i\ (1\le i<n)$ の作用を
+\[
+\sigma_i(E_1,\dots,E_n)
+=
+(E_1,\dots,E_{i-1},L_{E_i}E_{i+1},E_i,E_{i+2},\dots,E_n)
+\]
+で定める．前定理より，これは再び例外生成列を与える．また，ミューテーションは braid 関係式
+\[
+\sigma_i\sigma_j=\sigma_j\sigma_i
+\qquad (|i-j|>1),
+\]
+\[
+\sigma_i\sigma_{i+1}\sigma_i
+=
+\sigma_{i+1}\sigma_i\sigma_{i+1}.
+\]
+を満たすので，$\operatorname{Br}_n$ は $\operatorname{FEC}(\mathcal D)$ に作用する．次に，$\mathbb Z^n$ の標準基底 $e_i$ の作用を
+\[
+e_i(E_1,\dots,E_n)
+=
+(E_1,\dots,E_{i-1},E_i[1],E_{i+1},\dots,E_n).
+\]
+で定める．シフトは例外性および生成性を保つので，$\mathbb Z^n$ も
+$\operatorname{FEC}(\mathcal D)$ に作用する．さらに，$\operatorname{Br}_n$ は自然な全射
+\[
+\operatorname{Br}_n\longrightarrow \mathfrak S_n
+\]
+を通して $\mathbb Z^n$ の添字を置換する．すなわち
+\[
+\sigma_i e_j\sigma_i^{-1}=e_{s_i(j)}.
+\]
+である．したがって，これらの作用は半直積
+\[
+G_n=\operatorname{Br}_n\ltimes \mathbb Z^n.
+\]
+の作用を定める．
+\end{proof}
+
