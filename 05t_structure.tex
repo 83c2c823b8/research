@@ -201,9 +201,9 @@ $X[1]\in\D^{\le -1}$なので，
 {\color{red} 要証明}
 \end{proof}
 
-ミューテーションの定義で現れる評価射を説明する．三角圏 $\mathcal D$ と $E,F\in\mathcal D$ に対して，
+ミューテーションの定義で現れる評価射を説明する．三角圏 $\mathcal D$ と $X,Y\in\mathcal D$ に対して，
 \[
-\RHom(E,-)
+\RHom(X,-)
 :
 \mathcal D
 \longrightarrow
@@ -211,7 +211,7 @@ D^b(\mod k)
 \]
 と
 \[
--\otimes E
+-\otimes X
 :
 D^b(\mod k)
 \longrightarrow
@@ -221,79 +221,77 @@ D^b(\mod k)
 \[
 \varphi\colon\Hom_{D^b(\mod k)}
 \bigl(
-V,\RHom(E,F)
+V,\RHom(X,Y)
 \bigr)
 \simeq
 \Hom_{\mathcal D}
 \bigl(
-V\otimes E,F
+V\otimes X,Y
 \bigr)
 \]
-が存在する．特に，$V=\RHom(E,F)$とすると，
+が存在する．特に，$V=\RHom(X,Y)$とすると，
 \[
-\mathrm{id}_{\RHom(E,F)}
+\mathrm{id}_{\RHom(X,Y)}
 \in
 \Hom_{D^b(\mod k)}
 \bigl(
-\RHom(E,F),
-\RHom(E,F)
+\RHom(X,Y),
+\RHom(X,Y)
 \bigr)
 \]
 が存在する．この恒等射に対応する射
 \[
-\RHom(E,F)\otimes E
+\RHom(X,Y)\otimes X
 \longrightarrow
-F
+Y,
 \]
 を評価射 (evaluation morphism) と呼び，
 \[
 \mathrm{ev}
 :
-\RHom(E,F)\otimes E
+\RHom(X,Y)\otimes X
 \longrightarrow
-F
+Y.
 \]
 と記す．
 
 \begin{lemm}
-任意の $X,Y\in\mathcal D$ および $V\in D^b(\mod k)$に対して同型
+$A$ を環とし，$D(\mod A)$ を $A$-加群の導来圏とする．
+$X \in D(\mod A)$ が完全複体（すなわち，有界な有限生成射影加群複体と擬同型）であるとする．
+このとき任意の $Y,Z \in D(\mod A)$ に対して，：
 \[
-\RHom(X,V\otimes Y)
-\simeq
-V\otimes\RHom(X,Y).
+\RHom_A(X,Y \Ltensor_A Z)\simeq Y\Ltensor_A \RHom_A(X,Z).
 \]
-が存在する．
+が成り立つ．特に$Z=A$として，導来双対$(-)^* = \RHom_A(-, A)$と表すこととすると，
+\[
+\RHom_A(X,Y)\simeq Y\Ltensor_A X^* .
+\]
+が成り立つ．
 \end{lemm}
 \begin{proof}
-$D^b(\mod k)$ は半単純であるから，任意の$V\in D^b(\mod k)$ に対して
+$X$ は完全複体であるから，ある有界な有限生成射影 $A$-加群複体$P^\bullet$ が存在して
 \[
-V\simeq \bigoplus_i H^i(V)[-i]
+P^\bullet \xrightarrow{\sim} X,
 \]
-が成り立つ．したがって
+となる．したがって，
 \[
-V\otimes Y
-\simeq
-\bigoplus_i H^i(V)\otimes Y[-i]
+	\RHom_A(X, Y \Ltensor_A Z) \simeq \Hom_A(P^\bullet, Y \Ltensor_A Z),
 \]
-である．これに $\RHom(X,-)$ を作用させると
+である．各 $P^i$ は有限生成射影加群であるため，通常のテンソル--Hom交換則
 \[
-\begin{aligned}
-\RHom(X,V\otimes Y)
-&\simeq
-\RHom\left(X,\bigoplus_i H^i(V)\otimes Y[-i]\right)\\
-&\simeq
-\bigoplus_i H^i(V)\otimes \RHom(X,Y[-i])\\
-&\simeq
-\bigoplus_i H^i(V)\otimes \RHom(X,Y)[-i]\\
-&\simeq
-V\otimes \RHom(X,Y).
-\end{aligned}
+\Hom_A(P^i,Y \Ltensor_A Z)\simeq Y \Ltensor_A \Hom_A(P^i,Z),
 \]
-よって所望の同型
+が成立する．これを複体の次数ごとに適用すると
 \[
-\RHom(X,V\otimes Y)
-\simeq
-V\otimes\RHom(X,Y)
+	\Hom_A(P^\bullet,Y\Ltensor_A Z)\simeq Y\otimes_A\Hom_A(P^\bullet,Z),
+\]
+を得る．さらに
+\[
+	\Hom_A(P^\bullet,Z)\simeq \RHom_A(X,Z),
+\]
+であるから，
+\[
+\RHom_A(X,Y \Ltensor_A Z)\simeq Y\Ltensor_A \RHom_A(X,Z).
 \]
 を得る．
 \end{proof}

@@ -9,4 +9,4 @@
 \contentsline {section}{\numberline {9}安定性条件}{40}{}%
 \contentsline {section}{\numberline {10}行列因子化の圏}{44}{}%
 \contentsline {section}{\numberline {11}Auslander-Reiten理論}{46}{}%
-\contentsline {section}{\numberline {12}貼り合わせ}{47}{}%
+\contentsline {section}{\numberline {12}貼り合わせ}{48}{}%
