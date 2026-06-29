@@ -297,10 +297,10 @@ P^\bullet \xrightarrow{\sim} X,
 \end{proof}
 
 \begin{defn}
-$\mathcal D$ を三角圏とし，$E,F\in\mathcal D$ を対象とする． $F$ による $E$ の左ミューテーション $L_FE$ を，完全三角形：
-\[ E \xrightarrow{\mathrm{coev}} \RHom(E,F)^\vee\otimes F \longrightarrow R_FE \longrightarrow E[1],\]
-によって定義する．同様に，$E$ による $F$ の右ミューテーション $R_EF$ を，完全三角形：
+$\mathcal D$ を三角圏とし，$E,F\in\mathcal D$ を対象とする． $E$ による $F$ の左ミューテーション $L_FE$ を，完全三角形：
 \[ L_E F \longrightarrow \RHom(E,F)\otimes E \xrightarrow{\mathrm{ev}} F\longrightarrow  L_E F[1].\]
+によって定義する．同様に，$F$ による $E$ の右ミューテーション $R_FE$ を，完全三角形：
+\[ E \xrightarrow{\mathrm{coev}} \RHom(E,F)^\vee\otimes F \longrightarrow R_FE \longrightarrow E[1].\]
 によって定義する．
 \end{defn}
 
@@ -465,3 +465,47 @@ G_n=\operatorname{Br}_n\ltimes \mathbb Z^n.
 の作用を定める．
 \end{proof}
 
+\begin{defn}
+$D$ を三角圏とし，
+$\A\subset D$ を admissible な充満三角部分圏とする．$F\in D$ に対し，$\A$ による $F$ の左ミューテーション$L_{\A}F$ を，完全三角形：
+\[
+i_{\A}i_{\A}^{!}(F)
+\longrightarrow
+F
+\longrightarrow
+L_{\A}F
+\longrightarrow
+i_{\A}i_{\A}^{!}(F)[1],
+\]
+によって定義する．同様に，$E\in D$ に対し，$\A$ による $E$ の右ミューテーション$R_{\A}E$ を，完全三角形：
+\[
+R_{\A}E
+\longrightarrow
+E
+\longrightarrow
+i_{\A}i_{\A}^{*}(E)
+\longrightarrow
+R_{\A}E[1].
+\]
+によって定義する．
+\end{defn}
+ここで，$i_{\A}: \A\hookrightarrow D$ は包含関手であり，
+$i_{\A}^{!}$ および $i_{\A}^{*}$ はそれぞれ右随伴および左随伴である．
+特に，$\A=\langle E\rangle$ が例外対象 $E$ の生成する充満部分圏であるとき，
+上の定義は例外対象に対する左・右ミューテーションと一致する．
+\begin{defn}
+$D$ を三角圏とし，$\A,\B\subset D$を admissible な充満三角部分圏とする．$\A$ による $\B$ の左ミューテーション
+$L_{\A}\B$ を
+\[
+L_{\A}\B
+:=
+\{\,L_{\A}(B)\mid B\in\B\,\}.
+\]
+によって定義する．同様に，$\B$ による $\A$ の右ミューテーション$R_{\B}\A$ を
+\[
+R_{\B}\A
+:=
+\{\,R_{\B}(A)\mid A\in\A\,\}.
+\]
+によって定義する．
+\end{defn}
