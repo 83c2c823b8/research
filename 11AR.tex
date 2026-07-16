@@ -63,9 +63,9 @@ f \in \mathrm{Hom}_{\mathcal{T}}(X,Y)
 \mathrm{rad}_{\mathcal{T}}(X,Y)
 =
 \begin{cases}
-\mathrm{Hom}_{\mathcal{T}}(X,Y),
+\Hom_{\T}(X,Y),
 & X \not\cong Y,\\[4pt]
-\mathrm{rad}\!\left(\mathrm{End}_{\mathcal{T}}(X)\right),
+\mathrm{rad}\!\left(\End_{\T}(X)\right),
 & X \cong Y.
 \end{cases}
 \]
@@ -106,6 +106,10 @@ f \in \mathrm{Hom}_{\mathcal{T}}(X,Y)
 	\end{itemize}
 \end{defn}
 
+\begin{lemm}
+	
+\end{lemm}
+
 \begin{thm}\cite{Hap88}
 	任意の$X\in\ind\T$に対して，以下の完全三角形が存在する：\vspace{-3mm}
 	\begin{itemize}
@@ -115,7 +119,7 @@ f \in \mathrm{Hom}_{\mathcal{T}}(X,Y)
 			\Serre(X[-1])\ar[r,"g"]& Y\ar[r,"f"]& X\ar[r] & \Serre(X)
 		\end{tikzcd}.
 	\]
-ただし，$f$はsink morphismで，$g$はsource morphismである．
+ただし，$f'$はsink morphismで，$g'$はsource morphismである．
 \item
 		\[
 		\begin{tikzcd}
@@ -125,8 +129,16 @@ f \in \mathrm{Hom}_{\mathcal{T}}(X,Y)
 ただし，$f$はsource morphismで，$g$はsink morphismである．
 	\end{itemize}
 \end{thm}
-
-
+\begin{proof}
+	$X\in\ind\T$を任意にとる．Serre函手の定義により，
+		\[\End_{\T}(X)^\vee\simeq \Hom_{\T}(X,\Serre(X)),\]
+		また，$(\End_{\T}(X)/\mathrm{rad}(X,X))^\vee \subset (\End_{\T}(X))^\vee$なので，
+		$\varphi(\neq 0)\in (\End_{\T}(X)/\mathrm{rad}(X,X))^\vee $をとり，上記の同型で送った射を$h$とする．このとき，
+		\[\Serre(X[-1])\xrightarrow{g}Y\xrightarrow{f} X\xrightarrow{h} \Serre(X).\]
+		が主張する完全三角形になることを示す．まず，$f$がright almost splitであることを示す．任意の対象$Z\in\T$に対して，以下の列：
+		\[\Hom_{\T}(Z,\Serre(X[-1]))\longrightarrow \Hom_{\T}(Z,Y)\xlongrightarrow{f\circ -} \Hom_{\T}(Z,X)\xlongrightarrow{h\circ -} \Hom_{\T}(Z,\Serre(X)).\]
+		が完全なので，任意のsplit epimorphismでない$a\in\Hom_{\T}(Z,X)$に対して，$h\circ a = 0$を示せばよい．$a$はsplit epimorphismでなく，$X$が既約なので$a\in\mathrm{rad}(Z,X)$である．
+\end{proof}
 \begin{defn}
 	
 \end{defn}

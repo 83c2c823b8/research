@@ -274,7 +274,20 @@ $X'$がmdqでない場合は$X$を$X'$に取り替えて議論を繰り返すこ
 から$\phi(B^2)\ge\phi(Q)$が得られる．$\phi(B^2)=\phi(Q)=\phi(B^1)$と仮定すると，$X\twoheadrightarrow B^1$がmdqであることから$X\twoheadrightarrow B^1\twoheadrightarrow Q$となって，$B^1$と$Q$の双方向に全射があることから$B^1\simeq Q$となり，$B^2=0$．これは矛盾．したがって，$\phi(B^2)>\phi(B^1)$が成り立つ．この操作は条件(ii)より有限回でとまり，その商は半安定なのでHN分解を得る．
 \end{proof}
 
+\begin{prop}
+	$\P$を三角圏$\D$のスライスとする．このとき，任意の区間$I\subset\RR$で長さが１未満のとき，その充満部分圏$\P(I)\subset\D$は準アーベル圏になる．
+\end{prop}
 
+\begin{prop}\cite{Bri07}
+	$\sigma = (Z,\P)$を三角圏$\D$上の安定性条件とする．このとき，$\P(\phi)\subset\D$はアーベル圏となる．
+\end{prop}
+\begin{proof}
+$\P(\phi)$は，アーベル圏$\A=\P((\phi-1,\phi])$の充満部分圏である．したがって，$\Phi(\phi)$での$f$を$\A$と考えたときにその核，余核が$\P(\phi)$に入っていることを言えばよい．
+\end{proof}
+
+\begin{defn}
+	$X\in\P(\phi)\subset\D$に対して，$X$が$\P(\phi)$において単純対象であるとき$X$は$\P$に関して安定であると定める．
+\end{defn}
 %\begin{defn}\cite{Bri07}
 %	$\D\colon$三角圏．$\D$上の安定性条件とは，$\D$の有界な$t$-構造のHeart $\A\subset\D$と$\A$と$\A$上の安定性条件
 %	\[Z\colon K(\D)=K(\A)\to\CC\]
